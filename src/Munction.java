@@ -10,7 +10,7 @@ import helpers.SwingObject;
 
 import javax.swing.*;
 
-public class Munction extends MunctionContainer
+public class Munction extends MunctionAtom
 {
     public static void main(String...args)
     {
@@ -18,7 +18,7 @@ public class Munction extends MunctionContainer
     }
 }
 
-class MunctionContainer
+class MunctionAtom
 {
     public ASNought.BuilderContainer container = null;
 
@@ -32,7 +32,7 @@ class MunctionContainer
 
     //
 
-    public MunctionContainer()
+    public MunctionAtom()
     {
         this.builder = null;
 
