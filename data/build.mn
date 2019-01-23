@@ -1,0 +1,174 @@
+<munction>
+
+    <checklist>
+
+        <coprocessors>
+
+            <coprocessor classname="org.munction.Builder">
+
+                <option type="JAR" value="/libs/munction/jars/Munction.jar" fail="stop"></option>
+
+                <option type="autostart" value="true"></option>
+
+                <option type="rebuild" value="true"></option>
+
+                <option type="overwrite" value="store old"></option>
+
+                <builders>
+
+                    <option type="presystem" classname="org.munction.PreSystemBuilder"></option>
+
+                    <option type="system" classname="org.munction.SystemBuilder"></option>
+
+                    <option type="application" classname="org.munction.ApplicationBuilder"></option>
+
+                    <option type="interface" classname="org.munction.InterfaceBuilder"></option>
+
+                    <option type="network" classname="org.munction.NetworkBuilder"></option>
+
+                </builders>
+
+            </coprocessor>
+
+            <coprocessor classname="org.munction.Connector">
+
+                <option type="JAR" value="/libs/munction/jars/Munction.jar" fail="stop"></option>
+
+                <option type="autostart" value="true"></option>
+
+                <option type="JRE" value="/libs/jre/bin"></option>
+
+                <connector type="RMI">
+
+                    <option type="username" value="dems1024"></option>
+
+                    <option type="password" value="showmeanotherbigone"></option>
+
+                    <option type="url" value="rmi://grems.online.org:8033"></option>
+
+                </connector>
+
+            </coprocessor>
+
+            <coprocessor classname="org.munction.Persistor">
+
+                <option type="JAR" value="/libs/munction/jars/Munction.jar" fail="stop"></option>
+
+                <option type="autostart" value="true"></option>
+
+                <option type="JRE" value="/libs/jre/bin"></option>
+
+                <persistor type="Hard Drive">
+
+                    <option type="location" value="/usr/munction/out/storage/{PROJECT_NAME}"></option>
+
+                    <option type="overwrite" value="indexed"></option>
+
+                    <option type="encrypted" value="true"></option>
+
+                </persistor>
+
+
+                <persistor type="Database">
+
+                    <option type="username" value="dems1024"></option>
+
+                    <option type="password" value="showmeanotherbigone"></option>
+
+                    <option type="url" value="jdbc://grems.online.org:3033"></option>
+
+                    <option type="overwrite" value="indexed"></option>
+
+                </persistor>
+
+            </coprocessor>
+
+        </coprocessors>
+
+        <persistence>
+
+            <type>
+
+            </type>
+
+        </persistence>
+
+        <options>
+
+            <option type="frame" spec="tibs1.04">
+
+            </option>
+
+            <option type="security" spec="tibs1.04">
+
+            </option>
+
+        </options>
+
+    </checklist>
+
+    <presystem coprocessor="default">
+
+        <static>
+
+        </static>
+
+        <dynamic>
+
+        </dynamic>
+
+    </presystem>
+
+    <system coprocessor="default">
+
+        <static>
+
+        </static>
+
+        <dynamic>
+
+        </dynamic>
+
+        <queue>
+
+        </queue>
+
+    </system>
+
+    <application coprocessor="default">
+
+        <root classname=""></root>
+
+        <object>
+
+            <object>
+
+            </object>
+
+            <object>
+
+            </object>
+
+            <object>
+
+            </object>
+
+            <object>
+
+            </object>
+
+            <chainsaw namespace="munction.charts.{BOSSCHARTS}"></chainsaw>
+
+        </object>
+
+    </application>
+
+    <interface coprocessor="checklist">
+
+    </interface>
+
+    <network coprocessor="default">
+
+    </network>
+
+</munction>
