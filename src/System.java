@@ -1,8 +1,10 @@
+import munction.Munction;
+
 public class System
 {
     public static void main(String...args)
     {
-        java.lang.System.out.println("Munction RMI Coprocessor");
+        java.lang.System.out.println("munction.Munction RMI Coprocessor");
 
         //
 

@@ -1,3 +1,5 @@
+package munction;
+
 import atomscripts.ASNought;
 import components.Builder;
 import components.Connector;
@@ -7,6 +9,7 @@ import helpers.CallbackHandler;
 import helpers.Documenter;
 import helpers.Options;
 import helpers.SwingObject;
+import system.startup.Startup;
 
 import javax.swing.*;
 
@@ -14,7 +17,7 @@ public class Munction extends MunctionAtom
 {
     public static void main(String...args)
     {
-        Munction munction;
+        Startup startup = new Startup();
     }
 }
 
@@ -49,13 +52,13 @@ class MunctionAtom
     {
         container.reference(container, component, object, handler); //store information for meta-documentation of product
 
-        container.serialize(container, component, object, handler); //pre-process object for Munction, RMI, etc.
+        container.serialize(container, component, object, handler); //pre-process object for munction.Munction, RMI, etc.
     }
 
     public void addDocument(Documenter documenter, ASNought.BuildContainer container, JComponent component, SwingObject object, CallbackHandler handler, Options options)
     {
         documenter.reference(container, component, object, handler, options); //store information for meta-documentation of product
 
-        documenter.serialize(container, component, object, handler, options); //process object for Munction, RMI, etc.
+        documenter.serialize(container, component, object, handler, options); //process object for munction.Munction, RMI, etc.
     }
 }
