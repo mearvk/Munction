@@ -1,4 +1,11 @@
 package munction.modules.build;
 
-public class Presystem {
+import system.handlers.RegisteredHandler;
+
+public class Presystem
+{
+    public void addObject(Object object, RegisteredHandler handler)
+    {
+
+    }
 }

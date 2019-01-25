@@ -5,6 +5,7 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import system.Presystem;
 import system.System;
+import system.handlers.RegisteredHandler;
 
 public class BuildModule extends BuildModuleAtom
 {
@@ -45,7 +46,37 @@ public class BuildModule extends BuildModuleAtom
 
         //
 
+        munction.modules.build.Presystem presystem = (munction.modules.build.Presystem)factory.getBean("builder.presystem");
 
+        munction.modules.build.System system = (munction.modules.build.System)factory.getBean("builder.system");
+
+        //
+
+        UserInterfaceInterpreter userinterpreter = (UserInterfaceInterpreter)factory.getBean("builder.interface");
+
+        ApplicationInterpreter applicationinterpreter = (ApplicationInterpreter)factory.getBean("builder.application");
+
+        //
+
+        presystem.addObject(userinterpreter, new RegisteredHandler());
+
+        presystem.addObject(applicationinterpreter, new RegisteredHandler());
+
+        //
+
+        system.addObject(userinterpreter, new RegisteredHandler());
+
+        system.addObject(applicationinterpreter, new RegisteredHandler());
+
+        //
+
+        userinterpreter.setRegistered();
+
+        applicationinterpreter.setRegistered();
+
+        //
+
+        //callback based on settings
     }
 }
 
