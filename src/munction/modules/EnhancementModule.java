@@ -23,12 +23,12 @@ public class EnhancementModule
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Web module v."+EnhancementModuleAtom.version+" registered");
+        java.lang.System.out.println("  >> Enhancement module v."+EnhancementModuleAtom.version+" registered");
     }
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Web module v."+EnhancementModuleAtom.version+" registered");
+        java.lang.System.out.println("  >> Enhancement module v."+EnhancementModuleAtom.version+" registered");
     }
 }
 

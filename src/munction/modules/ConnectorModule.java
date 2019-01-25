@@ -23,12 +23,12 @@ public class ConnectorModule
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Web module v."+ConnectorModuleAtom.version+" registered");
+        java.lang.System.out.println("  >> Connector module v."+ConnectorModuleAtom.version+" registered");
     }
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Web module v."+ConnectorModuleAtom.version+" registered");
+        java.lang.System.out.println("  >> Connector module v."+ConnectorModuleAtom.version+" registered");
     }
 }
 

@@ -1,8 +1,6 @@
 package system.startup;
 
-import munction.modules.BuildModule;
-import munction.modules.MunctionModule;
-import munction.modules.WebModule;
+import munction.modules.*;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import system.Presystem;
@@ -34,6 +32,12 @@ public class Startup
 
         BuildModule buildmodule = (BuildModule)factory.getBean("buildmodule");
 
+        EnhancementModule enhancementmodule = (EnhancementModule)factory.getBean("enhancementmodule");
+
+        PersistenceModule persistencemodule = (PersistenceModule)factory.getBean("persistencemodule");
+
+        ConnectorModule connectormodule = (ConnectorModule)factory.getBean("connectormodule");
+
         WebModule webmodule = (WebModule)factory.getBean("webmodule");
 
         //
@@ -41,6 +45,12 @@ public class Startup
         presystem.addObject(munctionmodule, new RegisteredHandler());
 
         presystem.addObject(buildmodule, new RegisteredHandler());
+
+        presystem.addObject(enhancementmodule, new RegisteredHandler());
+
+        presystem.addObject(persistencemodule, new RegisteredHandler());
+
+        presystem.addObject(connectormodule, new RegisteredHandler());
 
         presystem.addObject(webmodule, new RegisteredHandler());
 
@@ -50,6 +60,12 @@ public class Startup
 
         system.addObject(buildmodule, new RegisteredHandler());
 
+        system.addObject(enhancementmodule, new RegisteredHandler());
+
+        system.addObject(persistencemodule, new RegisteredHandler());
+
+        system.addObject(connectormodule, new RegisteredHandler());
+
         system.addObject(webmodule, new RegisteredHandler());
 
         //
@@ -57,6 +73,12 @@ public class Startup
         munctionmodule.setRegistered();
 
         buildmodule.setRegistered();
+
+        enhancementmodule.setRegistered();
+
+        persistencemodule.setRegistered();
+
+        connectormodule.setRegistered();
 
         webmodule.setRegistered();
     }

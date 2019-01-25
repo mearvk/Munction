@@ -23,12 +23,12 @@ public class PersistenceModule
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Web module v."+PersistenceModuleAtom.version+" registered");
+        java.lang.System.out.println("  >> Persistence module v."+PersistenceModuleAtom.version+" registered");
     }
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Web module v."+PersistenceModuleAtom.version+" registered");
+        java.lang.System.out.println("  >> Persistence module v."+PersistenceModuleAtom.version+" registered");
     }
 }
 
