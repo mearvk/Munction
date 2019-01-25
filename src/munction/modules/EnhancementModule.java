@@ -1,7 +1,26 @@
 package munction.modules;
 
+import system.Presystem;
+import system.System;
+
 public class EnhancementModule
 {
+    public Presystem presystem;
+
+    public System system;
+
+    public EnhancementModule(Presystem presystem, System system)
+    {
+        this.presystem = presystem;
+
+        this.system = system;
+    }
+
+    static
+    {
+
+    }
+
     public void setRegistered()
     {
         java.lang.System.out.println("  >> Web module v."+EnhancementModuleAtom.version+" registered");

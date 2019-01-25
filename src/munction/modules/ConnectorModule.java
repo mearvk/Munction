@@ -1,7 +1,26 @@
 package munction.modules;
 
+import system.Presystem;
+import system.System;
+
 public class ConnectorModule
 {
+    public Presystem presystem;
+
+    public System system;
+
+    public ConnectorModule(Presystem presystem, System system)
+    {
+        this.presystem = presystem;
+
+        this.system = system;
+    }
+
+    static
+    {
+
+    }
+
     public void setRegistered()
     {
         java.lang.System.out.println("  >> Web module v."+ConnectorModuleAtom.version+" registered");

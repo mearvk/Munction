@@ -1,7 +1,26 @@
 package munction.modules;
 
-public class PeristenceModule
+import system.Presystem;
+import system.System;
+
+public class PersistenceModule
 {
+    public Presystem presystem;
+
+    public System system;
+
+    public PersistenceModule(Presystem presystem, System system)
+    {
+        this.presystem = presystem;
+
+        this.system = system;
+    }
+
+    static
+    {
+
+    }
+
     public void setRegistered()
     {
         java.lang.System.out.println("  >> Web module v."+PersistenceModuleAtom.version+" registered");
