@@ -3,24 +3,24 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <bean id="presystem" class="build.Presystem">
+    <bean id="presystem" class="modules.build.Presystem">
         <meta key="version" value="1.0"></meta>
     </bean>
 
-    <bean id="system" class="build.System">
+    <bean id="system" class="modules.build.System">
         <meta key="version" value="1.0"></meta>
     </bean>
 
-    <bean id="support" class="build.SupportAtom">
-        <meta key="version" value="1.0"></meta>
+    <bean id="interface" class="modules.build.UserInterfaceInterpreter">
+
+        <property name="" ref=""></property>
+
     </bean>
 
-    <bean id="peristence" class="build.DatabaseAtom">
-        <meta key="version" value="1.0"></meta>
-    </bean>
+    <bean id="application" class="modules.build.ApplicationInterpreter">
 
-    <bean id="interface" class="build.UserInterfaceAtom">
-        <meta key="version" value="1.0"></meta>
+        <property name="" ref=""></property>
+
     </bean>
 
 </beans>

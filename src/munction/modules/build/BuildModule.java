@@ -1,4 +1,4 @@
-package munction.modules;
+package munction.modules.build;
 
 import munction.modules.atoms.AbstractFunctionalAtom;
 import org.springframework.beans.factory.BeanFactory;

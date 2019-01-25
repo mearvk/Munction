@@ -1,6 +1,7 @@
 package system.startup;
 
 import munction.modules.*;
+import munction.modules.build.BuildModule;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import system.Presystem;
@@ -81,5 +82,9 @@ public class Startup
         connectormodule.setRegistered();
 
         webmodule.setRegistered();
+
+        //
+
+        buildmodule.process();
     }
 }
