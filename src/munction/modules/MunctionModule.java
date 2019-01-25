@@ -14,7 +14,7 @@ import system.System;
 
 import javax.swing.*;
 
-public class MunctionModule extends MunctionAtom
+public class MunctionModule extends MunctionModuleAtom
 {
     public Presystem presystem;
 
@@ -34,16 +34,16 @@ public class MunctionModule extends MunctionAtom
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Munction module v."+MunctionAtom.version+" registered");
+        java.lang.System.out.println("  >> Munction module v."+ MunctionModuleAtom.version+" registered");
     }
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Munction module v."+MunctionAtom.version+" unregistered");
+        java.lang.System.out.println("  >> Munction module v."+ MunctionModuleAtom.version+" unregistered");
     }
 }
 
-class MunctionAtom
+class MunctionModuleAtom
 {
     public static final String version = "1.001";
 
@@ -59,7 +59,7 @@ class MunctionAtom
 
     //
 
-    public MunctionAtom()
+    public MunctionModuleAtom()
     {
         this.builder = null;
 

@@ -23,12 +23,12 @@ public class BuildModule extends BuildModuleAtom
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Build module v."+ MunctionAtom.version+" registered");
+        java.lang.System.out.println("  >> Build module v."+ BuildModuleAtom.version+" registered");
     }
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Build module v."+MunctionAtom.version+" unregistered");
+        java.lang.System.out.println("  >> Build module v."+BuildModuleAtom.version+" unregistered");
     }
 }
 

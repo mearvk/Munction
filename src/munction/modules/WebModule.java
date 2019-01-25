@@ -23,16 +23,16 @@ public class WebModule
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Web module v."+WebListenerAtom.version+" registered");
+        java.lang.System.out.println("  >> Web module v."+ WebModuleAtom.version+" registered");
     }
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Web module v."+WebListenerAtom.version+" registered");
+        java.lang.System.out.println("  >> Web module v."+ WebModuleAtom.version+" registered");
     }
 }
 
-class WebListenerAtom
+class WebModuleAtom
 {
     public static final String version = "1.001";
 }
