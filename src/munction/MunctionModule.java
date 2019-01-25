@@ -9,20 +9,44 @@ import helpers.CallbackHandler;
 import helpers.Documenter;
 import helpers.Options;
 import helpers.SwingObject;
-import system.startup.Startup;
+import system.Presystem;
+import system.System;
 
 import javax.swing.*;
 
-public class Munction extends MunctionAtom
+public class MunctionModule extends MunctionAtom
 {
-    public static void main(String...args)
+    public Presystem presystem;
+
+    public System system;
+
+    public MunctionModule(Presystem presystem, System system)
     {
-        Startup startup = new Startup();
+        this.presystem = presystem;
+
+        this.system = system;
+    }
+
+    static
+    {
+
+    }
+
+    public void setRegistered()
+    {
+        java.lang.System.out.println("  >> Munction module v."+MunctionAtom.version+" registered");
+    }
+
+    public void unsetRegistered()
+    {
+        java.lang.System.out.println("  >> Munction module v."+MunctionAtom.version+" unregistered");
     }
 }
 
 class MunctionAtom
 {
+    public static final String version = "1.001";
+
     public ASNought.BuilderContainer container = null;
 
     public Builder builder = null;
@@ -52,13 +76,13 @@ class MunctionAtom
     {
         container.reference(container, component, object, handler); //store information for meta-documentation of product
 
-        container.serialize(container, component, object, handler); //pre-process object for munction.Munction, RMI, etc.
+        container.serialize(container, component, object, handler); //pre-process object for munction.MunctionModule, RMI, etc.
     }
 
     public void addDocument(Documenter documenter, ASNought.BuildContainer container, JComponent component, SwingObject object, CallbackHandler handler, Options options)
     {
         documenter.reference(container, component, object, handler, options); //store information for meta-documentation of product
 
-        documenter.serialize(container, component, object, handler, options); //process object for munction.Munction, RMI, etc.
+        documenter.serialize(container, component, object, handler, options); //process object for munction.MunctionModule, RMI, etc.
     }
 }

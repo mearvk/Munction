@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class JFrameX //extends munction.Munction
+public class JFrameX //extends munction.MunctionModule
 {
     public Integer listenerID;
 

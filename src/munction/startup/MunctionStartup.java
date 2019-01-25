@@ -1,6 +1,6 @@
 package munction.startup;
 
-import munction.Munction;
+import munction.MunctionModule;
 import system.Presystem;
 
 public class MunctionStartup
@@ -9,5 +9,5 @@ public class MunctionStartup
 
     public System system;
 
-    public Munction munction;
+    public MunctionModule munction;
 }
