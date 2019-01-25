@@ -1,0 +1,26 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="presystem" class="build.Presystem">
+        <meta key="version" value="1.0"></meta>
+    </bean>
+
+    <bean id="system" class="build.System">
+        <meta key="version" value="1.0"></meta>
+    </bean>
+
+    <bean id="support" class="build.SupportAtom">
+        <meta key="version" value="1.0"></meta>
+    </bean>
+
+    <bean id="peristence" class="build.DatabaseAtom">
+        <meta key="version" value="1.0"></meta>
+    </bean>
+
+    <bean id="interface" class="build.UserInterfaceAtom">
+        <meta key="version" value="1.0"></meta>
+    </bean>
+
+</beans>
