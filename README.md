@@ -1,2 +1,2 @@
-# munction.MunctionModule
-munction.MunctionModule
+# munction.modules.MunctionModule
+munction.modules.MunctionModule

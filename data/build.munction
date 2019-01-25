@@ -6,7 +6,7 @@
 
             <coprocessor classname="org.munction.Builder">
 
-                <option type="JAR" value="/libs/munction/jars/munction.MunctionModule.jar" fail="stop"></option>
+                <option type="JAR" value="/libs/munction/jars/munction.modules.MunctionModule.jar" fail="stop"></option>
 
                 <option type="autostart" value="true"></option>
 
@@ -32,7 +32,7 @@
 
             <coprocessor classname="org.munction.Connector">
 
-                <option type="JAR" value="/libs/munction/jars/munction.MunctionModule.jar" fail="stop"></option>
+                <option type="JAR" value="/libs/munction/jars/munction.modules.MunctionModule.jar" fail="stop"></option>
 
                 <option type="autostart" value="true"></option>
 
@@ -52,7 +52,7 @@
 
             <coprocessor classname="org.munction.Persistor">
 
-                <option type="JAR" value="/libs/munction/jars/munction.MunctionModule.jar" fail="stop"></option>
+                <option type="JAR" value="/libs/munction/jars/munction.modules.MunctionModule.jar" fail="stop"></option>
 
                 <option type="autostart" value="true"></option>
 

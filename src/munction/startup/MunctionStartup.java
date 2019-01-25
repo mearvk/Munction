@@ -1,6 +1,6 @@
 package munction.startup;
 
-import munction.MunctionModule;
+import munction.modules.MunctionModule;
 import system.Presystem;
 
 public class MunctionStartup

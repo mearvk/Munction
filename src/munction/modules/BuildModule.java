@@ -1,9 +1,9 @@
-package munction;
+package munction.modules;
 
 import system.Presystem;
 import system.System;
 
-public class BuildModule extends BuildListenerAtom
+public class BuildModule extends BuildModuleAtom
 {
     public Presystem presystem;
 
@@ -23,7 +23,7 @@ public class BuildModule extends BuildListenerAtom
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Build module v."+MunctionAtom.version+" registered");
+        java.lang.System.out.println("  >> Build module v."+ MunctionAtom.version+" registered");
     }
 
     public void unsetRegistered()
@@ -32,7 +32,7 @@ public class BuildModule extends BuildListenerAtom
     }
 }
 
-class BuildListenerAtom
+class BuildModuleAtom
 {
     public static final String version = "1.01";
 }

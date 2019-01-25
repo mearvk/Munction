@@ -1,8 +1,8 @@
 package system.startup;
 
-import munction.BuildModule;
-import munction.MunctionModule;
-import munction.WebModule;
+import munction.modules.BuildModule;
+import munction.modules.MunctionModule;
+import munction.modules.WebModule;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import system.Presystem;
