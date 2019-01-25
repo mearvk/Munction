@@ -11,13 +11,13 @@
         <meta key="version" value="1.0"></meta>
     </bean>
 
-    <bean id="enhancer.standard" class="munction.modules.enhancement.StandardEnhancement">
+    <bean id="enhancer.standard" class="munction.modules.enhancement.StandardEnhancer">
 
         <meta key="input" value="/home/xenu/IdeaProjects/Munction/input/ui/ui.xml"></meta>
 
     </bean>
 
-    <bean id="enhancer.custom" class="munction.modules.enhancement.CustomEnhancement">
+    <bean id="enhancer.custom" class="munction.modules.enhancement.CustomEnhancer">
 
         <meta key="input" value="/home/xenu/IdeaProjects/Munction/input/application/application.xml"></meta>
 

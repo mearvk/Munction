@@ -52,9 +52,9 @@ public class EnhancementModule extends EnhancementModuleAtom
 
         //
 
-        StandardEnhancement standardenhancer = (StandardEnhancement)factory.getBean("enhancer.standard");
+        StandardEnhancer standardenhancer = (StandardEnhancer)factory.getBean("enhancer.standard");
 
-        CustomEnhancement customenhancer = (CustomEnhancement)factory.getBean("enhancer.custom");
+        CustomEnhancer customenhancer = (CustomEnhancer)factory.getBean("enhancer.custom");
 
         //
 

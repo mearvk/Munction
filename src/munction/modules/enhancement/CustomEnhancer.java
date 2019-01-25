@@ -1,6 +1,6 @@
 package munction.modules.enhancement;
 
-public class CustomEnhancement
+public class CustomEnhancer
 {
     public void setRegistered()
     {
