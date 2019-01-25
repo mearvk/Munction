@@ -9,6 +9,7 @@ import helpers.CallbackHandler;
 import helpers.Documenter;
 import helpers.Options;
 import helpers.SwingObject;
+import munction.modules.atoms.AbstractFunctionalAtom;
 import system.Presystem;
 import system.System;
 
@@ -43,7 +44,7 @@ public class MunctionModule extends MunctionModuleAtom
     }
 }
 
-class MunctionModuleAtom
+class MunctionModuleAtom extends AbstractFunctionalAtom
 {
     public static final String version = "1.001";
 

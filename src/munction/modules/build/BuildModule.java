@@ -76,7 +76,7 @@ public class BuildModule extends BuildModuleAtom
 
         //
 
-        //callback based on settings
+        java.lang.System.out.println("  >> Munction functional build callbacks set");
     }
 }
 

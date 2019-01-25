@@ -1,0 +1,26 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="enhancer.presystem" class="munction.modules.enhancement.Presystem">
+        <meta key="version" value="1.0"></meta>
+    </bean>
+
+    <bean id="enhancer.system" class="munction.modules.enhancement.System">
+        <meta key="version" value="1.0"></meta>
+    </bean>
+
+    <bean id="enhancer.standard" class="munction.modules.enhancement.StandardEnhancement">
+
+        <meta key="input" value="/home/xenu/IdeaProjects/Munction/input/ui/ui.xml"></meta>
+
+    </bean>
+
+    <bean id="enhancer.custom" class="munction.modules.enhancement.CustomEnhancement">
+
+        <meta key="input" value="/home/xenu/IdeaProjects/Munction/input/application/application.xml"></meta>
+
+    </bean>
+
+</beans>

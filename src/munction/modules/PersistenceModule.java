@@ -1,5 +1,6 @@
 package munction.modules;
 
+import munction.modules.atoms.AbstractFunctionalAtom;
 import system.Presystem;
 import system.System;
 
@@ -32,7 +33,7 @@ public class PersistenceModule
     }
 }
 
-class PersistenceModuleAtom
+class PersistenceModuleAtom extends AbstractFunctionalAtom
 {
     public static final String version = "1.001";
 }

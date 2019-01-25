@@ -2,6 +2,7 @@ package system.startup;
 
 import munction.modules.*;
 import munction.modules.build.BuildModule;
+import munction.modules.enhancement.EnhancementModule;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import system.Presystem;
@@ -86,5 +87,13 @@ public class Startup
         //
 
         buildmodule.process();
+
+        enhancementmodule.process();
+
+        //persistencemodule.process();
+
+        //connectormodule.process();
+
+        //webmodule.process();
     }
 }
