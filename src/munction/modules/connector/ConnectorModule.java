@@ -1,8 +1,6 @@
-package munction.modules;
+package munction.modules.connector;
 
 import munction.modules.atoms.AbstractFunctionalAtom;
-import munction.modules.connector.CustomConnector;
-import munction.modules.connector.StandardConnector;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import system.Presystem;
@@ -29,12 +27,12 @@ public class ConnectorModule extends ConnectorModuleAtom
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Connector module loaded");
+        java.lang.System.out.println("  >> Enhancement module loaded");
     }
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Connector module loaded");
+        java.lang.System.out.println("  >> Enhancement module loaded");
     }
 
     @Override
@@ -48,33 +46,33 @@ public class ConnectorModule extends ConnectorModuleAtom
 
         //
 
-        munction.modules.connector.Presystem presystem = (munction.modules.connector.Presystem)factory.getBean("connector.presystem");
+        munction.modules.connector.Presystem presystem = (munction.modules.connector.Presystem)factory.getBean("enhancer.presystem");
 
-        munction.modules.connector.System system = (munction.modules.connector.System)factory.getBean("connector.system");
-
-        //
-
-        StandardConnector standardconnector = (StandardConnector)factory.getBean("connector.standard");
-
-        CustomConnector customconnector = (CustomConnector)factory.getBean("connector.custom");
+        munction.modules.connector.System system = (munction.modules.connector.System)factory.getBean("enhancer.system");
 
         //
 
-        presystem.addObject(standardconnector, new RegisteredHandler());
+        StandardConnector standardenhancer = (StandardConnector)factory.getBean("enhancer.standard");
 
-        presystem.addObject(customconnector, new RegisteredHandler());
-
-        //
-
-        system.addObject(standardconnector, new RegisteredHandler());
-
-        system.addObject(customconnector, new RegisteredHandler());
+        CustomConnector customenhancer = (CustomConnector)factory.getBean("enhancer.custom");
 
         //
 
-        standardconnector.setRegistered();
+        presystem.addObject(standardenhancer, new RegisteredHandler());
 
-        customconnector.setRegistered();
+        presystem.addObject(customenhancer, new RegisteredHandler());
+
+        //
+
+        system.addObject(standardenhancer, new RegisteredHandler());
+
+        system.addObject(customenhancer, new RegisteredHandler());
+
+        //
+
+        standardenhancer.setRegistered();
+
+        customenhancer.setRegistered();
 
         //
 

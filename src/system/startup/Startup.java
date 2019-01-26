@@ -93,8 +93,8 @@ public class Startup
 
         persistencemodule.process();
 
-        //connectormodule.process();
+        connectormodule.process();
 
-        //webmodule.process();
+        webmodule.process();
     }
 }

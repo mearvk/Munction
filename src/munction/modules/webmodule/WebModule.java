@@ -1,8 +1,6 @@
-package munction.modules;
+package munction.modules.webmodule;
 
 import munction.modules.atoms.AbstractFunctionalAtom;
-import munction.modules.connector.CustomConnector;
-import munction.modules.connector.StandardConnector;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import system.Presystem;
@@ -29,12 +27,12 @@ public class WebModule extends WebModuleAtom
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Web module loaded");
+        java.lang.System.out.println("  >> Enhancement module loaded");
     }
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Web module loaded");
+        java.lang.System.out.println("  >> Enhancement module loaded");
     }
 
     @Override
@@ -48,15 +46,15 @@ public class WebModule extends WebModuleAtom
 
         //
 
-        munction.modules.connector.Presystem presystem = (munction.modules.connector.Presystem)factory.getBean("web.presystem");
+        munction.modules.webmodule.Presystem presystem = (munction.modules.webmodule.Presystem)factory.getBean("web.presystem");
 
-        munction.modules.connector.System system = (munction.modules.connector.System)factory.getBean("web.system");
+        munction.modules.webmodule.System system = (munction.modules.webmodule.System)factory.getBean("web.system");
 
         //
 
-        StandardConnector standardweb = (StandardConnector)factory.getBean("web.standard");
+        StandardWeb standardweb = (StandardWeb)factory.getBean("web.standard");
 
-        CustomConnector customweb = (CustomConnector)factory.getBean("web.custom");
+        CustomWeb customweb = (CustomWeb)factory.getBean("web.custom");
 
         //
 

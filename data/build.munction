@@ -38,7 +38,7 @@
 
                 <option type="JRE" value="/libs/jre/bin"></option>
 
-                <connector type="RMI">
+                <munction.modules.connector type="RMI">
 
                     <option type="username" value="dems1024"></option>
 
@@ -46,7 +46,7 @@
 
                     <option type="url" value="rmi://grems.online.org:8033"></option>
 
-                </connector>
+                </munction.modules.connector>
 
             </coprocessor>
 

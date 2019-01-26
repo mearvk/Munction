@@ -42,7 +42,7 @@
         <constructor-arg ref="system"/>
     </bean>
 
-    <bean id="webmodule" class="munction.modules.WebModule">
+    <bean id="munction.modules.webmodule" class="munction.modules.WebModule">
         <meta key="version" value="1.0"></meta>
         <constructor-arg ref="presystem"/>
         <constructor-arg ref="system"/>
