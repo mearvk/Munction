@@ -39,7 +39,7 @@ public class PersistenceModule
 
     public void process()
     {
-        BeanFactory factory = new ClassPathXmlApplicationContext("enhancement.xml");
+        BeanFactory factory = new ClassPathXmlApplicationContext("persistence.xml");
 
         //
 

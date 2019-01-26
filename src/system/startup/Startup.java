@@ -4,6 +4,7 @@ import munction.modules.*;
 import munction.modules.build.BuildModule;
 import munction.modules.enhancement.EnhancementModule;
 import munction.modules.persistence.PersistenceModule;
+import munction.modules.web.WebModule;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import system.Presystem;
@@ -41,7 +42,7 @@ public class Startup
 
         ConnectorModule connectormodule = (ConnectorModule)factory.getBean("connectormodule");
 
-        WebModule webmodule = (WebModule)factory.getBean("web");
+        WebModule webmodule = (WebModule)factory.getBean("webmodule");
 
         //
 

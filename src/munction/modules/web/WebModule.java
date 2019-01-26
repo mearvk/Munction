@@ -38,7 +38,7 @@ public class WebModule extends WebModuleAtom
     @Override
     public void process()
     {
-        BeanFactory factory = new ClassPathXmlApplicationContext("enhancement.xml");
+        BeanFactory factory = new ClassPathXmlApplicationContext("web.xml");
 
         //
 

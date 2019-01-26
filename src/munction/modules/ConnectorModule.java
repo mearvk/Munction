@@ -40,7 +40,7 @@ public class ConnectorModule extends ConnectorModuleAtom
     @Override
     public void process()
     {
-        BeanFactory factory = new ClassPathXmlApplicationContext("enhancement.xml");
+        BeanFactory factory = new ClassPathXmlApplicationContext("connector.xml");
 
         //
 
