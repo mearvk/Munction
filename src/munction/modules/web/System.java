@@ -1,4 +1,4 @@
-package munction.modules.webmodule;
+package munction.modules.web;
 
 import system.handlers.RegisteredHandler;
 

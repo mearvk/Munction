@@ -41,7 +41,7 @@ public class Startup
 
         ConnectorModule connectormodule = (ConnectorModule)factory.getBean("connectormodule");
 
-        WebModule webmodule = (WebModule)factory.getBean("webmodule");
+        WebModule webmodule = (WebModule)factory.getBean("web");
 
         //
 

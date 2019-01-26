@@ -1,4 +1,4 @@
-package munction.modules.webmodule;
+package munction.modules.web;
 
 import munction.modules.atoms.AbstractFunctionalAtom;
 import org.springframework.beans.factory.BeanFactory;
@@ -46,9 +46,9 @@ public class WebModule extends WebModuleAtom
 
         //
 
-        munction.modules.webmodule.Presystem presystem = (munction.modules.webmodule.Presystem)factory.getBean("web.presystem");
+        munction.modules.web.Presystem presystem = (munction.modules.web.Presystem)factory.getBean("web.presystem");
 
-        munction.modules.webmodule.System system = (munction.modules.webmodule.System)factory.getBean("web.system");
+        munction.modules.web.System system = (munction.modules.web.System)factory.getBean("web.system");
 
         //
 
