@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Presystem
 {
-    ArrayList<RegisteredHandler> handlers = new ArrayList();
+    public ArrayList<RegisteredHandler> handlers = new ArrayList();
 
     public static Presystem staticpresystem;
 

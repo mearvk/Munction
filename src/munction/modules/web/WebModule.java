@@ -32,7 +32,7 @@ public class WebModule extends WebModuleAtom
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Enhancement module loaded");
+        java.lang.System.out.println("  >> Web module loaded");
     }
 
     @Override
@@ -42,7 +42,7 @@ public class WebModule extends WebModuleAtom
 
         //
 
-        java.lang.System.out.println("Munction [Web Document]:");
+        java.lang.System.out.println("Munction [Webengine Document]:");
 
         //
 
