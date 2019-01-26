@@ -27,12 +27,12 @@ public class BuildModule extends BuildModuleAtom
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Build module v."+ BuildModuleAtom.version+" registered");
+        java.lang.System.out.println("  >> Build module loaded");
     }
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Build module v."+BuildModuleAtom.version+" unregistered");
+        java.lang.System.out.println("  >> Build module loaded");
     }
 
     @Override
@@ -42,7 +42,7 @@ public class BuildModule extends BuildModuleAtom
 
         //
 
-        java.lang.System.out.println("Munction Build Document Loading:");
+        java.lang.System.out.println("Munction [Build Document]:");
 
         //
 

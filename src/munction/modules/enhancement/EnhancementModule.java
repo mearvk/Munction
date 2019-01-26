@@ -27,12 +27,12 @@ public class EnhancementModule extends EnhancementModuleAtom
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Enhancement module v."+EnhancementModuleAtom.version+" registered");
+        java.lang.System.out.println("  >> Enhancement module loaded");
     }
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Enhancement module v."+EnhancementModuleAtom.version+" registered");
+        java.lang.System.out.println("  >> Enhancement module loaded");
     }
 
     @Override
@@ -42,7 +42,7 @@ public class EnhancementModule extends EnhancementModuleAtom
 
         //
 
-        java.lang.System.out.println("Munction Enhancement Document Loading:");
+        java.lang.System.out.println("Munction [Enhancement Document]:");
 
         //
 

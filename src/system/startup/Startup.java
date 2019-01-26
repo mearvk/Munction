@@ -3,6 +3,7 @@ package system.startup;
 import munction.modules.*;
 import munction.modules.build.BuildModule;
 import munction.modules.enhancement.EnhancementModule;
+import munction.modules.persistence.PersistenceModule;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import system.Presystem;
@@ -20,7 +21,7 @@ public class Startup
     {
         BeanFactory factory = new ClassPathXmlApplicationContext("startup.xml");
 
-        java.lang.System.out.println("Munction Loading:");
+        java.lang.System.out.println("Munction [Modules]");
 
         //
 
@@ -90,7 +91,7 @@ public class Startup
 
         enhancementmodule.process();
 
-        //persistencemodule.process();
+        persistencemodule.process();
 
         //connectormodule.process();
 

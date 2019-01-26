@@ -24,12 +24,12 @@ public class WebModule
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Web module v."+ WebModuleAtom.version+" registered");
+        java.lang.System.out.println("  >> Web module loaded");
     }
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Web module v."+ WebModuleAtom.version+" registered");
+        java.lang.System.out.println("  >> Web module loaded");
     }
 }
 

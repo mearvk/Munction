@@ -35,12 +35,12 @@ public class MunctionModule extends MunctionModuleAtom
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Munction module v."+ MunctionModuleAtom.version+" registered");
+        java.lang.System.out.println("  >> Munction module loaded");
     }
 
     public void unsetRegistered()
     {
-        java.lang.System.out.println("  >> Munction module v."+ MunctionModuleAtom.version+" unregistered");
+        java.lang.System.out.println("  >> Munction module loaded");
     }
 }
 
