@@ -2,13 +2,13 @@ package munction.modules.build.examples.chatprogram;
 
 public class Startup
 {
-    public static void main()
+    public static void main(String...args)
     {
-        new Startup();
+        Startup startup = new Startup();
     }
 
     public Startup()
     {
-        new MunctionContainer();
+        MunctionContainer munction = new MunctionContainer();
     }
 }
