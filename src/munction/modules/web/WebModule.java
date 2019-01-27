@@ -27,7 +27,7 @@ public class WebModule extends WebModuleAtom
 
     public void setRegistered()
     {
-        java.lang.System.out.println("  >> Enhancement module loaded");
+        java.lang.System.out.println("  >> Web module loaded");
     }
 
     public void unsetRegistered()
