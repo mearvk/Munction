@@ -7,6 +7,8 @@ import java.util.Queue;
 
 public class ApplicationContainer
 {
+    public ApplicationContainerContext applicationcontainercontext = new ApplicationContainerContext();
+
     public ListProcessor listprocessor = new ListProcessor();
 
     public CallbackProcessor callbackprocessor = new CallbackProcessor();
@@ -43,6 +45,15 @@ public class ApplicationContainer
 
     public ApplicationContainer getframe(String username, String password, String name, String namespace, String munctionname, String munctionurl, Queue<Frame> retval)
     {
+        ApplicationContainerContext context = this.applicationcontainercontext;
+
+        context
+                .context()
+                .lists()
+                .signal();
+
+        //
+
         MunctionProcessor processor = this.munctionprocessor
                 .instance()
                 .addhandler(MunctionProcessor.STANDARD_EXCEPTION_HANDLER)
