@@ -79,4 +79,71 @@ public class ApplicationContainer
         return this;
     }
 
+    public ApplicationContainer getprocess(String username, String password, String name, String namespace, String munctionname, String munctionurl, Queue<Process> retval)
+    {
+        ApplicationContainerContext context = this.applicationcontainercontext;
+
+        context
+                .report("munction://localhost/", this)
+                .signal("munction://localhost/", this)
+                .lists("munction://localhost/", this)
+                .exceptions("munction://localhost", this);
+
+        //
+
+        MunctionProcessor processor = this.munctionprocessor
+                .instance("retval", username, password, munctionname, munctionurl)
+                .addhandler(STANDARD_EXCEPTION_HANDLER, "stderr", "munction://localhost")
+                .trylock()
+                .pull()
+                .ref()
+                .tryunlock()
+                .close();
+
+        //
+
+        MunctionReporter reporter = processor
+                .reporter()
+                .lock()
+                .report()
+                .free();
+
+        //
+
+        return this;
+    }
+
+    public ApplicationContainer getlist(String username, String password, String name, String namespace, String munctionname, String munctionurl, Queue<List> retval)
+    {
+        ApplicationContainerContext context = this.applicationcontainercontext;
+
+        context
+                .report("munction://localhost/", this)
+                .signal("munction://localhost/", this)
+                .lists("munction://localhost/", this)
+                .exceptions("munction://localhost", this);
+
+        //
+
+        MunctionProcessor processor = this.munctionprocessor
+                .instance("retval", username, password, munctionname, munctionurl)
+                .addhandler(STANDARD_EXCEPTION_HANDLER, "stderr", "munction://localhost")
+                .trylock()
+                .pull()
+                .ref()
+                .tryunlock()
+                .close();
+
+        //
+
+        MunctionReporter reporter = processor
+                .reporter()
+                .lock()
+                .report()
+                .free();
+
+        //
+
+        return this;
+    }
 }
