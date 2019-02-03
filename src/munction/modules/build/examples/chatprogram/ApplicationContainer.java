@@ -1,8 +1,9 @@
 package munction.modules.build.examples.chatprogram;
 
-import munction.modules.build.CallbackProcessor;
-import munction.modules.build.ListProcessor;
-import munction.modules.build.MunctionProcessor;
+import munction.modules.build.*;
+import munction.modules.build.Process;
+
+import java.util.Queue;
 
 public class ApplicationContainer
 {
@@ -12,8 +13,22 @@ public class ApplicationContainer
 
     public MunctionProcessor munctionprocessor = new MunctionProcessor();
 
+    public FramingProcessor framingprocessor = new FramingProcessor();
+
     public ApplicationContainer()
     {
+        //System.preinit(this);
 
+        //System.init(this);
+    }
+
+    public ApplicationContainer frame(String name, String namespace, String munctionname, String munctionurl, Queue<Frame> frames)
+    {
+        return this;
+    }
+
+    public ApplicationContainer process(String name, String namespace, String munctionname, String munctionurl, Queue<Process> processes)
+    {
+        return this;
     }
 }
