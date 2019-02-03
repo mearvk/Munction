@@ -18,12 +18,17 @@ public class MunctionProcessor
 
     //
 
-    public MunctionProcessor instance()
+    public MunctionProcessor instance(String userref, String username, String password, String munctionname, String munctionurl)
     {
         return new MunctionProcessor();
     }
 
-    public MunctionProcessor addhandler(Integer type)
+    public MunctionProcessor addhandler(Integer type, String munctionname, String munctionurl)
+    {
+        return this;
+    }
+
+    public MunctionProcessor trylock()
     {
         return this;
     }
@@ -43,12 +48,27 @@ public class MunctionProcessor
         return this;
     }
 
+    public MunctionProcessor pull()
+    {
+        return this;
+    }
+
     public MunctionProcessor ref(String name, Object assignation)
     {
         return this;
     }
 
-    public MunctionProcessor freelock(String name, Object assignation)
+    public MunctionProcessor ref()
+    {
+        return this;
+    }
+
+    public MunctionProcessor tryunlock()
+    {
+        return this;
+    }
+
+    public MunctionProcessor tryunlock(String name, Object assignation)
     {
         return this;
     }

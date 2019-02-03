@@ -5,6 +5,8 @@ import munction.modules.build.Process;
 
 import java.util.Queue;
 
+import static munction.modules.build.MunctionProcessor.STANDARD_EXCEPTION_HANDLER;
+
 public class ApplicationContainer
 {
     public ApplicationContainerContext applicationcontainercontext = new ApplicationContainerContext();
@@ -48,20 +50,20 @@ public class ApplicationContainer
         ApplicationContainerContext context = this.applicationcontainercontext;
 
         context
-                .context()
-                .lists()
-                .signal();
+                .report("munction://localhost/", this)
+                .signal("munction://localhost/", this)
+                .lists("munction://localhost/", this)
+                .exceptions("munction://localhost", this);
 
         //
 
         MunctionProcessor processor = this.munctionprocessor
-                .instance()
-                .addhandler(MunctionProcessor.STANDARD_EXCEPTION_HANDLER)
-                .asset("retval", munctionname, munctionurl)
-                .trylock(username, password)
-                .pull("retval", munctionname, munctionurl)
-                .ref("retval", retval)
-                .freelock(username, password)
+                .instance("retval", username, password, munctionname, munctionurl)
+                .addhandler(STANDARD_EXCEPTION_HANDLER, "stderr", "munction://localhost")
+                .trylock()
+                .pull()
+                .ref()
+                .tryunlock()
                 .close();
 
         //

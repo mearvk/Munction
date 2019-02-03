@@ -3,17 +3,27 @@ package munction.modules.build;
 public class ApplicationContainerContext
 {
 
-    public ApplicationContainerContext context()
+    public ApplicationContainerContext report(String url, Object object)
     {
         return this;
     }
 
-    public ApplicationContainerContext lists()
+    public ApplicationContainerContext lists(String url, Object object)
     {
         return this;
     }
 
-    public ApplicationContainerContext signal()
+    public ApplicationContainerContext signal(String url, Object object)
+    {
+        return this;
+    }
+
+    public ApplicationContainerContext exceptions(String url, Object object)
+    {
+        return this;
+    }
+
+    public ApplicationContainerContext fail(String type)
     {
         return this;
     }
