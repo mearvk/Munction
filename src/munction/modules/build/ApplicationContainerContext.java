@@ -3,6 +3,11 @@ package munction.modules.build;
 public class ApplicationContainerContext
 {
 
+    public ApplicationContainerContext setup(String url, Object object)
+    {
+        return this;
+    }
+
     public ApplicationContainerContext report(String url, Object object)
     {
         return this;
@@ -14,6 +19,11 @@ public class ApplicationContainerContext
     }
 
     public ApplicationContainerContext signal(String url, Object object)
+    {
+        return this;
+    }
+
+    public ApplicationContainerContext state(String url, Object object)
     {
         return this;
     }

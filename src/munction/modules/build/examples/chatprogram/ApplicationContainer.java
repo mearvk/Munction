@@ -28,17 +28,38 @@ public class ApplicationContainer
 
     public ApplicationContainer enframe(String name, String namespace, String munctionname, String munctionurl, Queue<Frame> frames)
     {
+        this.framingprocessor.hashCode();
+
         return this;
     }
 
     public ApplicationContainer enprocess(String name, String namespace, String munctionname, String munctionurl, Queue<Process> processes)
     {
+        this.framingprocessor.hashCode();
+
+        return this;
+    }
+
+    public ApplicationContainer enlist(String name, String namespace, String munctionname, String munctionurl, Queue<List> lists)
+    {
+        this.listprocessor.hashCode();
+
         return this;
     }
 
     //
 
-    public ApplicationContainer enlist(String name, String namespace, String munctionname, String munctionurl, Queue<List> lists)
+    public ApplicationContainer deframe(String name, String namespace, String munctionname, String munctionurl, Queue<Frame> frames)
+    {
+        return this;
+    }
+
+    public ApplicationContainer deprocess(String name, String namespace, String munctionname, String munctionurl, Queue<Process> processes)
+    {
+        return this;
+    }
+
+    public ApplicationContainer delist(String name, String namespace, String munctionname, String munctionurl, Queue<List> lists)
     {
         return this;
     }
@@ -50,15 +71,19 @@ public class ApplicationContainer
         ApplicationContainerContext context = this.applicationcontainercontext;
 
         context
+                .setup("munction://localhost/", this)
                 .report("munction://localhost/", this)
                 .signal("munction://localhost/", this)
+                .state("munction://localhost/", this)
                 .lists("munction://localhost/", this)
                 .exceptions("munction://localhost", this);
 
         //
 
-        MunctionProcessor processor = this.munctionprocessor
-                .instance("retval", username, password, munctionname, munctionurl)
+        MunctionProcessor processor = this.munctionprocessor.instance("retval", username, password, munctionname, munctionurl);
+
+        processor
+                .addcontext(context)
                 .addhandler(STANDARD_EXCEPTION_HANDLER, "stderr", "munction://localhost")
                 .trylock()
                 .pull()
@@ -68,8 +93,9 @@ public class ApplicationContainer
 
         //
 
-        MunctionReporter reporter = processor
-                .reporter()
+        MunctionReporter reporter = processor.reporter;
+
+        reporter
                 .lock()
                 .report()
                 .free();
@@ -84,17 +110,21 @@ public class ApplicationContainer
         ApplicationContainerContext context = this.applicationcontainercontext;
 
         context
+                .setup("munction://localhost/", this)
                 .report("munction://localhost/", this)
                 .signal("munction://localhost/", this)
+                .state("munction://localhost/", this)
                 .lists("munction://localhost/", this)
                 .exceptions("munction://localhost", this);
 
         //
 
-        MunctionProcessor processor = this.munctionprocessor
-                .instance("retval", username, password, munctionname, munctionurl)
+        MunctionProcessor processor = this.munctionprocessor.instance("retval", username, password, munctionname, munctionurl);
+
+        processor
+                .addcontext(context)
                 .addhandler(STANDARD_EXCEPTION_HANDLER, "stderr", "munction://localhost")
-                .trylock()
+                .trylock() //fails then what
                 .pull()
                 .ref()
                 .tryunlock()
@@ -102,8 +132,9 @@ public class ApplicationContainer
 
         //
 
-        MunctionReporter reporter = processor
-                .reporter()
+        MunctionReporter reporter = processor.reporter;
+
+        reporter
                 .lock()
                 .report()
                 .free();
@@ -118,15 +149,19 @@ public class ApplicationContainer
         ApplicationContainerContext context = this.applicationcontainercontext;
 
         context
+                .setup("munction://localhost/", this)
                 .report("munction://localhost/", this)
                 .signal("munction://localhost/", this)
+                .state("munction://localhost/", this)
                 .lists("munction://localhost/", this)
                 .exceptions("munction://localhost", this);
 
         //
 
-        MunctionProcessor processor = this.munctionprocessor
-                .instance("retval", username, password, munctionname, munctionurl)
+        MunctionProcessor processor = this.munctionprocessor.instance("retval", username, password, munctionname, munctionurl);
+
+        processor
+                .addcontext(context)
                 .addhandler(STANDARD_EXCEPTION_HANDLER, "stderr", "munction://localhost")
                 .trylock()
                 .pull()
@@ -136,8 +171,9 @@ public class ApplicationContainer
 
         //
 
-        MunctionReporter reporter = processor
-                .reporter()
+        MunctionReporter reporter = processor.reporter;
+
+        reporter
                 .lock()
                 .report()
                 .free();

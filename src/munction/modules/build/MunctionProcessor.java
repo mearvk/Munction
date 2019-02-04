@@ -28,6 +28,11 @@ public class MunctionProcessor
         return this;
     }
 
+    public MunctionProcessor addcontext(ApplicationContainerContext context)
+    {
+        return this;
+    }
+
     public MunctionProcessor trylock()
     {
         return this;
