@@ -1,11 +1,14 @@
 package munction.modules.build.examples.chatprogram;
 
 import munction.modules.build.*;
+
 import munction.modules.build.Process;
 
 import java.util.Queue;
 
 import static munction.modules.build.MunctionProcessor.STANDARD_EXCEPTION_HANDLER;
+
+//
 
 public class ApplicationContainer
 {
@@ -28,28 +31,28 @@ public class ApplicationContainer
 
     public ApplicationContainer enframe(String name, String namespace, String munctionname, String munctionurl, Queue<Frame> frames)
     {
-        this.framingprocessor.hashCode();
+        this.framingprocessor.addFrameSet(name, namespace, munctionname, munctionurl, frames);
 
         return this;
     }
 
     public ApplicationContainer enprocess(String name, String namespace, String munctionname, String munctionurl, Queue<Process> processes)
     {
-        this.framingprocessor.hashCode();
+        this.framingprocessor.addProcessSet(name, namespace, munctionname, munctionurl, processes);
 
         return this;
     }
 
     public ApplicationContainer enlist(String name, String namespace, String munctionname, String munctionurl, Queue<List> lists)
     {
-        this.listprocessor.hashCode();
+        this.framingprocessor.addListSet(name, namespace, munctionname, munctionurl, lists);
 
         return this;
     }
 
     public ApplicationContainer enset(String name, String namespace, String munctionname, String munctionurl, Queue<Item> lists)
     {
-        this.listprocessor.hashCode();
+        this.framingprocessor.addItemSet(name, namespace, munctionname, munctionurl, lists);
 
         return this;
     }
@@ -58,22 +61,28 @@ public class ApplicationContainer
 
     public ApplicationContainer deframe(String name, String namespace, String munctionname, String munctionurl, Queue<Frame> frames)
     {
+        this.framingprocessor.removeFrameSet(name, namespace, munctionname, munctionurl, frames);
+
         return this;
     }
 
     public ApplicationContainer deprocess(String name, String namespace, String munctionname, String munctionurl, Queue<Process> processes)
     {
+        this.framingprocessor.removeProcessSet(name, namespace, munctionname, munctionurl, processes);
+
         return this;
     }
 
     public ApplicationContainer delist(String name, String namespace, String munctionname, String munctionurl, Queue<List> lists)
     {
+        this.framingprocessor.removeListSet(name, namespace, munctionname, munctionurl, lists);
+
         return this;
     }
 
-    public ApplicationContainer deset(String name, String namespace, String munctionname, String munctionurl, Queue<Item> lists)
+    public ApplicationContainer deset(String name, String namespace, String munctionname, String munctionurl, Queue<Item> items)
     {
-        this.listprocessor.hashCode();
+        this.framingprocessor.removeItemSet(name, namespace, munctionname, munctionurl, items);
 
         return this;
     }
@@ -85,6 +94,7 @@ public class ApplicationContainer
         ApplicationContext context = this.applcontext;
 
         context
+                .reference("","")
                 .setup("munction://localhost/", this)
                 .report("munction://localhost/", this)
                 .signal("munction://localhost/", this)
@@ -124,6 +134,7 @@ public class ApplicationContainer
         ApplicationContext context = this.applcontext;
 
         context
+                .reference("","")
                 .setup("munction://localhost/", this)
                 .report("munction://localhost/", this)
                 .signal("munction://localhost/", this)
@@ -163,6 +174,7 @@ public class ApplicationContainer
         ApplicationContext context = this.applcontext;
 
         context
+                .reference("","")
                 .setup("munction://localhost/", this)
                 .report("munction://localhost/", this)
                 .signal("munction://localhost/", this)
