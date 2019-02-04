@@ -28,7 +28,7 @@ public class MunctionProcessor
         return this;
     }
 
-    public MunctionProcessor addcontext(ApplicationContainerContext context)
+    public MunctionProcessor addcontext(ApplicationContext context)
     {
         return this;
     }

@@ -9,15 +9,15 @@ import static munction.modules.build.MunctionProcessor.STANDARD_EXCEPTION_HANDLE
 
 public class ApplicationContainer
 {
-    public ApplicationContainerContext applicationcontainercontext = new ApplicationContainerContext();
+    public ApplicationContext applcontext = new ApplicationContext();
 
     public ListProcessor listprocessor = new ListProcessor();
-
-    public CallbackProcessor callbackprocessor = new CallbackProcessor();
 
     public MunctionProcessor munctionprocessor = new MunctionProcessor();
 
     public FramingProcessor framingprocessor = new FramingProcessor();
+
+    //
 
     public ApplicationContainer()
     {
@@ -47,6 +47,13 @@ public class ApplicationContainer
         return this;
     }
 
+    public ApplicationContainer enset(String name, String namespace, String munctionname, String munctionurl, Queue<Item> lists)
+    {
+        this.listprocessor.hashCode();
+
+        return this;
+    }
+
     //
 
     public ApplicationContainer deframe(String name, String namespace, String munctionname, String munctionurl, Queue<Frame> frames)
@@ -64,11 +71,18 @@ public class ApplicationContainer
         return this;
     }
 
+    public ApplicationContainer deset(String name, String namespace, String munctionname, String munctionurl, Queue<Item> lists)
+    {
+        this.listprocessor.hashCode();
+
+        return this;
+    }
+
     //
 
     public ApplicationContainer getframe(String username, String password, String name, String namespace, String munctionname, String munctionurl, Queue<Frame> retval)
     {
-        ApplicationContainerContext context = this.applicationcontainercontext;
+        ApplicationContext context = this.applcontext;
 
         context
                 .setup("munction://localhost/", this)
@@ -107,7 +121,7 @@ public class ApplicationContainer
 
     public ApplicationContainer getprocess(String username, String password, String name, String namespace, String munctionname, String munctionurl, Queue<Process> retval)
     {
-        ApplicationContainerContext context = this.applicationcontainercontext;
+        ApplicationContext context = this.applcontext;
 
         context
                 .setup("munction://localhost/", this)
@@ -146,7 +160,7 @@ public class ApplicationContainer
 
     public ApplicationContainer getlist(String username, String password, String name, String namespace, String munctionname, String munctionurl, Queue<List> retval)
     {
-        ApplicationContainerContext context = this.applicationcontainercontext;
+        ApplicationContext context = this.applcontext;
 
         context
                 .setup("munction://localhost/", this)
