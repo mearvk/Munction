@@ -1,0 +1,41 @@
+<settings>
+
+    <file>
+
+        <dir type="BASEDIR" name="BASEDIR" url="~/IdeaProjects/Munction/src"></dir>
+
+        <dir type="APPLICATION" name="CHATPROGRAM"  url="~/IdeaProjects/Munction/src/munction/build"></dir>
+
+    </file>
+
+    <descriptors>
+
+        <descriptor type="name" name="application" ref="CHATPROGRAM"></descriptor>
+
+        <descriptor type="context" name="setup" value="munction://contexts/setup"></descriptor>
+
+        <descriptor type="context" name="report" value="munction://contexts/report"></descriptor>
+
+        <descriptor type="context" name="signal" value="munction://contexts/signal"></descriptor>
+
+        <descriptor type="context" name="state" value="munction://contexts/state"></descriptor>
+
+        <descriptor type="context" name="lists" value="munction://contexts/lists"></descriptor>
+
+        <descriptor type="context" name="exceptions" value="munction://contexts/exceptions"></descriptor>
+
+    </descriptors>
+
+    <module>
+
+        <context name="" url=""></context>
+
+    </module>
+
+    <module>
+
+        <context name="" url=""></context>
+
+    </module>
+
+</settings>

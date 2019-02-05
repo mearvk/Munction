@@ -89,12 +89,12 @@ public class ApplicationContainer
 
     //
 
-    public ApplicationContainer getframe(String username, String password, String name, String namespace, String munctionname, String munctionurl, Queue<Frame> retval)
+    public ApplicationContainer getframe(String username, String password, String name, String namespace, String modulename, String munctionname, String munctionurl, Queue<Frame> retval)
     {
         ApplicationContext context = this.applcontext;
 
         context
-                .reference("","")
+                .reference("{BASEDIR}/context/settings,xml", modulename)
                 .setup("munction://localhost/", this)
                 .report("munction://localhost/", this)
                 .signal("munction://localhost/", this)
@@ -129,12 +129,12 @@ public class ApplicationContainer
         return this;
     }
 
-    public ApplicationContainer getprocess(String username, String password, String name, String namespace, String munctionname, String munctionurl, Queue<Process> retval)
+    public ApplicationContainer getprocess(String username, String password, String name, String namespace, String modulename,  String munctionname, String munctionurl, Queue<Process> retval)
     {
         ApplicationContext context = this.applcontext;
 
         context
-                .reference("","")
+                .reference("{BASEDIR}/context/settings,xml", modulename)
                 .setup("munction://localhost/", this)
                 .report("munction://localhost/", this)
                 .signal("munction://localhost/", this)
@@ -169,12 +169,12 @@ public class ApplicationContainer
         return this;
     }
 
-    public ApplicationContainer getlist(String username, String password, String name, String namespace, String munctionname, String munctionurl, Queue<List> retval)
+    public ApplicationContainer getlist(String username, String password, String name, String namespace, String modulename,  String munctionname, String munctionurl, Queue<List> retval)
     {
         ApplicationContext context = this.applcontext;
 
         context
-                .reference("","")
+                .reference("{BASEDIR}/context/settings,xml", modulename)
                 .setup("munction://localhost/", this)
                 .report("munction://localhost/", this)
                 .signal("munction://localhost/", this)
