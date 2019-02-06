@@ -6,5 +6,8 @@ public class JComponentX
 {
     public JComponent jComponent;
 
-    public void cord(JComponentX base, JComponentX parent){}
+    public JComponentX cord(JConfigX config, JComponentX parent)
+    {
+        return this;
+    }
 }

@@ -26,23 +26,23 @@ public class InterfaceContainer
     {
         InitializationStrategy initstrategy = new InitializationStrategy(this);
 
-        initstrategy.container.jframe.cord(jframe, null);
+        initstrategy.container.jframe.cord(new JConfigX("{DEFAULT}","{MUNCTION}"), null);
 
-        initstrategy.container.jframe.cord(jmenubarA, jframe);
+        initstrategy.container.jframe.cord(new JConfigX("{DEFAULT}","{MUNCTION}"), jmenubarA);
 
-        initstrategy.container.jframe.cord(jmenuA, jmenubarA);
+        initstrategy.container.jframe.cord(new JConfigX("{DEFAULT}","{MUNCTION}"), jpanelA);
 
-        initstrategy.container.jframe.cord(jmenuB, jmenubarA);
+        initstrategy.container.jframe.cord(new JConfigX("{DEFAULT}","{MUNCTION}"), jpanelB);
 
-        initstrategy.container.jframe.cord(jpanelA, jframe);
+        initstrategy.container.jmenubarA.cord(new JConfigX("{DEFAULT}","{MUNCTION}"), jmenuA);
 
-        initstrategy.container.jframe.cord(jpanelB, jframe);
+        initstrategy.container.jmenubarA.cord(new JConfigX("{DEFAULT}","{MUNCTION}"), jmenuB);
 
-        initstrategy.container.jframe.cord(jbuttonA, jpanelA);
+        initstrategy.container.jpanelA.cord(new JConfigX("{DEFAULT}","{MUNCTION}"), jbuttonA);
 
-        initstrategy.container.jframe.cord(jbuttonB, jpanelA);
+        initstrategy.container.jpanelA.cord(new JConfigX("{DEFAULT}","{MUNCTION}"), jbuttonB);
 
-        initstrategy.container.jframe.cord(jbuttonC, jpanelA);
+        initstrategy.container.jpanelA.cord(new JConfigX("{DEFAULT}","{MUNCTION}"), jbuttonC);
 
         //
 
