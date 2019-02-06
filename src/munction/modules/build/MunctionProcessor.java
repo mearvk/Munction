@@ -9,7 +9,7 @@ public class MunctionProcessor extends MunctionProcessorAtom
 	
 	public static final Integer MUNCTION_HANDLER = 0;
 	
-	public static final Integer LOCALE_EXCEPTION_HANDLER = 1;
+	//
 	
 	public BigInteger framesetid;
 	
@@ -39,21 +39,21 @@ public class MunctionProcessor extends MunctionProcessorAtom
 	
 	public MunctionProcessor addframe()
 	{
-		Frameset frame = new Frameset(this);
+		this.framesets.add(new Frameset(this));
 		
 		return this;
 	}
 	
-	public MunctionProcessor addhandler(Integer type, String munctionname, String munctionurl)
+	public MunctionProcessor sethandler(Integer type, String munctionname, String munctionurl)
 	{
-		super.addhandler(type, munctionname, munctionurl);
+		super.sethandler(type, munctionname, munctionurl);
 		
 		return this;
 	}
 	
-	public MunctionProcessor addcontext(ApplicationContext context)
+	public MunctionProcessor setcontext(ApplicationContext context)
 	{
-		super.addcontext(context);
+		super.setcontext(context);
 		
 		return this;
 	}
@@ -122,25 +122,16 @@ public class MunctionProcessor extends MunctionProcessorAtom
 	}
 }
 
-class Frameset extends ArrayList
-{
-	public MunctionProcessor processor;
-	
-	public Frameset(MunctionProcessor processor)
-	{
-		this.processor = processor;
-	}
-	
-}
+
 
 class MunctionProcessorAtom
 {
-	public MunctionProcessorAtom addhandler(Integer type, String munctionname, String munctionurl)
+	public MunctionProcessorAtom sethandler(Integer type, String munctionname, String munctionurl)
 	{
 		return this;
 	}
 	
-	public MunctionProcessorAtom addcontext(ApplicationContext context)
+	public MunctionProcessorAtom setcontext(ApplicationContext context)
 	{
 		return this;
 	}
@@ -207,4 +198,17 @@ class MunctionProcessorAtom
 		
 		//return this.reporter;
 	}
+}
+
+class Frameset
+{
+	public ArrayList<StackTraceElement[]> frameset = new ArrayList();
+	
+	public MunctionProcessor processor;
+	
+	public Frameset(MunctionProcessor processor)
+	{
+		this.processor = processor;
+	}
+	
 }

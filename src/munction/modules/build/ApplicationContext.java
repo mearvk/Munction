@@ -2,8 +2,45 @@ package munction.modules.build;
 
 public class ApplicationContext
 {
+	public String username;
 	
-	public ApplicationContext reference(String url, String modulename)
+	public String password;
+	
+	public ApplicationContext setusername(String username)
+	{
+		this.username = username;
+		
+		return this;
+	}
+	
+	public ApplicationContext setpassword(String password)
+	{
+		this.password = password;
+		
+		return this;
+	}
+	
+	public ApplicationContext setlocalname(String name)
+	{
+		return this;
+	}
+	
+	public ApplicationContext setmoduleurl(String url)
+	{
+		return this;
+	}
+	
+	public ApplicationContext setnamespace(String namespace)
+	{
+		return this;
+	}
+	
+	public ApplicationContext setmodulename(String url)
+	{
+		return this;
+	}
+	
+	public ApplicationContext setreference(String url, String modulename)
 	{
 		return this;
 	}

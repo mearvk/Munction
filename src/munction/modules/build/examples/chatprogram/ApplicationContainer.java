@@ -11,6 +11,10 @@ import static munction.modules.build.MunctionProcessor.MUNCTION_HANDLER;
 
 public class ApplicationContainer
 {
+	public static final String BASEDIR = "{BASEDIR}/contexts/settings.xml";
+	
+	//
+	
 	public ApplicationContext applicationcontext = new ApplicationContext();
 	
 	public MunctionProcessor munctionprocessor = new MunctionProcessor();
@@ -91,21 +95,21 @@ public class ApplicationContainer
 		ApplicationContext context = this.applicationcontext;
 		
 		context
-				.reference("{BASEDIR}/contexts/settings,xml", modulename)
-				.setup("{SETUP}", this)
-				.report("{REPORT}", this)
-				.signal("{SIGNAL}", this)
-				.state("{STATE}", this)
-				.lists("{LISTS}", this)
-				.exceptions("{EXCEPTIONS}", this);
+				.setreference(BASEDIR, modulename)
+				.setmodulename(munctionname)
+				.setmoduleurl(munctionurl)
+				.setusername(username)
+				.setpassword(password)
+				.setnamespace(namespace)
+				.setlocalname(name);
 		
 		//
 		
 		MunctionProcessor processor = this.munctionprocessor.instance("retval", username, password, munctionname, munctionurl);
 		
 		processor
-				.addcontext(context)
-				.addhandler(MUNCTION_HANDLER, "stderr", "munction://localhost")
+				.setcontext(context)
+				.sethandler(MUNCTION_HANDLER, "stderr", "munction://localhost")
 				.cycle()
 				.close();
 		
@@ -128,21 +132,21 @@ public class ApplicationContainer
 		ApplicationContext context = this.applicationcontext;
 		
 		context
-				.reference("{BASEDIR}/contexts/settings,xml", modulename)
-				.setup("{SETUP}", this)
-				.report("{REPORT}", this)
-				.signal("{SIGNAL}", this)
-				.state("{STATE}", this)
-				.lists("{LISTS}", this)
-				.exceptions("{EXCEPTIONS}", this);
+				.setreference(BASEDIR, modulename)
+				.setmodulename(munctionname)
+				.setmoduleurl(munctionurl)
+				.setusername(username)
+				.setpassword(password)
+				.setnamespace(namespace)
+				.setlocalname(name);
 		
 		//
 		
 		MunctionProcessor processor = this.munctionprocessor.instance("retval", username, password, munctionname, munctionurl);
 		
 		processor
-				.addcontext(context)
-				.addhandler(MUNCTION_HANDLER, "stderr", "munction://localhost")
+				.setcontext(context)
+				.sethandler(MUNCTION_HANDLER, "stderr", "munction://localhost")
 				.cycle()
 				.close();
 		
@@ -165,24 +169,22 @@ public class ApplicationContainer
 		ApplicationContext context = this.applicationcontext;
 		
 		context
-				.reference("{BASEDIR}/contexts/settings,xml", modulename)
-				.setup("{SETUP}", this)
-				.report("{REPORT}", this)
-				.signal("{SIGNAL}", this)
-				.state("{STATE}", this)
-				.lists("{LISTS}", this)
-				.exceptions("{EXCEPTIONS}", this);
+				.setreference(BASEDIR, modulename)
+				.setmodulename(munctionname)
+				.setmoduleurl(munctionurl)
+				.setusername(username)
+				.setpassword(password)
+				.setnamespace(namespace)
+				.setlocalname(name);
 		
 		//
 		
 		MunctionProcessor processor = this.munctionprocessor.instance("retval", username, password, munctionname, munctionurl);
 		
 		processor
-				.addframe()
-				.addcontext(context)
-				.addhandler(MUNCTION_HANDLER, "stderr", "munction://localhost")
+				.setcontext(context)
+				.sethandler(MUNCTION_HANDLER, "stderr", "munction://localhost")
 				.cycle()
-				.flush()
 				.close();
 		
 		//

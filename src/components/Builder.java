@@ -78,7 +78,7 @@ public class Builder extends AS001
 			
 			Builder coprocessor = new Builder(new ASNought.BuildScript(""));
 			
-			coprocessor.reference();  //reference scripts, timings, callbacks, identifiers
+			coprocessor.reference();  //setreference scripts, timings, callbacks, identifiers
 			
 			coprocessor.build();      //build
 			
@@ -99,7 +99,7 @@ public class Builder extends AS001
 			
 			Builder coprocessor = new Builder(new ASNought.BuildScript(""));
 			
-			coprocessor.reference();  //reference scripts, timings, callbacks, identifiers
+			coprocessor.reference();  //setreference scripts, timings, callbacks, identifiers
 			
 			coprocessor.build();      //build
 			
@@ -120,7 +120,7 @@ public class Builder extends AS001
 			
 			Builder coprocessor = new Builder(new ASNought.BuildScript(""));
 			
-			coprocessor.reference();  //reference scripts, timings, callbacks, identifiers
+			coprocessor.reference();  //setreference scripts, timings, callbacks, identifiers
 			
 			coprocessor.build();      //build
 			
@@ -141,7 +141,7 @@ public class Builder extends AS001
 			
 			Builder coprocessor = new Builder(new ASNought.BuildScript(""));
 			
-			coprocessor.reference();  //reference scripts, timings, callbacks, identifiers
+			coprocessor.reference();  //setreference scripts, timings, callbacks, identifiers
 			
 			coprocessor.build();      //build
 			
@@ -162,7 +162,7 @@ public class Builder extends AS001
 			
 			Builder coprocessor = new Builder(new ASNought.BuildScript(""));
 			
-			coprocessor.reference();  //reference scripts, timings, callbacks, identifiers
+			coprocessor.reference();  //setreference scripts, timings, callbacks, identifiers
 			
 			coprocessor.build();      //build
 			
