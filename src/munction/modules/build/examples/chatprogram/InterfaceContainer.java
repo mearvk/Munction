@@ -40,9 +40,9 @@ public class InterfaceContainer
 
         initstrategy.container.jframe.cord(jbuttonA, jpanelA);
 
-        initstrategy.container.jframe.cord(jbuttonB, jframe);
+        initstrategy.container.jframe.cord(jbuttonB, jpanelA);
 
-        initstrategy.container.jframe.cord(jbuttonC, jframe);
+        initstrategy.container.jframe.cord(jbuttonC, jpanelA);
 
         //
 
