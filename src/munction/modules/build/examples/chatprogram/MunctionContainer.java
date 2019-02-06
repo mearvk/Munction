@@ -1,13 +1,17 @@
 package munction.modules.build.examples.chatprogram;
 
-public class MunctionContainer
+public class MunctionContainer extends MunctionContainerAtom
 {
-    public InterfaceContainer userinterface = new InterfaceContainer();
-
-    public ApplicationContainer application = new ApplicationContainer();
-
     public MunctionContainer()
     {
 
     }
 }
+
+class MunctionContainerAtom
+{
+    public InterfaceContainer userinterface = new InterfaceContainer();
+
+    public ApplicationContainer application = new ApplicationContainer();
+}
+
