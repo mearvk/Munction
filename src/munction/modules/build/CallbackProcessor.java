@@ -1,9 +1,7 @@
 package munction.modules.build;
 
-public class CallbackProcessor
-{
-    public CallbackProcessor()
-    {
+public class CallbackProcessor {
+    public CallbackProcessor() {
 
     }
 

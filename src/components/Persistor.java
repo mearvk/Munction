@@ -1,10 +1,8 @@
 package components;
 
-public class Persistor implements Runnable
-{
+public class Persistor implements Runnable {
     @Override
-    public void run()
-    {
+    public void run() {
 
     }
 }

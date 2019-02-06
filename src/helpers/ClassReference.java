@@ -1,9 +1,7 @@
 package helpers;
 
-public class ClassReference
-{
-    public ClassReference(SwingObject object)
-    {
+public class ClassReference {
+    public ClassReference(SwingObject object) {
 
     }
 }

@@ -1,29 +1,23 @@
 package munction.modules.build;
 
-public class MunctionReporter
-{
-    public MunctionReporter(Integer processid)
-    {
+public class MunctionReporter {
+    public MunctionReporter(Integer processid) {
 
     }
 
-    public MunctionReporter()
-    {
+    public MunctionReporter() {
 
     }
 
-    public MunctionReporter report()
-    {
+    public MunctionReporter report() {
         return this;
     }
 
-    public MunctionReporter free()
-    {
+    public MunctionReporter free() {
         return this;
     }
 
-    public MunctionReporter lock()
-    {
+    public MunctionReporter lock() {
         return this;
     }
 }

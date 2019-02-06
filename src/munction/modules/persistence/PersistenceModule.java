@@ -1,44 +1,36 @@
 package munction.modules.persistence;
 
 import munction.modules.atoms.AbstractFunctionalAtom;
-import munction.modules.enhancement.CustomEnhancer;
-import munction.modules.enhancement.StandardEnhancer;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import system.Presystem;
 import system.System;
 import system.handlers.RegisteredHandler;
 
-public class PersistenceModule
-{
+public class PersistenceModule {
     public Presystem presystem;
 
     public System system;
 
-    public PersistenceModule(Presystem presystem, System system)
-    {
+    public PersistenceModule(Presystem presystem, System system) {
         this.presystem = presystem;
 
         this.system = system;
     }
 
-    static
-    {
+    static {
 
     }
 
-    public void setRegistered()
-    {
+    public void setRegistered() {
         java.lang.System.out.println("  >> Persistence module loaded");
     }
 
-    public void unsetRegistered()
-    {
+    public void unsetRegistered() {
         java.lang.System.out.println("  >> Persistence module loaded");
     }
 
-    public void process()
-    {
+    public void process() {
         BeanFactory factory = new ClassPathXmlApplicationContext("persistence.xml");
 
         //
@@ -47,15 +39,15 @@ public class PersistenceModule
 
         //
 
-        munction.modules.persistence.Presystem presystem = (munction.modules.persistence.Presystem)factory.getBean("persistence.presystem");
+        munction.modules.persistence.Presystem presystem = (munction.modules.persistence.Presystem) factory.getBean("persistence.presystem");
 
-        munction.modules.persistence.System system = (munction.modules.persistence.System)factory.getBean("persistence.system");
+        munction.modules.persistence.System system = (munction.modules.persistence.System) factory.getBean("persistence.system");
 
         //
 
-        StandardPersistor standardpersistor = (StandardPersistor)factory.getBean("persistence.standard");
+        StandardPersistor standardpersistor = (StandardPersistor) factory.getBean("persistence.standard");
 
-        CustomPersistor custompersistor = (CustomPersistor)factory.getBean("persistence.custom");
+        CustomPersistor custompersistor = (CustomPersistor) factory.getBean("persistence.custom");
 
         //
 
@@ -81,7 +73,6 @@ public class PersistenceModule
     }
 }
 
-class PersistenceModuleAtom extends AbstractFunctionalAtom
-{
+class PersistenceModuleAtom extends AbstractFunctionalAtom {
     public static final String version = "1.001";
 }

@@ -1,10 +1,8 @@
 package components;
 
-public class Enhancer implements Runnable
-{
+public class Enhancer implements Runnable {
     @Override
-    public void run()
-    {
+    public void run() {
 
     }
 }

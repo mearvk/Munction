@@ -1,6 +1,5 @@
 package helpers;
 
-public class Options
-{
+public class Options {
 
 }

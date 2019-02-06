@@ -7,37 +7,31 @@ import system.Presystem;
 import system.System;
 import system.handlers.RegisteredHandler;
 
-public class BuildModule extends BuildModuleAtom
-{
+public class BuildModule extends BuildModuleAtom {
     public Presystem presystem;
 
     public System system;
 
-    public BuildModule(Presystem presystem, System system)
-    {
+    public BuildModule(Presystem presystem, System system) {
         this.presystem = presystem;
 
         this.system = system;
     }
 
-    static
-    {
+    static {
 
     }
 
-    public void setRegistered()
-    {
+    public void setRegistered() {
         java.lang.System.out.println("  >> Build module loaded");
     }
 
-    public void unsetRegistered()
-    {
+    public void unsetRegistered() {
         java.lang.System.out.println("  >> Build module loaded");
     }
 
     @Override
-    public void process()
-    {
+    public void process() {
         BeanFactory factory = new ClassPathXmlApplicationContext("build.xml");
 
         //
@@ -46,15 +40,15 @@ public class BuildModule extends BuildModuleAtom
 
         //
 
-        munction.modules.build.Presystem presystem = (munction.modules.build.Presystem)factory.getBean("builder.presystem");
+        munction.modules.build.Presystem presystem = (munction.modules.build.Presystem) factory.getBean("builder.presystem");
 
-        munction.modules.build.System system = (munction.modules.build.System)factory.getBean("builder.system");
+        munction.modules.build.System system = (munction.modules.build.System) factory.getBean("builder.system");
 
         //
 
-        UserInterfaceInterpreter userinterpreter = (UserInterfaceInterpreter)factory.getBean("builder.interface");
+        UserInterfaceInterpreter userinterpreter = (UserInterfaceInterpreter) factory.getBean("builder.interface");
 
-        ApplicationInterpreter applicationinterpreter = (ApplicationInterpreter)factory.getBean("builder.application");
+        ApplicationInterpreter applicationinterpreter = (ApplicationInterpreter) factory.getBean("builder.application");
 
         //
 
@@ -80,7 +74,6 @@ public class BuildModule extends BuildModuleAtom
     }
 }
 
-class BuildModuleAtom extends AbstractFunctionalAtom
-{
+class BuildModuleAtom extends AbstractFunctionalAtom {
     public static final String version = "1.01";
 }

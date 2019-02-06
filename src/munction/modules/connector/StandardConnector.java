@@ -1,14 +1,11 @@
 package munction.modules.connector;
 
-public class StandardConnector
-{
-    public void setRegistered()
-    {
+public class StandardConnector {
+    public void setRegistered() {
 
     }
 
-    public void unsetRegistered()
-    {
+    public void unsetRegistered() {
 
     }
 }

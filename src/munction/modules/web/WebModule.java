@@ -7,37 +7,31 @@ import system.Presystem;
 import system.System;
 import system.handlers.RegisteredHandler;
 
-public class WebModule extends WebModuleAtom
-{
+public class WebModule extends WebModuleAtom {
     public Presystem presystem;
 
     public System system;
 
-    public WebModule(Presystem presystem, System system)
-    {
+    public WebModule(Presystem presystem, System system) {
         this.presystem = presystem;
 
         this.system = system;
     }
 
-    static
-    {
+    static {
 
     }
 
-    public void setRegistered()
-    {
+    public void setRegistered() {
         java.lang.System.out.println("  >> Web module loaded");
     }
 
-    public void unsetRegistered()
-    {
+    public void unsetRegistered() {
         java.lang.System.out.println("  >> Web module loaded");
     }
 
     @Override
-    public void process()
-    {
+    public void process() {
         BeanFactory factory = new ClassPathXmlApplicationContext("web.xml");
 
         //
@@ -46,15 +40,15 @@ public class WebModule extends WebModuleAtom
 
         //
 
-        munction.modules.web.Presystem presystem = (munction.modules.web.Presystem)factory.getBean("web.presystem");
+        munction.modules.web.Presystem presystem = (munction.modules.web.Presystem) factory.getBean("web.presystem");
 
-        munction.modules.web.System system = (munction.modules.web.System)factory.getBean("web.system");
+        munction.modules.web.System system = (munction.modules.web.System) factory.getBean("web.system");
 
         //
 
-        StandardWeb standardweb = (StandardWeb)factory.getBean("web.standard");
+        StandardWeb standardweb = (StandardWeb) factory.getBean("web.standard");
 
-        CustomWeb customweb = (CustomWeb)factory.getBean("web.custom");
+        CustomWeb customweb = (CustomWeb) factory.getBean("web.custom");
 
         //
 
@@ -80,7 +74,6 @@ public class WebModule extends WebModuleAtom
     }
 }
 
-class WebModuleAtom extends AbstractFunctionalAtom
-{
+class WebModuleAtom extends AbstractFunctionalAtom {
     public static final String version = "1.001";
 }

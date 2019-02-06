@@ -7,37 +7,31 @@ import system.Presystem;
 import system.System;
 import system.handlers.RegisteredHandler;
 
-public class EnhancementModule extends EnhancementModuleAtom
-{
+public class EnhancementModule extends EnhancementModuleAtom {
     public Presystem presystem;
 
     public System system;
 
-    public EnhancementModule(Presystem presystem, System system)
-    {
+    public EnhancementModule(Presystem presystem, System system) {
         this.presystem = presystem;
 
         this.system = system;
     }
 
-    static
-    {
+    static {
 
     }
 
-    public void setRegistered()
-    {
+    public void setRegistered() {
         java.lang.System.out.println("  >> Enhancement module loaded");
     }
 
-    public void unsetRegistered()
-    {
+    public void unsetRegistered() {
         java.lang.System.out.println("  >> Enhancement module loaded");
     }
 
     @Override
-    public void process()
-    {
+    public void process() {
         BeanFactory factory = new ClassPathXmlApplicationContext("enhancement.xml");
 
         //
@@ -46,15 +40,15 @@ public class EnhancementModule extends EnhancementModuleAtom
 
         //
 
-        munction.modules.enhancement.Presystem presystem = (munction.modules.enhancement.Presystem)factory.getBean("enhancer.presystem");
+        munction.modules.enhancement.Presystem presystem = (munction.modules.enhancement.Presystem) factory.getBean("enhancer.presystem");
 
-        munction.modules.enhancement.System system = (munction.modules.enhancement.System)factory.getBean("enhancer.system");
+        munction.modules.enhancement.System system = (munction.modules.enhancement.System) factory.getBean("enhancer.system");
 
         //
 
-        StandardEnhancer standardenhancer = (StandardEnhancer)factory.getBean("enhancer.standard");
+        StandardEnhancer standardenhancer = (StandardEnhancer) factory.getBean("enhancer.standard");
 
-        CustomEnhancer customenhancer = (CustomEnhancer)factory.getBean("enhancer.custom");
+        CustomEnhancer customenhancer = (CustomEnhancer) factory.getBean("enhancer.custom");
 
         //
 
@@ -80,7 +74,6 @@ public class EnhancementModule extends EnhancementModuleAtom
     }
 }
 
-class EnhancementModuleAtom extends AbstractFunctionalAtom
-{
+class EnhancementModuleAtom extends AbstractFunctionalAtom {
     public static final String version = "1.001";
 }

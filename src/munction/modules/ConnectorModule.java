@@ -9,37 +9,31 @@ import system.Presystem;
 import system.System;
 import system.handlers.RegisteredHandler;
 
-public class ConnectorModule extends ConnectorModuleAtom
-{
+public class ConnectorModule extends ConnectorModuleAtom {
     public Presystem presystem;
 
     public System system;
 
-    public ConnectorModule(Presystem presystem, System system)
-    {
+    public ConnectorModule(Presystem presystem, System system) {
         this.presystem = presystem;
 
         this.system = system;
     }
 
-    static
-    {
+    static {
 
     }
 
-    public void setRegistered()
-    {
+    public void setRegistered() {
         java.lang.System.out.println("  >> Connector module loaded");
     }
 
-    public void unsetRegistered()
-    {
+    public void unsetRegistered() {
         java.lang.System.out.println("  >> Connector module loaded");
     }
 
     @Override
-    public void process()
-    {
+    public void process() {
         BeanFactory factory = new ClassPathXmlApplicationContext("connector.xml");
 
         //
@@ -48,15 +42,15 @@ public class ConnectorModule extends ConnectorModuleAtom
 
         //
 
-        munction.modules.connector.Presystem presystem = (munction.modules.connector.Presystem)factory.getBean("connector.presystem");
+        munction.modules.connector.Presystem presystem = (munction.modules.connector.Presystem) factory.getBean("connector.presystem");
 
-        munction.modules.connector.System system = (munction.modules.connector.System)factory.getBean("connector.system");
+        munction.modules.connector.System system = (munction.modules.connector.System) factory.getBean("connector.system");
 
         //
 
-        StandardConnector standardconnector = (StandardConnector)factory.getBean("connector.standard");
+        StandardConnector standardconnector = (StandardConnector) factory.getBean("connector.standard");
 
-        CustomConnector customconnector = (CustomConnector)factory.getBean("connector.custom");
+        CustomConnector customconnector = (CustomConnector) factory.getBean("connector.custom");
 
         //
 
@@ -82,7 +76,6 @@ public class ConnectorModule extends ConnectorModuleAtom
     }
 }
 
-class ConnectorModuleAtom extends AbstractFunctionalAtom
-{
+class ConnectorModuleAtom extends AbstractFunctionalAtom {
     public static final String version = "1.001";
 }

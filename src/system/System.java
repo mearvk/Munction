@@ -4,8 +4,7 @@ import system.handlers.RegisteredHandler;
 
 import java.util.ArrayList;
 
-public class System
-{
+public class System {
     ArrayList<RegisteredHandler> handlers = new ArrayList();
 
     public static System staticsystem;
@@ -14,25 +13,21 @@ public class System
 
     public System system;
 
-    static
-    {
+    static {
         System.staticsystem = new System();
     }
 
-    public System()
-    {
-       this.system = this;
+    public System() {
+        this.system = this;
     }
 
-    public System(Presystem presystem)
-    {
+    public System(Presystem presystem) {
         this.presystem = presystem;
 
         this.system = this;
     }
 
-    public void addObject(Object object, RegisteredHandler handler)
-    {
+    public void addObject(Object object, RegisteredHandler handler) {
         this.handlers.add(handler);
 
         handler.addObject(object);
