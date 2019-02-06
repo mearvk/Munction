@@ -19,7 +19,7 @@ public class MunctionProcessor extends MunctionProcessorAtom
 	
 	//
 	
-	public Integer procid = 0x0000;
+	
 	
 	//
 	
@@ -195,10 +195,7 @@ class MunctionProcessorAtom
 		return this;
 	}
 	
-	public MunctionProcessorAtom cycle()
-	{
-		return this;
-	}
+	public MunctionProcessorAtom cycle() { return this; }
 	
 	public MunctionProcessorAtom pullnotify() { return this; }
 	
@@ -241,7 +238,13 @@ class Frameset
 {
 	public ArrayList<StackTraceElement[]> frameset = new ArrayList();
 	
+	public Integer procid = 0x0000;
+	
+	//
+	
 	public MunctionProcessor processor;
+	
+	//
 	
 	public Frameset(MunctionProcessor processor)
 	{
