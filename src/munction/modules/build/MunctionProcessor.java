@@ -1,12 +1,21 @@
 package munction.modules.build;
 
-public class MunctionProcessor
+import java.math.BigInteger;
+import java.util.*;
+
+public class MunctionProcessor extends MunctionProcessorAtom
 {
 	//write these up for a factory and dynamic [source generated at runtime] solution set
 	
-	public static final Integer STANDARD_EXCEPTION_HANDLER = 0;
+	public static final Integer MUNCTION_HANDLER = 0;
 	
 	public static final Integer LOCALE_EXCEPTION_HANDLER = 1;
+	
+	public BigInteger framesetid;
+	
+	//
+	
+	public ArrayList<Frameset> framesets = new ArrayList<Frameset>();
 	
 	//
 	
@@ -18,27 +27,47 @@ public class MunctionProcessor
 	
 	//
 	
-	public MunctionProcessor instance(String userref, String username, String password, String munctionname, String munctionurl)
+	public MunctionProcessor instance(String refref, String frameref, String username, String password, String munctionname, String munctionurl)
 	{
 		return new MunctionProcessor();
 	}
 	
+	public MunctionProcessor instance(String refref, String username, String password, String munctionname, String munctionurl)
+	{
+		return new MunctionProcessor();
+	}
+	
+	public MunctionProcessor addframe()
+	{
+		Frameset frame = new Frameset(this);
+		
+		return this;
+	}
+	
 	public MunctionProcessor addhandler(Integer type, String munctionname, String munctionurl)
 	{
+		super.addhandler(type, munctionname, munctionurl);
+		
 		return this;
 	}
 	
 	public MunctionProcessor addcontext(ApplicationContext context)
 	{
+		super.addcontext(context);
+		
 		return this;
 	}
 	
-	public MunctionProcessor trylock()
+	public MunctionProcessor lock()
 	{
 		return this;
 	}
 	
-	public MunctionProcessor trylock(String username, String password)
+	public MunctionProcessor flush() { return this; }
+	
+	public MunctionProcessor sed() { return this; }
+	
+	public MunctionProcessor lock(String username, String password)
 	{
 		return this;
 	}
@@ -48,15 +77,17 @@ public class MunctionProcessor
 		return this;
 	}
 	
-	public MunctionProcessor pull(String name, String munctionname, String munctionurl)
+	public MunctionProcessor cycle(String name, String munctionname, String munctionurl)
 	{
 		return this;
 	}
 	
-	public MunctionProcessor pull()
+	public MunctionProcessor cycle()
 	{
 		return this;
 	}
+	
+	public MunctionProcessor pullnotify() { return this; }
 	
 	public MunctionProcessor ref(String name, Object assignation)
 	{
@@ -68,12 +99,12 @@ public class MunctionProcessor
 		return this;
 	}
 	
-	public MunctionProcessor tryunlock()
+	public MunctionProcessor unlock()
 	{
 		return this;
 	}
 	
-	public MunctionProcessor tryunlock(String name, Object assignation)
+	public MunctionProcessor unlock(String name, Object assignation)
 	{
 		return this;
 	}
@@ -88,5 +119,92 @@ public class MunctionProcessor
 	public MunctionReporter reporter()
 	{
 		return this.reporter;
+	}
+}
+
+class Frameset extends ArrayList
+{
+	public MunctionProcessor processor;
+	
+	public Frameset(MunctionProcessor processor)
+	{
+		this.processor = processor;
+	}
+	
+}
+
+class MunctionProcessorAtom
+{
+	public MunctionProcessorAtom addhandler(Integer type, String munctionname, String munctionurl)
+	{
+		return this;
+	}
+	
+	public MunctionProcessorAtom addcontext(ApplicationContext context)
+	{
+		return this;
+	}
+	
+	public MunctionProcessorAtom lock()
+	{
+		return this;
+	}
+	
+	public MunctionProcessorAtom sed() { return this; }
+	
+	public MunctionProcessorAtom lock(String username, String password)
+	{
+		return this;
+	}
+	
+	public MunctionProcessorAtom asset(String name, String munctionname, String munctionurl)
+	{
+		return this;
+	}
+	
+	public MunctionProcessorAtom cycle(String name, String munctionname, String munctionurl)
+	{
+		return this;
+	}
+	
+	public MunctionProcessorAtom cycle()
+	{
+		return this;
+	}
+	
+	public MunctionProcessorAtom pullnotify() { return this; }
+	
+	public MunctionProcessorAtom ref(String name, Object assignation)
+	{
+		return this;
+	}
+	
+	public MunctionProcessorAtom ref()
+	{
+		return this;
+	}
+	
+	public MunctionProcessorAtom unlock()
+	{
+		return this;
+	}
+	
+	public MunctionProcessorAtom unlock(String name, Object assignation)
+	{
+		return this;
+	}
+	
+	public MunctionProcessorAtom close()
+	{
+		return this;
+	}
+	
+	//
+	
+	public MunctionReporter reporter()
+	{
+		return null;
+		
+		//return this.reporter;
 	}
 }

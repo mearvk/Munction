@@ -4,23 +4,23 @@ import munction.modules.build.examples.chatprogram.components.*;
 
 public class InterfaceContainer
 {
-	JFrameX jframe;
+	public JFrameX jframe;
 	
-	JPanelX jpanelA;
+	public JPanelX jpanelA;
 	
-	JPanelX jpanelB;
+	public JPanelX jpanelB;
 	
-	JMenuBarX jmenubarA;
+	public JMenuBarX jmenubarA;
 	
-	JMenuX jmenuA;
+	public JMenuX jmenuA;
 	
-	JMenuX jmenuB;
+	public JMenuX jmenuB;
 	
-	JButtonX jbuttonA;
+	public JButtonX jbuttonA;
 	
-	JButtonX jbuttonB;
+	public JButtonX jbuttonB;
 	
-	JButtonX jbuttonC;
+	public JButtonX jbuttonC;
 	
 	public InterfaceContainer()
 	{
@@ -46,13 +46,11 @@ public class InterfaceContainer
 		
 		//
 		
-		initstrategy.loose();
-		
-		initstrategy.run();
+		initstrategy.loose().model();
 	}
 }
 
-class InitializationStrategy extends Thread
+class InitializationStrategy
 {
 	public Thread thread;
 	
@@ -76,6 +74,8 @@ class InitializationStrategy extends Thread
 	{
 		return this;
 	}
+	
+	public InitializationStrategy model() { return this; }
 }
 
 

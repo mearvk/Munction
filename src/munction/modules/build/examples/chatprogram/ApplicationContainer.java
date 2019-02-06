@@ -5,15 +5,13 @@ import munction.modules.build.*;
 
 import java.util.Queue;
 
-import static munction.modules.build.MunctionProcessor.STANDARD_EXCEPTION_HANDLER;
+import static munction.modules.build.MunctionProcessor.MUNCTION_HANDLER;
 
 //
 
 public class ApplicationContainer
 {
-	public ApplicationContext applcontext = new ApplicationContext();
-	
-	public ListProcessor listprocessor = new ListProcessor();
+	public ApplicationContext applicationcontext = new ApplicationContext();
 	
 	public MunctionProcessor munctionprocessor = new MunctionProcessor();
 	
@@ -90,7 +88,7 @@ public class ApplicationContainer
 	
 	public ApplicationContainer getframe(String username, String password, String name, String namespace, String modulename, String munctionname, String munctionurl, Queue<Frame> retval)
 	{
-		ApplicationContext context = this.applcontext;
+		ApplicationContext context = this.applicationcontext;
 		
 		context
 				.reference("{BASEDIR}/contexts/settings,xml", modulename)
@@ -107,11 +105,8 @@ public class ApplicationContainer
 		
 		processor
 				.addcontext(context)
-				.addhandler(STANDARD_EXCEPTION_HANDLER, "stderr", "munction://localhost")
-				.trylock()
-				.pull()
-				.ref()
-				.tryunlock()
+				.addhandler(MUNCTION_HANDLER, "stderr", "munction://localhost")
+				.cycle()
 				.close();
 		
 		//
@@ -130,7 +125,7 @@ public class ApplicationContainer
 	
 	public ApplicationContainer getprocess(String username, String password, String name, String namespace, String modulename, String munctionname, String munctionurl, Queue<Process> retval)
 	{
-		ApplicationContext context = this.applcontext;
+		ApplicationContext context = this.applicationcontext;
 		
 		context
 				.reference("{BASEDIR}/contexts/settings,xml", modulename)
@@ -147,11 +142,8 @@ public class ApplicationContainer
 		
 		processor
 				.addcontext(context)
-				.addhandler(STANDARD_EXCEPTION_HANDLER, "stderr", "munction://localhost")
-				.trylock() //fails then what
-				.pull()
-				.ref()
-				.tryunlock()
+				.addhandler(MUNCTION_HANDLER, "stderr", "munction://localhost")
+				.cycle()
 				.close();
 		
 		//
@@ -170,7 +162,7 @@ public class ApplicationContainer
 	
 	public ApplicationContainer getlist(String username, String password, String name, String namespace, String modulename, String munctionname, String munctionurl, Queue<List> retval)
 	{
-		ApplicationContext context = this.applcontext;
+		ApplicationContext context = this.applicationcontext;
 		
 		context
 				.reference("{BASEDIR}/contexts/settings,xml", modulename)
@@ -186,12 +178,11 @@ public class ApplicationContainer
 		MunctionProcessor processor = this.munctionprocessor.instance("retval", username, password, munctionname, munctionurl);
 		
 		processor
+				.addframe()
 				.addcontext(context)
-				.addhandler(STANDARD_EXCEPTION_HANDLER, "stderr", "munction://localhost")
-				.trylock()
-				.pull()
-				.ref()
-				.tryunlock()
+				.addhandler(MUNCTION_HANDLER, "stderr", "munction://localhost")
+				.cycle()
+				.flush()
 				.close();
 		
 		//
