@@ -60,57 +60,92 @@ public class MunctionProcessor extends MunctionProcessorAtom
 	
 	public MunctionProcessor lock()
 	{
+		super.lock();
+		
 		return this;
 	}
 	
-	public MunctionProcessor flush() { return this; }
+	public MunctionProcessor flush()
+	{
+		super.flush();
+		
+		return this;
+	}
 	
-	public MunctionProcessor sed() { return this; }
+	public MunctionProcessor sed()
+	{
+		super.sed();
+		
+		return this;
+	}
 	
 	public MunctionProcessor lock(String username, String password)
 	{
+		super.lock();
+		
 		return this;
 	}
 	
 	public MunctionProcessor asset(String name, String munctionname, String munctionurl)
 	{
+		super.asset(name,munctionname,munctionurl);
+		
 		return this;
 	}
 	
 	public MunctionProcessor cycle(String name, String munctionname, String munctionurl)
 	{
+		super.cycle(name, munctionname, munctionurl);
+		
 		return this;
 	}
 	
 	public MunctionProcessor cycle()
 	{
+		super.cycle();
+		
 		return this;
 	}
 	
-	public MunctionProcessor pullnotify() { return this; }
+	public MunctionProcessor pullnotify()
+	{
+		super.pullnotify();
+		
+		return this;
+	}
 	
 	public MunctionProcessor ref(String name, Object assignation)
 	{
+		super.ref(name, assignation);
+		
 		return this;
 	}
 	
 	public MunctionProcessor ref()
 	{
+		super.ref();
+		
 		return this;
 	}
 	
 	public MunctionProcessor unlock()
 	{
+		super.unlock();
+		
 		return this;
 	}
 	
 	public MunctionProcessor unlock(String name, Object assignation)
 	{
+		super.unlock(name, assignation);
+		
 		return this;
 	}
 	
 	public MunctionProcessor close()
 	{
+		super.close();
+		
 		return this;
 	}
 	
@@ -135,6 +170,8 @@ class MunctionProcessorAtom
 	{
 		return this;
 	}
+	
+	public MunctionProcessorAtom flush(){ return this; }
 	
 	public MunctionProcessorAtom lock()
 	{
