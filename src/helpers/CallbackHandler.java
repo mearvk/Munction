@@ -1,5 +1,6 @@
 package helpers;
 
-public class CallbackHandler {
+public class CallbackHandler
+{
 
 }

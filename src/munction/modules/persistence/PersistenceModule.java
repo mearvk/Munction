@@ -7,72 +7,79 @@ import system.Presystem;
 import system.System;
 import system.handlers.RegisteredHandler;
 
-public class PersistenceModule {
-    public Presystem presystem;
+public class PersistenceModule
+{
+	static
+	{
 
-    public System system;
+	}
 
-    public PersistenceModule(Presystem presystem, System system) {
-        this.presystem = presystem;
+	public Presystem presystem;
 
-        this.system = system;
-    }
+	public System system;
 
-    static {
+	public PersistenceModule(Presystem presystem, System system)
+	{
+		this.presystem = presystem;
 
-    }
+		this.system = system;
+	}
 
-    public void setRegistered() {
-        java.lang.System.out.println("  >> Persistence module loaded");
-    }
+	public void setRegistered()
+	{
+		java.lang.System.out.println("  >> Persistence module loaded");
+	}
 
-    public void unsetRegistered() {
-        java.lang.System.out.println("  >> Persistence module loaded");
-    }
+	public void unsetRegistered()
+	{
+		java.lang.System.out.println("  >> Persistence module loaded");
+	}
 
-    public void process() {
-        BeanFactory factory = new ClassPathXmlApplicationContext("persistence.xml");
+	public void process()
+	{
+		BeanFactory factory = new ClassPathXmlApplicationContext("persistence.xml");
 
-        //
+		//
 
-        java.lang.System.out.println("Munction [Persistence Document]:");
+		java.lang.System.out.println("Munction [Persistence Document]:");
 
-        //
+		//
 
-        munction.modules.persistence.Presystem presystem = (munction.modules.persistence.Presystem) factory.getBean("persistence.presystem");
+		munction.modules.persistence.Presystem presystem = (munction.modules.persistence.Presystem) factory.getBean("persistence.presystem");
 
-        munction.modules.persistence.System system = (munction.modules.persistence.System) factory.getBean("persistence.system");
+		munction.modules.persistence.System system = (munction.modules.persistence.System) factory.getBean("persistence.system");
 
-        //
+		//
 
-        StandardPersistor standardpersistor = (StandardPersistor) factory.getBean("persistence.standard");
+		StandardPersistor standardpersistor = (StandardPersistor) factory.getBean("persistence.standard");
 
-        CustomPersistor custompersistor = (CustomPersistor) factory.getBean("persistence.custom");
+		CustomPersistor custompersistor = (CustomPersistor) factory.getBean("persistence.custom");
 
-        //
+		//
 
-        presystem.addObject(standardpersistor, new RegisteredHandler());
+		presystem.addObject(standardpersistor, new RegisteredHandler());
 
-        presystem.addObject(custompersistor, new RegisteredHandler());
+		presystem.addObject(custompersistor, new RegisteredHandler());
 
-        //
+		//
 
-        system.addObject(standardpersistor, new RegisteredHandler());
+		system.addObject(standardpersistor, new RegisteredHandler());
 
-        system.addObject(custompersistor, new RegisteredHandler());
+		system.addObject(custompersistor, new RegisteredHandler());
 
-        //
+		//
 
-        standardpersistor.setRegistered();
+		standardpersistor.setRegistered();
 
-        custompersistor.setRegistered();
+		custompersistor.setRegistered();
 
-        //
+		//
 
-        java.lang.System.out.println("  >> Munction functional enhancement callbacks set");
-    }
+		java.lang.System.out.println("  >> Munction functional enhancement callbacks set");
+	}
 }
 
-class PersistenceModuleAtom extends AbstractFunctionalAtom {
-    public static final String version = "1.001";
+class PersistenceModuleAtom extends AbstractFunctionalAtom
+{
+	public static final String version = "1.001";
 }

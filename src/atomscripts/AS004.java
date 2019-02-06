@@ -1,4 +1,5 @@
 package atomscripts;
 
-public class AS004 {
+public class AS004
+{
 }

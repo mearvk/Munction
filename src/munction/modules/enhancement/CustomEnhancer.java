@@ -1,11 +1,14 @@
 package munction.modules.enhancement;
 
-public class CustomEnhancer {
-    public void setRegistered() {
+public class CustomEnhancer
+{
+	public void setRegistered()
+	{
 
-    }
+	}
 
-    public void unsetRegistered() {
+	public void unsetRegistered()
+	{
 
-    }
+	}
 }

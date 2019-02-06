@@ -7,73 +7,80 @@ import system.Presystem;
 import system.System;
 import system.handlers.RegisteredHandler;
 
-public class EnhancementModule extends EnhancementModuleAtom {
-    public Presystem presystem;
+public class EnhancementModule extends EnhancementModuleAtom
+{
+	static
+	{
 
-    public System system;
+	}
 
-    public EnhancementModule(Presystem presystem, System system) {
-        this.presystem = presystem;
+	public Presystem presystem;
 
-        this.system = system;
-    }
+	public System system;
 
-    static {
+	public EnhancementModule(Presystem presystem, System system)
+	{
+		this.presystem = presystem;
 
-    }
+		this.system = system;
+	}
 
-    public void setRegistered() {
-        java.lang.System.out.println("  >> Enhancement module loaded");
-    }
+	public void setRegistered()
+	{
+		java.lang.System.out.println("  >> Enhancement module loaded");
+	}
 
-    public void unsetRegistered() {
-        java.lang.System.out.println("  >> Enhancement module loaded");
-    }
+	public void unsetRegistered()
+	{
+		java.lang.System.out.println("  >> Enhancement module loaded");
+	}
 
-    @Override
-    public void process() {
-        BeanFactory factory = new ClassPathXmlApplicationContext("enhancement.xml");
+	@Override
+	public void process()
+	{
+		BeanFactory factory = new ClassPathXmlApplicationContext("enhancement.xml");
 
-        //
+		//
 
-        java.lang.System.out.println("Munction [Enhancement Document]:");
+		java.lang.System.out.println("Munction [Enhancement Document]:");
 
-        //
+		//
 
-        munction.modules.enhancement.Presystem presystem = (munction.modules.enhancement.Presystem) factory.getBean("enhancer.presystem");
+		munction.modules.enhancement.Presystem presystem = (munction.modules.enhancement.Presystem) factory.getBean("enhancer.presystem");
 
-        munction.modules.enhancement.System system = (munction.modules.enhancement.System) factory.getBean("enhancer.system");
+		munction.modules.enhancement.System system = (munction.modules.enhancement.System) factory.getBean("enhancer.system");
 
-        //
+		//
 
-        StandardEnhancer standardenhancer = (StandardEnhancer) factory.getBean("enhancer.standard");
+		StandardEnhancer standardenhancer = (StandardEnhancer) factory.getBean("enhancer.standard");
 
-        CustomEnhancer customenhancer = (CustomEnhancer) factory.getBean("enhancer.custom");
+		CustomEnhancer customenhancer = (CustomEnhancer) factory.getBean("enhancer.custom");
 
-        //
+		//
 
-        presystem.addObject(standardenhancer, new RegisteredHandler());
+		presystem.addObject(standardenhancer, new RegisteredHandler());
 
-        presystem.addObject(customenhancer, new RegisteredHandler());
+		presystem.addObject(customenhancer, new RegisteredHandler());
 
-        //
+		//
 
-        system.addObject(standardenhancer, new RegisteredHandler());
+		system.addObject(standardenhancer, new RegisteredHandler());
 
-        system.addObject(customenhancer, new RegisteredHandler());
+		system.addObject(customenhancer, new RegisteredHandler());
 
-        //
+		//
 
-        standardenhancer.setRegistered();
+		standardenhancer.setRegistered();
 
-        customenhancer.setRegistered();
+		customenhancer.setRegistered();
 
-        //
+		//
 
-        java.lang.System.out.println("  >> Munction functional enhancement callbacks set");
-    }
+		java.lang.System.out.println("  >> Munction functional enhancement callbacks set");
+	}
 }
 
-class EnhancementModuleAtom extends AbstractFunctionalAtom {
-    public static final String version = "1.001";
+class EnhancementModuleAtom extends AbstractFunctionalAtom
+{
+	public static final String version = "1.001";
 }

@@ -1,5 +1,6 @@
 package helpers;
 
-public class Setters {
+public class Setters
+{
 
 }

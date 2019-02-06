@@ -7,73 +7,80 @@ import system.Presystem;
 import system.System;
 import system.handlers.RegisteredHandler;
 
-public class WebModule extends WebModuleAtom {
-    public Presystem presystem;
+public class WebModule extends WebModuleAtom
+{
+	static
+	{
 
-    public System system;
+	}
 
-    public WebModule(Presystem presystem, System system) {
-        this.presystem = presystem;
+	public Presystem presystem;
 
-        this.system = system;
-    }
+	public System system;
 
-    static {
+	public WebModule(Presystem presystem, System system)
+	{
+		this.presystem = presystem;
 
-    }
+		this.system = system;
+	}
 
-    public void setRegistered() {
-        java.lang.System.out.println("  >> Web module loaded");
-    }
+	public void setRegistered()
+	{
+		java.lang.System.out.println("  >> Web module loaded");
+	}
 
-    public void unsetRegistered() {
-        java.lang.System.out.println("  >> Web module loaded");
-    }
+	public void unsetRegistered()
+	{
+		java.lang.System.out.println("  >> Web module loaded");
+	}
 
-    @Override
-    public void process() {
-        BeanFactory factory = new ClassPathXmlApplicationContext("web.xml");
+	@Override
+	public void process()
+	{
+		BeanFactory factory = new ClassPathXmlApplicationContext("web.xml");
 
-        //
+		//
 
-        java.lang.System.out.println("Munction [Webengine Document]:");
+		java.lang.System.out.println("Munction [Webengine Document]:");
 
-        //
+		//
 
-        munction.modules.web.Presystem presystem = (munction.modules.web.Presystem) factory.getBean("web.presystem");
+		munction.modules.web.Presystem presystem = (munction.modules.web.Presystem) factory.getBean("web.presystem");
 
-        munction.modules.web.System system = (munction.modules.web.System) factory.getBean("web.system");
+		munction.modules.web.System system = (munction.modules.web.System) factory.getBean("web.system");
 
-        //
+		//
 
-        StandardWeb standardweb = (StandardWeb) factory.getBean("web.standard");
+		StandardWeb standardweb = (StandardWeb) factory.getBean("web.standard");
 
-        CustomWeb customweb = (CustomWeb) factory.getBean("web.custom");
+		CustomWeb customweb = (CustomWeb) factory.getBean("web.custom");
 
-        //
+		//
 
-        presystem.addObject(standardweb, new RegisteredHandler());
+		presystem.addObject(standardweb, new RegisteredHandler());
 
-        presystem.addObject(customweb, new RegisteredHandler());
+		presystem.addObject(customweb, new RegisteredHandler());
 
-        //
+		//
 
-        system.addObject(standardweb, new RegisteredHandler());
+		system.addObject(standardweb, new RegisteredHandler());
 
-        system.addObject(customweb, new RegisteredHandler());
+		system.addObject(customweb, new RegisteredHandler());
 
-        //
+		//
 
-        standardweb.setRegistered();
+		standardweb.setRegistered();
 
-        customweb.setRegistered();
+		customweb.setRegistered();
 
-        //
+		//
 
-        java.lang.System.out.println("  >> Munction functional enhancement callbacks set");
-    }
+		java.lang.System.out.println("  >> Munction functional enhancement callbacks set");
+	}
 }
 
-class WebModuleAtom extends AbstractFunctionalAtom {
-    public static final String version = "1.001";
+class WebModuleAtom extends AbstractFunctionalAtom
+{
+	public static final String version = "1.001";
 }

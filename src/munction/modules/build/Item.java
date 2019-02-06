@@ -1,4 +1,5 @@
 package munction.modules.build;
 
-public class Item {
+public class Item
+{
 }
