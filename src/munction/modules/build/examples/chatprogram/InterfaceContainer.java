@@ -26,7 +26,7 @@ public class InterfaceContainer
 	{
 		InitializationStrategy initstrategy = new InitializationStrategy(this);
 		
-		initstrategy.container.jframe.cord(new JConfigX("{DEFAULT}", "{MUNCTION}"), null);
+		initstrategy.container.jframe.root(new JConfigX("{DEFAULT}", "{MUNCTION}"));
 		
 		initstrategy.container.jframe.cord(new JConfigX("{DEFAULT}", "{MUNCTION}"), jmenubarA);
 		
