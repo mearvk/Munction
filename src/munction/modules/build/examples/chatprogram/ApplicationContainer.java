@@ -94,13 +94,13 @@ public class ApplicationContainer
         ApplicationContext context = this.applcontext;
 
         context
-                .reference("{BASEDIR}/context/settings,xml", modulename)
-                .setup("munction://localhost/", this)
-                .report("munction://localhost/", this)
-                .signal("munction://localhost/", this)
-                .state("munction://localhost/", this)
-                .lists("munction://localhost/", this)
-                .exceptions("munction://localhost", this);
+                .reference("{BASEDIR}/contexts/settings,xml", modulename)
+                .setup("{SETUP}", this)
+                .report("{REPORT}", this)
+                .signal("{SIGNAL}", this)
+                .state("{STATE}", this)
+                .lists("{LISTS}", this)
+                .exceptions("{EXCEPTIONS}", this);
 
         //
 
@@ -134,13 +134,13 @@ public class ApplicationContainer
         ApplicationContext context = this.applcontext;
 
         context
-                .reference("{BASEDIR}/context/settings,xml", modulename)
-                .setup("munction://localhost/", this)
-                .report("munction://localhost/", this)
-                .signal("munction://localhost/", this)
-                .state("munction://localhost/", this)
-                .lists("munction://localhost/", this)
-                .exceptions("munction://localhost", this);
+                .reference("{BASEDIR}/contexts/settings,xml", modulename)
+                .setup("{SETUP}", this)
+                .report("{REPORT}", this)
+                .signal("{SIGNAL}", this)
+                .state("{STATE}", this)
+                .lists("{LISTS}", this)
+                .exceptions("{EXCEPTIONS}", this);
 
         //
 
@@ -174,13 +174,13 @@ public class ApplicationContainer
         ApplicationContext context = this.applcontext;
 
         context
-                .reference("{BASEDIR}/context/settings,xml", modulename)
-                .setup("munction://localhost/", this)
-                .report("munction://localhost/", this)
-                .signal("munction://localhost/", this)
-                .state("munction://localhost/", this)
-                .lists("munction://localhost/", this)
-                .exceptions("munction://localhost", this);
+                .reference("{BASEDIR}/contexts/settings,xml", modulename)
+                .setup("{SETUP}", this)
+                .report("{REPORT}", this)
+                .signal("{SIGNAL}", this)
+                .state("{STATE}", this)
+                .lists("{LISTS}", this)
+                .exceptions("{EXCEPTIONS}", this);
 
         //
 
