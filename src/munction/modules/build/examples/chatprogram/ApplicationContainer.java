@@ -17,6 +17,8 @@ public class ApplicationContainer
 	
 	public ApplicationContext applicationcontext = new ApplicationContext();
 	
+	//
+	
 	public MunctionProcessor munctionprocessor = new MunctionProcessor();
 	
 	public FramingProcessor framingprocessor = new FramingProcessor();
@@ -109,7 +111,7 @@ public class ApplicationContainer
 		
 		processor
 				.setcontext(context)
-				.sethandler(MUNCTION_HANDLER, "stderr", "munction://localhost")
+				.sethandler(MUNCTION_HANDLER, "::", "munction://localhost")
 				.cycle()
 				.close();
 		
@@ -146,7 +148,7 @@ public class ApplicationContainer
 		
 		processor
 				.setcontext(context)
-				.sethandler(MUNCTION_HANDLER, "stderr", "munction://localhost")
+				.sethandler(MUNCTION_HANDLER, "::", "munction://localhost")
 				.cycle()
 				.close();
 		
@@ -183,7 +185,7 @@ public class ApplicationContainer
 		
 		processor
 				.setcontext(context)
-				.sethandler(MUNCTION_HANDLER, "stderr", "munction://localhost")
+				.sethandler(MUNCTION_HANDLER, "::", "munction://localhost")
 				.cycle()
 				.close();
 		
