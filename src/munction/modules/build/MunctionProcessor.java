@@ -19,10 +19,6 @@ public class MunctionProcessor extends MunctionProcessorAtom
 	
 	//
 	
-	
-	
-	//
-	
 	public MunctionReporter reporter = new MunctionReporter();
 	
 	//
