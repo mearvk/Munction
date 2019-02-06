@@ -35,10 +35,7 @@ public class ApplicationContext
 		return this;
 	}
 	
-	public ApplicationContext setmodulename(String url)
-	{
-		return this;
-	}
+	public ApplicationContext setmodulename(String url) { return this; }
 	
 	public ApplicationContext setreference(String url, String modulename)
 	{
