@@ -4,23 +4,23 @@ import munction.modules.build.examples.chatprogram.components.*;
 
 public class InterfaceContainer
 {
-	public JFrameX jframe;
+	public JFrameX jframe = new JFrameX();
 	
-	public JPanelX jpanelA;
+	public JPanelX jpanelA = new JPanelX();
 	
-	public JPanelX jpanelB;
+	public JPanelX jpanelB = new JPanelX();
 	
-	public JMenuBarX jmenubarA;
+	public JMenuBarX jmenubarA = new JMenuBarX();
 	
-	public JMenuX jmenuA;
+	public JMenuX jmenuA = new JMenuX();
 	
-	public JMenuX jmenuB;
+	public JMenuX jmenuB = new JMenuX();
 	
-	public JButtonX jbuttonA;
+	public JButtonX jbuttonA = new JButtonX();
 	
-	public JButtonX jbuttonB;
+	public JButtonX jbuttonB = new JButtonX();
 	
-	public JButtonX jbuttonC;
+	public JButtonX jbuttonC = new JButtonX();
 	
 	public InterfaceContainer()
 	{

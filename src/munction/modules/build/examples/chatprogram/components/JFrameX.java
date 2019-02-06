@@ -4,5 +4,5 @@ import javax.swing.*;
 
 public class JFrameX extends JComponentX
 {
-	public JFrame jframe;
+	public JFrame jframe = new JFrame();
 }

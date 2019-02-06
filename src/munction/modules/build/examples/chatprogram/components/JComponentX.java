@@ -2,9 +2,9 @@ package munction.modules.build.examples.chatprogram.components;
 
 import javax.swing.*;
 
-public class JComponentX
+public class JComponentX extends JComponent
 {
-	public JComponent jComponent;
+	public JComponent jComponent = this;
 	
 	public JComponentX root(JConfigX config)
 	{
