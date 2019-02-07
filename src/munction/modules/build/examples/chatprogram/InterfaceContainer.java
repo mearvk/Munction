@@ -51,23 +51,23 @@ public class InterfaceContainer
 		
 		this.initstrategy = new InitializationStrategy(context, this);
 		
-		initstrategy.container.jframe000.root(new JConfigX("/root", "{{{MUNCTIONURL}}}"));
+		initstrategy.container.jframe000.root(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"));
 		
-		initstrategy.container.jframe000.cord(new JConfigX("/root/jmenubar000", "{{{MUNCTIONURL}}}"), jmenubar000);
+		initstrategy.container.jframe000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jmenubar000);
 		
-		initstrategy.container.jframe000.cord(new JConfigX("/root/jpanel000", "{{{MUNCTIONURL}}}"), jpanel000);
+		initstrategy.container.jframe000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jpanel000);
 		
-		initstrategy.container.jframe000.cord(new JConfigX("/root/jpanel001", "{{{MUNCTIONURL}}}"), jpanel001);
+		initstrategy.container.jframe000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jpanel001);
 		
-		initstrategy.container.jmenubar000.cord(new JConfigX("/root/jmenubar000/jmenu000", "{{{MUNCTIONURL}}}"), jmenu000);
+		initstrategy.container.jmenubar000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jmenu000);
 		
-		initstrategy.container.jmenubar000.cord(new JConfigX("/root/jmenubar000/jmenu001", "{{{MUNCTIONURL}}}"), jmenu001);
+		initstrategy.container.jmenubar000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jmenu001);
 		
-		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel000/jbutton000", "{{{MUNCTIONURL}}}"), jbutton000);
+		initstrategy.container.jpanel000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jbutton000);
 		
-		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel000/jbutton001", "{{{MUNCTIONURL}}}"), jbutton001);
+		initstrategy.container.jpanel000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jbutton001);
 		
-		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel000/jbutton002", "{{{MUNCTIONURL}}}"), jbutton002);
+		initstrategy.container.jpanel000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jbutton002);
 		
 		//
 		
