@@ -4,45 +4,46 @@ import munction.modules.build.examples.chatprogram.components.*;
 
 public class InterfaceContainer
 {
-	public JFrameX jframe = new JFrameX();
+	public JFrameX jframe000 = new JFrameX();
 	
-	public JPanelX jpanelA = new JPanelX();
+	public JPanelX jpanel000 = new JPanelX();
 	
-	public JPanelX jpanelB = new JPanelX();
+	public JPanelX jpanel001 = new JPanelX();
 	
-	public JMenuBarX jmenubarA = new JMenuBarX();
+	public JMenuBarX jmenubar000 = new JMenuBarX();
 	
-	public JMenuX jmenuA = new JMenuX();
+	public JMenuX jmenu000 = new JMenuX();
 	
-	public JMenuX jmenuB = new JMenuX();
+	public JMenuX jmenu001 = new JMenuX();
 	
-	public JButtonX jbuttonA = new JButtonX();
+	public JButtonX jbutton000 = new JButtonX();
 	
-	public JButtonX jbuttonB = new JButtonX();
+	public JButtonX jbutton001 = new JButtonX();
 	
-	public JButtonX jbuttonC = new JButtonX();
+	public JButtonX jbutton002 = new JButtonX();
+	
 	
 	public InterfaceContainer()
 	{
 		InitializationStrategy initstrategy = new InitializationStrategy(this);
 		
-		initstrategy.container.jframe.root(new JConfigX("{DEFAULT}", "{MUNCTION}"));
+		initstrategy.container.jframe000.root(new JConfigX("/root", "{MUNCTION}"));
 		
-		initstrategy.container.jframe.cord(new JConfigX("{DEFAULT}", "{MUNCTION}"), jmenubarA);
+		initstrategy.container.jframe000.cord(new JConfigX("/root/jmenubar[000]", "{MUNCTION}"), jmenubar000);
 		
-		initstrategy.container.jframe.cord(new JConfigX("{DEFAULT}", "{MUNCTION}"), jpanelA);
+		initstrategy.container.jframe000.cord(new JConfigX("/root/jpanel[000]", "{MUNCTION}"), jpanel000);
 		
-		initstrategy.container.jframe.cord(new JConfigX("{DEFAULT}", "{MUNCTION}"), jpanelB);
+		initstrategy.container.jframe000.cord(new JConfigX("/root/jpanel[001]", "{MUNCTION}"), jpanel001);
 		
-		initstrategy.container.jmenubarA.cord(new JConfigX("{DEFAULT}", "{MUNCTION}"), jmenuA);
+		initstrategy.container.jmenubar000.cord(new JConfigX("/root/jmenubar[000]/jmenu[000]", "{MUNCTION}"), jmenu000);
 		
-		initstrategy.container.jmenubarA.cord(new JConfigX("{DEFAULT}", "{MUNCTION}"), jmenuB);
+		initstrategy.container.jmenubar000.cord(new JConfigX("/root/jmenubar[000]/jmenu[001]", "{MUNCTION}"), jmenu001);
 		
-		initstrategy.container.jpanelA.cord(new JConfigX("{DEFAULT}", "{MUNCTION}"), jbuttonA);
+		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel[000]/jbutton[000]", "{MUNCTION}"), jbutton000);
 		
-		initstrategy.container.jpanelA.cord(new JConfigX("{DEFAULT}", "{MUNCTION}"), jbuttonB);
+		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel[000]/jbutton[001]", "{MUNCTION}"), jbutton001);
 		
-		initstrategy.container.jpanelA.cord(new JConfigX("{DEFAULT}", "{MUNCTION}"), jbuttonC);
+		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel[000]/jbutton[002]", "{MUNCTION}"), jbutton002);
 		
 		//
 		
