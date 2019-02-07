@@ -54,6 +54,10 @@ class InitializationStrategy
 {
 	public Thread thread;
 	
+	public LooseModelingThread loosemodelingthread;
+	
+	public TightModelingThread tightmodelingthread;
+	
 	public InterfaceContainer container;
 	
 	//
@@ -76,6 +80,26 @@ class InitializationStrategy
 	}
 	
 	public InitializationStrategy model() { return this; }
+	
+	
+	class LooseModelingThread extends Thread
+	{
+		@Override
+		public void run()
+		{
+			//loose modeling controller runs here
+		}
+	}
+	
+	class TightModelingThread extends Thread
+	{
+		@Override
+		public void run()
+		{
+			//tight modeling controller runs here
+		}
+	}
+	
 }
 
 
