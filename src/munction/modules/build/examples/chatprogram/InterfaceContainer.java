@@ -52,8 +52,6 @@ public class InterfaceContainer
 
 class InitializationStrategy
 {
-	public Thread thread;
-	
 	public LooseModelingThread loosemodelingthread = new LooseModelingThread(this);
 	
 	public TightModelingThread tightmodelingthread = new TightModelingThread(this);
