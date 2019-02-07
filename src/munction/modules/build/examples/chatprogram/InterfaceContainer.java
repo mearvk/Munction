@@ -54,9 +54,9 @@ class InitializationStrategy
 {
 	public Thread thread;
 	
-	public LooseModelingThread loosemodelingthread;
+	public LooseModelingThread loosemodelingthread = new LooseModelingThread(this);
 	
-	public TightModelingThread tightmodelingthread;
+	public TightModelingThread tightmodelingthread = new TightModelingThread(this);
 	
 	public InterfaceContainer container;
 	
@@ -71,19 +71,38 @@ class InitializationStrategy
 	
 	public InitializationStrategy loose()
 	{
+		this.loosemodelingthread.run();
+		
 		return this;
 	}
 	
 	public InitializationStrategy tight()
 	{
+		this.tightmodelingthread.run();
+		
 		return this;
 	}
 	
-	public InitializationStrategy model() { return this; }
+	public InitializationStrategy model()
+	{
+		return this;
+	}
 	
 	
 	class LooseModelingThread extends Thread
 	{
+		public InitializationStrategy strategy;
+		
+		public LooseModelingThread(InitializationStrategy strategy)
+		{
+			this.strategy = strategy;
+		}
+		
+		public void setstrategy(InitializationStrategy strategy)
+		{
+			this.strategy = strategy;
+		}
+		
 		@Override
 		public void run()
 		{
@@ -93,6 +112,18 @@ class InitializationStrategy
 	
 	class TightModelingThread extends Thread
 	{
+		public InitializationStrategy strategy;
+		
+		public TightModelingThread(InitializationStrategy strategy)
+		{
+			this.strategy = strategy;
+		}
+		
+		public void setstrategy(InitializationStrategy strategy)
+		{
+			this.strategy = strategy;
+		}
+		
 		@Override
 		public void run()
 		{
