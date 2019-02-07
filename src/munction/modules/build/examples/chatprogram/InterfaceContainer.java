@@ -1,6 +1,7 @@
 package munction.modules.build.examples.chatprogram;
 
 import munction.modules.build.ApplicationContext;
+
 import munction.modules.build.examples.chatprogram.components.*;
 
 public class InterfaceContainer
