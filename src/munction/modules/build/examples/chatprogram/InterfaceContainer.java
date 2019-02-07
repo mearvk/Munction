@@ -51,23 +51,23 @@ public class InterfaceContainer
 		
 		this.initstrategy = new InitializationStrategy(context, this);
 		
-		initstrategy.container.jframe000.root(new JConfigX("/root", "{MUNCTION}/{MODULENAME}/{VARNAME}"));
+		initstrategy.container.jframe000.root(new JConfigX("/root", "{{{MUNCTIONURL}}}"));
 		
-		initstrategy.container.jframe000.cord(new JConfigX("/root/jmenubar[000]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jmenubar000);
+		initstrategy.container.jframe000.cord(new JConfigX("/root/jmenubar000", "{{{MUNCTIONURL}}}"), jmenubar000);
 		
-		initstrategy.container.jframe000.cord(new JConfigX("/root/jpanel[000]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jpanel000);
+		initstrategy.container.jframe000.cord(new JConfigX("/root/jpanel000", "{{{MUNCTIONURL}}}"), jpanel000);
 		
-		initstrategy.container.jframe000.cord(new JConfigX("/root/jpanel[001]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jpanel001);
+		initstrategy.container.jframe000.cord(new JConfigX("/root/jpanel001", "{{{MUNCTIONURL}}}"), jpanel001);
 		
-		initstrategy.container.jmenubar000.cord(new JConfigX("/root/jmenubar[000]/jmenu[000]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jmenu000);
+		initstrategy.container.jmenubar000.cord(new JConfigX("/root/jmenubar000/jmenu000", "{{{MUNCTIONURL}}}"), jmenu000);
 		
-		initstrategy.container.jmenubar000.cord(new JConfigX("/root/jmenubar[000]/jmenu[001]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jmenu001);
+		initstrategy.container.jmenubar000.cord(new JConfigX("/root/jmenubar000/jmenu001", "{{{MUNCTIONURL}}}"), jmenu001);
 		
-		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel[000]/jbutton[000]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jbutton000);
+		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel000/jbutton000", "{{{MUNCTIONURL}}}"), jbutton000);
 		
-		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel[000]/jbutton[001]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jbutton001);
+		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel000/jbutton001", "{{{MUNCTIONURL}}}"), jbutton001);
 		
-		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel[000]/jbutton[002]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jbutton002);
+		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel000/jbutton002", "{{{MUNCTIONURL}}}"), jbutton002);
 		
 		//
 		
