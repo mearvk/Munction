@@ -1,9 +1,18 @@
 package munction.modules.build.examples.chatprogram;
 
+import munction.modules.build.ApplicationContext;
 import munction.modules.build.examples.chatprogram.components.*;
 
 public class InterfaceContainer
 {
+	public final String modulename = "USERINTERFACE";
+	
+	public ApplicationContext context;
+	
+	public InitializationStrategy initstrategy;
+	
+	//
+	
 	public JFrameX jframe000 = new JFrameX();
 	
 	public JPanelX jpanel000 = new JPanelX();
@@ -25,25 +34,40 @@ public class InterfaceContainer
 	
 	public InterfaceContainer()
 	{
-		InitializationStrategy initstrategy = new InitializationStrategy(this);
+		this.context = new ApplicationContext();
 		
-		initstrategy.container.jframe000.root(new JConfigX("/root", "{MUNCTION}"));
+		this.context.setlocalname("USERINTERFACE");
 		
-		initstrategy.container.jframe000.cord(new JConfigX("/root/jmenubar[000]", "{MUNCTION}"), jmenubar000);
+		this.context.setusername("USERNAME");
 		
-		initstrategy.container.jframe000.cord(new JConfigX("/root/jpanel[000]", "{MUNCTION}"), jpanel000);
+		this.context.setpassword("PASSWORD");
 		
-		initstrategy.container.jframe000.cord(new JConfigX("/root/jpanel[001]", "{MUNCTION}"), jpanel001);
+		this.context.setreference("{CLASSPATH}/contexts/userinterface/settings.xml", "{CLASSPATH}/{MODULENAME}");
 		
-		initstrategy.container.jmenubar000.cord(new JConfigX("/root/jmenubar[000]/jmenu[000]", "{MUNCTION}"), jmenu000);
+		this.context.setnamespace("{MUNCTION}/{CLASSPATH}/");
 		
-		initstrategy.container.jmenubar000.cord(new JConfigX("/root/jmenubar[000]/jmenu[001]", "{MUNCTION}"), jmenu001);
 		
-		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel[000]/jbutton[000]", "{MUNCTION}"), jbutton000);
+		//
 		
-		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel[000]/jbutton[001]", "{MUNCTION}"), jbutton001);
+		this.initstrategy = new InitializationStrategy(context, this);
 		
-		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel[000]/jbutton[002]", "{MUNCTION}"), jbutton002);
+		initstrategy.container.jframe000.root(new JConfigX("/root", "{MUNCTION}/{MODULENAME}/{VARNAME}"));
+		
+		initstrategy.container.jframe000.cord(new JConfigX("/root/jmenubar[000]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jmenubar000);
+		
+		initstrategy.container.jframe000.cord(new JConfigX("/root/jpanel[000]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jpanel000);
+		
+		initstrategy.container.jframe000.cord(new JConfigX("/root/jpanel[001]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jpanel001);
+		
+		initstrategy.container.jmenubar000.cord(new JConfigX("/root/jmenubar[000]/jmenu[000]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jmenu000);
+		
+		initstrategy.container.jmenubar000.cord(new JConfigX("/root/jmenubar[000]/jmenu[001]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jmenu001);
+		
+		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel[000]/jbutton[000]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jbutton000);
+		
+		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel[000]/jbutton[001]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jbutton001);
+		
+		initstrategy.container.jpanel000.cord(new JConfigX("/root/jpanel[000]/jbutton[002]", "{MUNCTION}/{MODULENAME}/{VARNAME}"), jbutton002);
 		
 		//
 		
@@ -59,10 +83,14 @@ class InitializationStrategy
 	
 	public InterfaceContainer container;
 	
+	public ApplicationContext context;
+	
 	//
 	
-	public InitializationStrategy(InterfaceContainer container)
+	public InitializationStrategy(ApplicationContext context, InterfaceContainer container)
 	{
+		this.context = context;
+		
 		this.container = container;
 	}
 	
