@@ -31,7 +31,8 @@ public class InterfaceContainer
 	public JButtonX jbutton001 = new JButtonX();
 	
 	public JButtonX jbutton002 = new JButtonX();
-	
+
+	//
 	
 	public InterfaceContainer()
 	{
