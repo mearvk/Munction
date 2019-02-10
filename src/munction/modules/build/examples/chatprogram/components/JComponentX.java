@@ -15,4 +15,9 @@ public class JComponentX extends JComponent
 	{
 		return this;
 	}
+
+	public JComponentX cord(JConfigX config, JEventListenerX eventlistener)
+	{
+		return this;
+	}
 }

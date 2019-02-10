@@ -54,23 +54,33 @@ public class InterfaceContainer
 		
 		//
 		
-		this.initstrategy.container.jframe000.root(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}")); 				//CLASSPATH, APPNAME, MODULENAME
+		this.initstrategy.container.jframe000.root(new JConfigX()); 				//CLASSPATH, APPNAME, MODULENAME
 		
-		this.initstrategy.container.jframe000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jmenubar000); 	//CLASSPATH, APPNAME, MODULENAME
+		this.initstrategy.container.jframe000.cord(new JConfigX(), jmenubar000); 	//CLASSPATH, APPNAME, MODULENAME
 		
-		this.initstrategy.container.jframe000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jpanel000); 	//CLASSPATH, APPNAME, MODULENAME
+		this.initstrategy.container.jframe000.cord(new JConfigX(), jpanel000); 		//CLASSPATH, APPNAME, MODULENAME
 		
-		this.initstrategy.container.jframe000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jpanel001); 	//CLASSPATH, APPNAME, MODULENAME
+		this.initstrategy.container.jframe000.cord(new JConfigX(), jpanel001); 		//CLASSPATH, APPNAME, MODULENAME
 		
-		this.initstrategy.container.jmenubar000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jmenu000); 	//CLASSPATH, APPNAME, MODULENAME
+		this.initstrategy.container.jmenubar000.cord(new JConfigX(), jmenu000); 	//CLASSPATH, APPNAME, MODULENAME
 		
-		this.initstrategy.container.jmenubar000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jmenu001); 	//CLASSPATH, APPNAME, MODULENAME
+		this.initstrategy.container.jmenubar000.cord(new JConfigX(), jmenu001); 	//CLASSPATH, APPNAME, MODULENAME
 		
-		this.initstrategy.container.jpanel000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jbutton000); 	//CLASSPATH, APPNAME, MODULENAME
+		this.initstrategy.container.jpanel000.cord(new JConfigX(), jbutton000); 	//CLASSPATH, APPNAME, MODULENAME
 		
-		this.initstrategy.container.jpanel000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jbutton001); 	//CLASSPATH, APPNAME, MODULENAME
+		this.initstrategy.container.jpanel000.cord(new JConfigX(), jbutton001); 	//CLASSPATH, APPNAME, MODULENAME
 		
-		this.initstrategy.container.jpanel000.cord(new JConfigX("{HIERARCHICAL}", "{{{MUNCTIONURL}}}"), jbutton002); 	//CLASSPATH, APPNAME, MODULENAME
+		this.initstrategy.container.jpanel000.cord(new JConfigX(), jbutton002); 	//CLASSPATH, APPNAME, MODULENAME
+
+		//
+
+		this.initstrategy.container.jframe000.cord(new JConfigX(), new JEventListenerX("onvisible,onhide"));
+
+		this.initstrategy.container.jbutton000.cord(new JConfigX(), new JEventListenerX("onclick,onmouseover,onmouseout"));
+
+		this.initstrategy.container.jbutton001.cord(new JConfigX(), new JEventListenerX("onclick,onmouseover,onmouseout"));
+
+		this.initstrategy.container.jbutton002.cord(new JConfigX(), new JEventListenerX("onclick,onmouseover,onmouseout"));
 		
 		//
 		
