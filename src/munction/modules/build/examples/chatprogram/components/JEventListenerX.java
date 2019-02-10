@@ -1,5 +1,7 @@
 package munction.modules.build.examples.chatprogram.components;
 
+import java.util.ArrayList;
+
 public class JEventListenerX
 {
     public String munctionclass;
@@ -28,4 +30,16 @@ public class JEventListenerX
         this.munctionurl = "{STANDARD}";
     }
 
+    class ClassTokenizer
+    {
+        public void tokenize(String input, ArrayList<String> output)
+        {
+            String[] tokens = input.split(",");
+
+            for(int i=0; i<tokens.length; i++)
+            {
+                output.add(tokens[i]);
+            }
+        }
+    }
 }
