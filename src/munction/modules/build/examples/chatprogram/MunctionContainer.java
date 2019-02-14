@@ -33,8 +33,8 @@ public class MunctionContainer extends MunctionContainerAtom
 
 class MunctionContainerAtom
 {
-	public InterfaceContainer userinterface = new InterfaceContainer();
+	public InterfaceContainer userinterface = new InterfaceContainer(); 	//InterfacePrelogic
 	
-	public ApplicationContainer application = new ApplicationContainer();
+	public ApplicationContainer application = new ApplicationContainer();	//ApplicationCologic
 }
 
