@@ -27,29 +27,9 @@ public class ApplicationContainer
 
 	//
 
-	public UserInterfaceContainer ui = new UserInterfaceContainer();
-
-	public NetworkContainer network = new NetworkContainer();
-	
-	//
-
-	class UserInterfaceContainer
-	{
-
-	}
-
-	class NetworkContainer
-	{
-
-	}
-
-	//
-
 	public ApplicationContainer()
 	{
-		//System.preinit(this);
-		
-		//System.init(this);
+
 	}
 
 	//

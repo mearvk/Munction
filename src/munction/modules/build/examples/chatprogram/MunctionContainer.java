@@ -41,8 +41,6 @@ class MunctionContainerAtom
 {
 	public ApplicationContainer applicationinterface = new ApplicationContainer();
 
-
-
 	//
 
 	public MunctionContainerAtom()

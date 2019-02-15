@@ -4,7 +4,7 @@ import munction.modules.build.ApplicationContext;
 
 import munction.modules.build.examples.chatprogram.components.*;
 
-public class UIDoor
+public class UserInterfaceStrategyX
 {
 	public final String modulename = "USERINTERFACE";
 	
@@ -34,7 +34,7 @@ public class UIDoor
 
 	//
 	
-	public UIDoor()
+	public UserInterfaceStrategyX()
 	{
 		this.context = new ApplicationContext();
 		
@@ -95,13 +95,13 @@ class InitializationStrategy
 	
 	public TightModelingThread tightmodelingthread = new TightModelingThread(this);
 	
-	public UIDoor container;
+	public UserInterfaceStrategyX container;
 	
 	public ApplicationContext context;
 	
 	//
 	
-	public InitializationStrategy(ApplicationContext context, UIDoor container)
+	public InitializationStrategy(ApplicationContext context, UserInterfaceStrategyX container)
 	{
 		this.context = context;
 		
