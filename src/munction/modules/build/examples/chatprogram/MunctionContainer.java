@@ -27,7 +27,13 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	public MunctionContainer()
 	{
+		this.server = new MunctionServer("default");
 
+		this.namespace = "default";
+
+		this.projectname = "default";
+
+		this.modulename = "default";
 	}
 }
 
@@ -35,9 +41,7 @@ class MunctionContainerAtom
 {
 	public ApplicationContainer applicationinterface = new ApplicationContainer();
 
-	public InterfaceContainer userinterface = new InterfaceContainer();
-	
-	public NetworkContainer networkinterface = new NetworkContainer();
+
 
 	//
 

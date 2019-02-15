@@ -20,11 +20,31 @@ public class ApplicationContainer
 	//
 	
 	public MunctionProcessor munctionprocessor = new MunctionProcessor();
-	
-	public FramingProcessor framingprocessor = new FramingProcessor();
-	
+
 	//
 	
+	public FramingProcessor framingprocessor = new FramingProcessor();
+
+	//
+
+	public UserInterfaceContainer ui = new UserInterfaceContainer();
+
+	public NetworkContainer network = new NetworkContainer();
+	
+	//
+
+	class UserInterfaceContainer
+	{
+
+	}
+
+	class NetworkContainer
+	{
+
+	}
+
+	//
+
 	public ApplicationContainer()
 	{
 		//System.preinit(this);

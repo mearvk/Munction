@@ -4,7 +4,7 @@ import munction.modules.build.ApplicationContext;
 
 import munction.modules.build.examples.chatprogram.components.*;
 
-public class InterfaceContainer
+public class UIDoor
 {
 	public final String modulename = "USERINTERFACE";
 	
@@ -34,7 +34,7 @@ public class InterfaceContainer
 
 	//
 	
-	public InterfaceContainer()
+	public UIDoor()
 	{
 		this.context = new ApplicationContext();
 		
@@ -44,7 +44,7 @@ public class InterfaceContainer
 		
 		this.context.setpassword("PASSWORD");
 		
-		this.context.setreference("{CLASSPATH}/contexts/userinterface/settings.xml", "{{MODULENAME}}");
+		this.context.setreference("{CLASSPATH}/contexts/ui/settings.xml", "{{MODULENAME}}");
 		
 		this.context.setnamespace("{{NAMESPACE}}");
 		
@@ -95,13 +95,13 @@ class InitializationStrategy
 	
 	public TightModelingThread tightmodelingthread = new TightModelingThread(this);
 	
-	public InterfaceContainer container;
+	public UIDoor container;
 	
 	public ApplicationContext context;
 	
 	//
 	
-	public InitializationStrategy(ApplicationContext context, InterfaceContainer container)
+	public InitializationStrategy(ApplicationContext context, UIDoor container)
 	{
 		this.context = context;
 		
