@@ -43,9 +43,7 @@ class MunctionContainerAtom
 
 	public MunctionContainerAtom()
 	{
-		this.applicationinterface.setnetworkinterface(networkinterface);
 
-		this.applicationinterface.setuserinterface(userinterface);
 	}
 }
 

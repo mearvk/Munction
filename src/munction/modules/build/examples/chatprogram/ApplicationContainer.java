@@ -33,18 +33,6 @@ public class ApplicationContainer
 	}
 
 	//
-
-	public ApplicationContainer setuserinterface(InterfaceContainer container)
-	{
-		return this;
-	}
-
-	public ApplicationContainer setnetworkinterface(NetworkContainer network)
-	{
-		return this;
-	}
-
-	//
 	
 	public ApplicationContainer enframe(String name, String namespace, String munctionname, String munctionurl, Queue<Frame> frames)
 	{
