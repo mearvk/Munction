@@ -33,8 +33,19 @@ public class MunctionContainer extends MunctionContainerAtom
 
 class MunctionContainerAtom
 {
-	public InterfaceContainer userinterface = new InterfaceContainer(); 	//InterfacePrelogic
+	public ApplicationContainer applicationinterface = new ApplicationContainer();
+
+	public InterfaceContainer userinterface = new InterfaceContainer();
 	
-	public ApplicationContainer application = new ApplicationContainer();	//ApplicationCologic
+	public NetworkContainer networkinterface = new NetworkContainer();
+
+	//
+
+	public MunctionContainerAtom()
+	{
+		this.applicationinterface.setnetworkinterface(networkinterface);
+
+		this.applicationinterface.setuserinterface(userinterface);
+	}
 }
 
