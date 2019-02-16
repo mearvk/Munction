@@ -4,10 +4,15 @@ import munction.modules.build.MunctionException;
 import munction.shutdown.MunctionServerShutdown;
 import munction.startup.MunctionServerStartup;
 
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.rmi.server.RMIClientSocketFactory;
+import java.rmi.server.RMIServerSocketFactory;
 
 public class MunctionServer extends MunctionServerAtom
 {
@@ -25,11 +30,7 @@ public class MunctionServer extends MunctionServerAtom
 
         //
 
-        Registry registry = LocateRegistry.getRegistry(this.servername, this.portnumber);
-
-        //
-
-        this.setregistry(registry);
+        this.setregistry(null);
     }
 }
 
@@ -38,6 +39,12 @@ class MunctionServerAtom
     public MunctionServerStartup startup = new MunctionServerStartup();
 
     public MunctionServerShutdown shutdown = new MunctionServerShutdown();
+
+    //
+
+    public MunctionRegistryStartup registrystartup = new MunctionRegistryStartup();
+
+    public MunctionRegistryShutdown registryshutdown = new MunctionRegistryShutdown();
 
     //
 
@@ -56,15 +63,35 @@ class MunctionServerAtom
         {
             this.shutdown = new MunctionServerShutdown();
         }
+
+        System.out.println("Munction server starting...");
     }
 
     //
 
-    public void setregistry(Registry registry)
+    public MunctionServerAtom setregistry(Registry registry)
     {
-        //security manager
+        if(registry == null)
+        {
+            try
+            {
+                //security manager
 
-        this.registry = registry;
+                this.registry = LocateRegistry.createRegistry(3434, new RMIClientImpl(), new RMIServerImpl());
+            }
+            catch(Exception exception)
+            {
+                MunctionException.relist(exception,"{MUNCTION}","setregistry", true);
+            }
+        }
+        else
+        {
+            //security manager
+
+            this.registry = registry;
+        }
+
+        return this;
     }
 
     public Remote pull(String resourcename)
@@ -97,3 +124,25 @@ class MunctionServerAtom
         return remote;
     }
 }
+
+class RMIClientImpl implements RMIClientSocketFactory
+{
+
+    @Override
+    public Socket createSocket(String s, int i) throws IOException
+    {
+        return new Socket(s,i);
+    }
+}
+
+class RMIServerImpl implements RMIServerSocketFactory
+{
+
+    @Override
+    public ServerSocket createServerSocket(int i) throws IOException
+    {
+        return new ServerSocket(i);
+    }
+}
+
+

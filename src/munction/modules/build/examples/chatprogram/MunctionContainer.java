@@ -37,7 +37,7 @@ public class MunctionContainer extends MunctionContainerAtom
 	{
 		try
 		{
-			this.server = new MunctionServer("default",3434);
+			this.server = new MunctionServer("munction",3434);
 
 			this.namespace = "default";
 
@@ -60,7 +60,9 @@ class MunctionContainerAtom
 
 	public MunctionContainerAtom()
 	{
+		//security manager
 
+		System.out.println("Munction container starting...");
 	}
 }
 
