@@ -45,6 +45,21 @@ class MunctionServerAtom
 
     //
 
+    public MunctionServerAtom()
+    {
+        if(this.startup==null)
+        {
+            this.startup = new MunctionServerStartup();
+        }
+
+        if(this.shutdown==null)
+        {
+            this.shutdown = new MunctionServerShutdown();
+        }
+    }
+
+    //
+
     public void setregistry(Registry registry)
     {
         //security manager
@@ -65,6 +80,20 @@ class MunctionServerAtom
             MunctionException.relist(exception, "{MUNCTION}/munctionserveratom","pull", true);
         }
 
-        return null;
+        return retval;
+    }
+
+    public Remote push(String resourcename, Remote remote)
+    {
+        try
+        {
+            this.registry.bind(resourcename, remote);
+        }
+        catch(Exception exception)
+        {
+            MunctionException.relist(exception, "{MUNCTION}/munctionserveratom", "push", true);
+        }
+
+        return remote;
     }
 }
