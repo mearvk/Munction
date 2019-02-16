@@ -7,6 +7,15 @@ import java.rmi.registry.Registry;
 
 public class MunctionRegistryModifier
 {
+    private volatile MunctionServerAtom atom = null;
+
+    public MunctionRegistryModifier own(MunctionServerAtom atom)
+    {
+        this.atom = atom;
+
+        return this;
+    }
+
     public MunctionRegistryModifier security(MunctionServerAtom atom, Registry registry)
     {
         return this;

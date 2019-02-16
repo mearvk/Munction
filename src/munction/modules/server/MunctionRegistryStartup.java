@@ -7,6 +7,15 @@ import java.rmi.registry.Registry;
 
 public class MunctionRegistryStartup
 {
+    private volatile MunctionServerAtom atom = null;
+
+    public MunctionRegistryStartup own(MunctionServerAtom atom)
+    {
+        this.atom = atom;
+
+        return this;
+    }
+
     public MunctionRegistryStartup security(MunctionServerAtom atom, Registry registry)
     {
         return this;

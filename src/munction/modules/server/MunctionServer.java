@@ -70,12 +70,20 @@ class MunctionServerAtom
 
     //
 
+    public MunctionServerAtom killregistry(Registry registry)
+    {
+        this.registryshutdown
+            .security(this, registry)
+            .killregistry(this, registry);
+
+        return this;
+    }
 
     public MunctionServerAtom initregistry(Registry registry)
     {
         this.registrystartup
-                .security(this, registry)
-                .initregistry(this, registry);
+            .security(this, registry)
+            .initregistry(this, registry);
 
         return this;
     }
