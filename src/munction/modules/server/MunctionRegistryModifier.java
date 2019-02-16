@@ -5,14 +5,14 @@ import munction.modules.build.MunctionException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-public class MunctionRegistryStartup
+public class MunctionRegistryModifier
 {
-    public MunctionRegistryStartup security(MunctionServerAtom atom, Registry registry)
+    public MunctionRegistryModifier security(MunctionServerAtom atom, Registry registry)
     {
         return this;
     }
 
-    public MunctionRegistryStartup initregistry(MunctionServerAtom atom, Registry registry)
+    public MunctionRegistryModifier setregistry(MunctionServerAtom atom, Registry registry)
     {
         if(registry == null)
         {

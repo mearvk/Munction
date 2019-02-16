@@ -9,7 +9,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.RMIClientSocketFactory;
 import java.rmi.server.RMIServerSocketFactory;
@@ -44,6 +43,8 @@ class MunctionServerAtom
 
     public MunctionRegistryStartup registrystartup = new MunctionRegistryStartup();
 
+    public MunctionRegistryModifier registrymodifier = new MunctionRegistryModifier();
+
     public MunctionRegistryShutdown registryshutdown = new MunctionRegistryShutdown();
 
     //
@@ -69,27 +70,21 @@ class MunctionServerAtom
 
     //
 
+
+    public MunctionServerAtom initregistry(Registry registry)
+    {
+        this.registrystartup
+                .security(this, registry)
+                .initregistry(this, registry);
+
+        return this;
+    }
+
     public MunctionServerAtom setregistry(Registry registry)
     {
-        if(registry == null)
-        {
-            try
-            {
-                //security manager
-
-                this.registry = LocateRegistry.createRegistry(3434, new RMIClientImpl(), new RMIServerImpl());
-            }
-            catch(Exception exception)
-            {
-                MunctionException.relist(exception,"{MUNCTION}","setregistry", true);
-            }
-        }
-        else
-        {
-            //security manager
-
-            this.registry = registry;
-        }
+        this.registrymodifier
+            .security(this, registry)
+            .setregistry(this, registry);
 
         return this;
     }
