@@ -1,35 +1,70 @@
 package munction.modules.server;
 
-import munction.shutdown.MunctionShutdown;
-import munction.startup.MunctionStartup;
+import munction.modules.build.MunctionException;
+import munction.shutdown.MunctionServerShutdown;
+import munction.startup.MunctionServerStartup;
 
-import javax.management.remote.rmi.RMIConnection;
-import javax.management.remote.rmi.RMIServer;
-import java.io.IOException;
+import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
-public class MunctionServer implements RMIServer
+public class MunctionServer extends MunctionServerAtom
 {
-    public MunctionStartup startup;
-
-    public MunctionShutdown shutdown;
-
     public String servername;
 
-    public MunctionServer(String servername)
+    public Integer portnumber;
+
+    //
+
+    public MunctionServer(String servername, Integer portnumber) throws RemoteException
     {
         this.servername = servername;
+
+        this.portnumber = portnumber;
+
+        //
+
+        Registry registry = LocateRegistry.getRegistry(this.servername, this.portnumber);
+
+        //
+
+        this.setregistry(registry);
+    }
+}
+
+class MunctionServerAtom
+{
+    public MunctionServerStartup startup = new MunctionServerStartup();
+
+    public MunctionServerShutdown shutdown = new MunctionServerShutdown();
+
+    //
+
+    public Registry registry = null;
+
+    //
+
+    public void setregistry(Registry registry)
+    {
+        //security manager
+
+        this.registry = registry;
     }
 
-    @Override
-    public String getVersion() throws RemoteException
+    public Remote pull(String resourcename)
     {
-        return null;
-    }
+        Remote retval = null;
 
-    @Override
-    public RMIConnection newClient(Object o) throws IOException
-    {
+        try
+        {
+            retval = this.registry.lookup(resourcename);
+        }
+        catch(Exception exception)
+        {
+            MunctionException.relist(exception, "{MUNCTION}/munctionserveratom","pull", true);
+        }
+
         return null;
     }
 }

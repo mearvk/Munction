@@ -1,5 +1,6 @@
 package munction.modules.build.examples.chatprogram;
 
+import munction.modules.build.MunctionException;
 import munction.modules.server.MunctionServer;
 
 public class MunctionContainer extends MunctionContainerAtom
@@ -16,24 +17,38 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	public MunctionContainer(String munctionserver, String namespace, String projectname, String modulename)
 	{
-		this.server = new MunctionServer(munctionserver);
+		try
+		{
+			this.server = new MunctionServer(munctionserver, 3434);
 
-		this.namespace = namespace;
+			this.namespace = namespace;
 
-		this.projectname = projectname;
+			this.projectname = projectname;
 
-		this.modulename = modulename;
+			this.modulename = modulename;
+		}
+		catch(Exception e)
+		{
+			MunctionException.relist(e, "{MUNCTION}/munctioncontainer", "constructor", true);
+		}
 	}
 
 	public MunctionContainer()
 	{
-		this.server = new MunctionServer("default");
+		try
+		{
+			this.server = new MunctionServer("default",3434);
 
-		this.namespace = "default";
+			this.namespace = "default";
 
-		this.projectname = "default";
+			this.projectname = "default";
 
-		this.modulename = "default";
+			this.modulename = "default";
+		}
+		catch(Exception e)
+		{
+			MunctionException.relist(e, "{MUNCTION}/munctioncontainer", "constructor", true);
+		}
 	}
 }
 

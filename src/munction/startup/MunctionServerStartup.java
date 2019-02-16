@@ -3,7 +3,7 @@ package munction.startup;
 import munction.modules.MunctionModule;
 import system.Presystem;
 
-public class MunctionStartup
+public class MunctionServerStartup
 {
 	public Presystem presystem;
 
