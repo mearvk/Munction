@@ -9,6 +9,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.RMIClientSocketFactory;
 import java.rmi.server.RMIServerSocketFactory;
@@ -29,7 +30,7 @@ public class MunctionServer extends MunctionServerAtom
 
         //
 
-        this.setregistry(null);
+        this.initialize();
     }
 }
 
@@ -64,13 +65,11 @@ class MunctionServerAtom
         {
             this.shutdown = new MunctionServerShutdown();
         }
-
-        System.out.println("Munction server starting...");
     }
 
     //
 
-    public MunctionServerAtom killregistry(Registry registry)
+    public MunctionServerAtom shutdown(Registry registry)
     {
         this.registryshutdown
             .security(this, registry)
@@ -79,20 +78,22 @@ class MunctionServerAtom
         return this;
     }
 
-    public MunctionServerAtom initregistry(Registry registry)
+    public MunctionServerAtom initialize()
     {
-        this.registrystartup
-            .security(this, registry)
-            .initregistry(this, registry);
+        try
+        {
+            Registry registry = LocateRegistry.createRegistry(3434);
 
-        return this;
-    }
+            this.registrystartup
+                    .security(this, registry)
+                    .initregistry(this, registry);
 
-    public MunctionServerAtom setregistry(Registry registry)
-    {
-        this.registrymodifier
-            .security(this, registry)
-            .setregistry(this, registry);
+
+        }
+        catch(Exception exception)
+        {
+            MunctionException.relist(exception, "{STARTUP}","Registry Startup");
+        }
 
         return this;
     }
