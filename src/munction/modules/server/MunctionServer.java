@@ -69,7 +69,7 @@ class MunctionServerAtom
 
     //
 
-    public MunctionServerAtom shutdown(Registry registry)
+    protected MunctionServerAtom shutdown(Registry registry)
     {
         this.registryshutdown
             .security(this, registry)
@@ -78,7 +78,7 @@ class MunctionServerAtom
         return this;
     }
 
-    public MunctionServerAtom initialize()
+    protected MunctionServerAtom initialize()
     {
         try
         {
