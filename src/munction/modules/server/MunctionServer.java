@@ -2,8 +2,6 @@ package munction.modules.server;
 
 import munction.modules.build.MunctionException;
 import munction.modules.build.RegistryControl;
-import munction.shutdown.MunctionServerShutdown;
-import munction.startup.MunctionServerStartup;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -14,9 +12,19 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.RMIClientSocketFactory;
 import java.rmi.server.RMIServerSocketFactory;
+import java.util.HashMap;
 
 public class MunctionServer extends MunctionServerAtom
 {
+    static
+    {
+
+    }
+
+    public static HashMap<String, MunctionServer> servers = new HashMap();
+
+    //
+
     public String servername;
 
     public Integer portnumber;
@@ -31,8 +39,19 @@ public class MunctionServer extends MunctionServerAtom
 
         //
 
-        this.startup();
+        MunctionServer.servers.put(servername, (MunctionServer) setup());
     }
+
+    public void start()
+    {
+        this.setup();
+    }
+
+    public void stop()
+    {
+        this.destroy();
+    }
+
 }
 
 class MunctionServerAtom
@@ -50,27 +69,29 @@ class MunctionServerAtom
 
     //
 
-    protected MunctionServerAtom shutdown(Registry registry)
+    protected MunctionServerAtom destroy()
     {
         try
         {
+            Registry registry = this.registry;
+
             this.control.registrystartup
                     .security(this, registry)
                     .initregistry(this, registry);
         }
         catch(Exception exception)
         {
-            MunctionException.relist(exception, "{MUNCTION}/initialize","shutdown");
+            MunctionException.relist(exception, "{MUNCTION}/initialize","destroy");
         }
 
         return this;
     }
 
-    protected MunctionServerAtom startup()
+    protected MunctionServerAtom setup()
     {
         try
         {
-            Registry registry = LocateRegistry.createRegistry(3434);
+            Registry registry = this.registry =  LocateRegistry.createRegistry(3434);
 
             this.control.registryshutdown
                     .security(this, registry)
@@ -78,7 +99,7 @@ class MunctionServerAtom
         }
         catch(Exception exception)
         {
-            MunctionException.relist(exception, "{MUNCTION}/initialize","startup");
+            MunctionException.relist(exception, "{MUNCTION}/initialize","setup");
         }
 
         return this;
@@ -102,6 +123,8 @@ class MunctionServerAtom
 
     public Remote push(String resourcename, Remote remote)
     {
+        Remote retval = remote;
+
         try
         {
             this.registry.bind(resourcename, remote);
@@ -111,7 +134,7 @@ class MunctionServerAtom
             MunctionException.relist(exception, "{MUNCTION}/munctionserveratom", "push", true);
         }
 
-        return remote;
+        return retval;
     }
 }
 

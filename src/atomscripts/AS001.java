@@ -1,6 +1,6 @@
 package atomscripts;
 
-public class AS001 extends ASNought //bid startup for standard applications
+public class AS001 extends ASNought //bid setup for standard applications
 {
 	//load contexts
 	
