@@ -1,6 +1,7 @@
 package munction.modules.server;
 
 import munction.modules.build.MunctionException;
+import munction.modules.build.RegistryControl;
 import munction.shutdown.MunctionServerShutdown;
 import munction.startup.MunctionServerStartup;
 
@@ -36,42 +37,22 @@ public class MunctionServer extends MunctionServerAtom
 
 class MunctionServerAtom
 {
-    public MunctionServerStartup startup = new MunctionServerStartup();
-
-    public MunctionServerShutdown shutdown = new MunctionServerShutdown();
-
-    //
-
-    public MunctionRegistryStartup registrystartup = new MunctionRegistryStartup();
-
-    public MunctionRegistryModifier registrymodifier = new MunctionRegistryModifier();
-
-    public MunctionRegistryShutdown registryshutdown = new MunctionRegistryShutdown();
-
-    //
-
     public Registry registry = null;
+
+    public RegistryControl control = new RegistryControl();
 
     //
 
     public MunctionServerAtom()
     {
-        if(this.startup==null)
-        {
-            this.startup = new MunctionServerStartup();
-        }
 
-        if(this.shutdown==null)
-        {
-            this.shutdown = new MunctionServerShutdown();
-        }
     }
 
     //
 
     protected MunctionServerAtom shutdown(Registry registry)
     {
-        this.registryshutdown
+        this.control.registryshutdown
             .security(this, registry)
             .killregistry(this, registry);
 
@@ -84,7 +65,7 @@ class MunctionServerAtom
         {
             Registry registry = LocateRegistry.createRegistry(3434);
 
-            this.registrystartup
+            this.control.registrystartup
                     .security(this, registry)
                     .initregistry(this, registry);
 
