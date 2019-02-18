@@ -31,7 +31,7 @@ public class MunctionServer extends MunctionServerAtom
 
         //
 
-        this.initialize();
+        this.startup();
     }
 }
 
@@ -52,28 +52,33 @@ class MunctionServerAtom
 
     protected MunctionServerAtom shutdown(Registry registry)
     {
-        this.control.registryshutdown
-            .security(this, registry)
-            .killregistry(this, registry);
+        try
+        {
+            this.control.registrystartup
+                    .security(this, registry)
+                    .initregistry(this, registry);
+        }
+        catch(Exception exception)
+        {
+            MunctionException.relist(exception, "{MUNCTION}/initialize","shutdown");
+        }
 
         return this;
     }
 
-    protected MunctionServerAtom initialize()
+    protected MunctionServerAtom startup()
     {
         try
         {
             Registry registry = LocateRegistry.createRegistry(3434);
 
-            this.control.registrystartup
+            this.control.registryshutdown
                     .security(this, registry)
-                    .initregistry(this, registry);
-
-
+                    .killregistry(this, registry);
         }
         catch(Exception exception)
         {
-            MunctionException.relist(exception, "{STARTUP}","Registry Startup");
+            MunctionException.relist(exception, "{MUNCTION}/initialize","startup");
         }
 
         return this;
