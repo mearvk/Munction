@@ -1,7 +1,4 @@
-package munction.modules.build.examples.chatprogram;
-
-import munction.modules.build.Process;
-import munction.modules.build.*;
+package munction.modules.build;
 
 import java.util.Queue;
 

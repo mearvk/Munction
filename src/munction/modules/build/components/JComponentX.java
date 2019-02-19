@@ -1,9 +1,8 @@
-package munction.modules.build.examples.chatprogram.components;
+package munction.modules.build.components;
 
-import munction.modules.build.examples.chatprogram.NullParent;
+import munction.modules.build.NullParent;
 
 import javax.swing.*;
-import java.util.ArrayList;
 import java.util.HashSet;
 
 public class JComponentX extends JComponent

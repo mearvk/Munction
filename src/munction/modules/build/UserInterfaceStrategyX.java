@@ -1,8 +1,6 @@
-package munction.modules.build.examples.chatprogram;
+package munction.modules.build;
 
-import munction.modules.build.ApplicationContext;
-
-import munction.modules.build.examples.chatprogram.components.*;
+import munction.modules.build.components.*;
 
 public class UserInterfaceStrategyX
 {
@@ -149,7 +147,7 @@ class InitializationStrategy
 		{
 			//loose modeling controller runs here
 			
-			System.out.println("LooseModelingThread TBI");
+			java.lang.System.out.println("LooseModelingThread TBI");
 		}
 	}
 	
@@ -172,7 +170,7 @@ class InitializationStrategy
 		{
 			//tight modeling controller runs here
 			
-			System.out.println("TightModelingThread TBI");
+			java.lang.System.out.println("TightModelingThread TBI");
 		}
 	}
 	

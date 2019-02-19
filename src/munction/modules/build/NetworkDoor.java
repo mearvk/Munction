@@ -1,4 +1,4 @@
-package munction.modules.build.examples.chatprogram;
+package munction.modules.build;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package munction.modules.build.examples.chatprogram.components;
+package munction.modules.build.components;
 
 import javax.swing.*;
 

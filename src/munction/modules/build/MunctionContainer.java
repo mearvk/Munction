@@ -1,8 +1,4 @@
-package munction.modules.build.examples.chatprogram;
-
-import munction.modules.build.MunctionException;
-import munction.modules.build.MunctionProject;
-import munction.modules.server.MunctionServer;
+package munction.modules.build;
 
 import java.util.ArrayList;
 
@@ -33,7 +29,7 @@ class MunctionContainerAtom
 	{
 		//security manager
 
-		System.out.println("Munction container starting...");
+		java.lang.System.out.println("Munction container starting...");
 	}
 }
 
