@@ -1,0 +1,11 @@
+<ui>
+
+    <loader type="default">
+
+        <module id="userinterface" name="graphical interface v 1.0" >
+
+        </module>
+
+    </loader>
+
+</ui>

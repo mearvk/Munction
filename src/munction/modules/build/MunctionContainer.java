@@ -1,5 +1,6 @@
 package munction.modules.build;
 
+import munction.modules.server.MunctionServer;
 import system.handlers.ProjectFileHandler;
 
 import java.util.ArrayList;
@@ -10,7 +11,11 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	//
 
-	public String munctionserver;
+	public MunctionServer munctionserver;
+
+	//
+
+	public String servername;
 
 	public String namespace;
 
@@ -24,11 +29,23 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	public MunctionContainer(String munctionserver, String munctionname, String namespace, String projectURL)
 	{
-		this.munctionserver = munctionserver;
+		this.servername = munctionserver;
 
 		this.namespace = namespace;
 
 		this.projectURL = projectURL;
+
+		//
+
+		try
+		{
+			this.munctionserver = new MunctionServer(munctionserver, 3434);
+		}
+		catch(Exception exception)
+		{
+			MunctionException.relist(exception,"{MUNCTION}/MunctionContainer.class","constructor",true,true);
+		}
+
 
 		//
 
@@ -50,13 +67,33 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	public MunctionContainer()
 	{
-		this.munctionserver = "munction";
+		this.servername = "munction";
 
 		this.namespace = "munction";
 
 		this.projectURL = "./settings/config/project.xml";
 
 		//
+
+		try
+		{
+			this.munctionserver = new MunctionServer(servername, 3434);
+		}
+		catch(Exception exception)
+		{
+			MunctionException.relist(exception,"{MUNCTION}/MunctionContainer.class","constructor",true,true);
+		}
+
+		//
+
+		try
+		{
+
+		}
+		catch(Exception exception)
+		{
+			MunctionException.relist(exception,"{MUNCTION}/MunctionContainer.klass","constructor",true,true);
+		}
 
 		try
 		{
