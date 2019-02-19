@@ -1,11 +1,17 @@
 package munction.modules.build.examples.chatprogram;
 
 import munction.modules.build.MunctionComponent;
-import munction.modules.build.UserInterfaceStrategyX;
+import munction.modules.build.userinterface.UserInterfaceStrategyImpl;
 
 public class ChatClient extends MunctionComponent
 {
-    UserInterfaceStrategyX userinterfacestrategy = new UserInterfaceStrategyX();
+    UserInterfaceStrategyImpl userinterfacestrategy = new UserInterfaceStrategyImpl();
 
+    //
+
+    public ChatClient()
+    {
+        //userinterfacestrategy.
+    }
 
 }

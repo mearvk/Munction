@@ -4,7 +4,7 @@
 
         <loader type="default">
 
-            <module id="server" name="server">
+            <module id="client" name="server">
 
                 <class name="ChatClient" package="munction.modules.build.examples.chatprogram">
 

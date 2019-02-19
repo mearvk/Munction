@@ -1,11 +1,70 @@
 <ui>
 
+    <attribute name="PROJECTDIR" value=""> </attribute>
+
+    <attribute name="BUILDDIR" value=""> </attribute>
+
+    <builder rebuild="true" class="org.munction.builders.ui.UserInterfaceBuilder">
+
+        <dir type="base" value="{PROJECTDIR}"> </dir>
+
+        <dir type="output" value="{PROJECTDIR}/{BUILDDIR}"> </dir>
+
+        <attribute name="library" value="MunctionX"> </attribute>
+
+    </builder>
+
     <loader type="default">
 
         <module id="userinterface" name="graphical interface v 1.0" >
+
+            <interface>
+
+                <jframe id="windowpane" description="{id}">
+
+                    <jmenubar id="menu" description="{id}">
+
+                        <jmenu> </jmenu>
+
+                        <jmenu> </jmenu>
+
+                        <jmenu> </jmenu>
+
+                        <jmenu> </jmenu>
+
+                    </jmenubar>
+
+                    <jpanel id="navigationpane" description="{id}">
+
+                    </jpanel>
+
+                    <jpanel id="contentpane" description="{id}">
+
+                        <jscrollpane id="scrollpane" description="{id}">
+
+                            <jpanel id="favoritespane" description="{id}">
+
+                            </jpanel>
+
+                            <jpanel id="contentpane" description="{id}">
+
+                            </jpanel>
+
+                        </jscrollpane>
+
+                    </jpanel>
+
+                    <jpanel id="notificationpane" description="{id}">
+
+                    </jpanel>
+
+                </jframe>
+
+            </interface>
 
         </module>
 
     </loader>
 
 </ui>
+
