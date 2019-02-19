@@ -1,54 +1,25 @@
 package munction.modules.build.examples.chatprogram;
 
 import munction.modules.build.MunctionException;
+import munction.modules.build.MunctionProject;
 import munction.modules.server.MunctionServer;
+
+import java.util.ArrayList;
 
 public class MunctionContainer extends MunctionContainerAtom
 {
-	public MunctionServer server;
-
-	public String namespace;
-
-	public String projectname;
-
-	public String modulename;
+	public ArrayList<MunctionProject> projects = new ArrayList<MunctionProject>();
 
 	//
 
 	public MunctionContainer(String munctionserver, String namespace, String projectname, String modulename)
 	{
-		try
-		{
-			this.server = new MunctionServer(munctionserver, 3434);
-
-			this.namespace = namespace;
-
-			this.projectname = projectname;
-
-			this.modulename = modulename;
-		}
-		catch(Exception e)
-		{
-			MunctionException.relist(e, "{MUNCTION}/munctioncontainer", "constructor", true);
-		}
+		this.projects.add(new MunctionProject(munctionserver, namespace, projectname, modulename));
 	}
 
 	public MunctionContainer()
 	{
-		try
-		{
-			this.server = new MunctionServer("munction",3434);
-
-			this.namespace = "default";
-
-			this.projectname = "default";
-
-			this.modulename = "default";
-		}
-		catch(Exception e)
-		{
-			MunctionException.relist(e, "{MUNCTION}/munctioncontainer", "constructor", true);
-		}
+		this.projects.add(new MunctionProject("munction","default","default","default"));
 	}
 }
 

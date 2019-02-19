@@ -1,6 +1,7 @@
 package munction.modules.server;
 
 import munction.modules.build.MunctionException;
+import munction.modules.build.MunctionServerMap;
 import munction.modules.build.RegistryControl;
 
 import java.io.IOException;
@@ -12,16 +13,10 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.RMIClientSocketFactory;
 import java.rmi.server.RMIServerSocketFactory;
-import java.util.HashMap;
 
 public class MunctionServer extends MunctionServerAtom
 {
-    static
-    {
-
-    }
-
-    public static HashMap<String, MunctionServer> servers = new HashMap();
+    public static MunctionServerMap<String, MunctionServer> servers = new MunctionServerMap();
 
     //
 
@@ -39,17 +34,17 @@ public class MunctionServer extends MunctionServerAtom
 
         //
 
-        MunctionServer.servers.put(servername, (MunctionServer) setup());
+        MunctionServer.servers.put(servername, (MunctionServer) this.createregistry());
     }
 
     public void start()
     {
-        this.setup();
+        this.createregistry();
     }
 
     public void stop()
     {
-        this.destroy();
+        this.removeregistry();
     }
 
 }
@@ -69,7 +64,7 @@ class MunctionServerAtom
 
     //
 
-    protected MunctionServerAtom destroy()
+    protected MunctionServerAtom createregistry()
     {
         try
         {
@@ -87,7 +82,7 @@ class MunctionServerAtom
         return this;
     }
 
-    protected MunctionServerAtom setup()
+    protected MunctionServerAtom removeregistry()
     {
         try
         {
