@@ -1,10 +1,8 @@
 package munction.modules.build;
 
-import exceptions.StartupFileNotFoundException;
 import munction.modules.server.MunctionServer;
 import system.handlers.StartupFileHandler;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 
 public class MunctionProject
@@ -43,9 +41,13 @@ public class MunctionProject
 
             this.handler = new StartupFileHandler(this.startupURL);
         }
+        catch(FileNotFoundException fnfe)
+        {
+            MunctionException.relist(fnfe, "{MUNCTION}/munctioncontainer", "constructor", true, true);
+        }
         catch(Exception e)
         {
-            MunctionException.relist(e, "{MUNCTION}/munctioncontainer", "constructor", true);
+            MunctionException.relist(e, "{MUNCTION}/munctioncontainer", "constructor", true, true);
         }
     }
 
@@ -66,6 +68,10 @@ public class MunctionProject
             //
 
             this.handler = new StartupFileHandler(this.startupURL);
+        }
+        catch(FileNotFoundException fnfe)
+        {
+            MunctionException.relist(fnfe, "{MUNCTION}/munctioncontainer", "constructor", true);
         }
         catch(Exception e)
         {
