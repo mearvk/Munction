@@ -1,0 +1,27 @@
+<munction type="projects">
+
+    <project name="chatclient" namespace="org.mearvk.munction.builds.chatprogram001">
+
+        <loader type="default">
+
+            <class name="ChatClient" package="munction.modules.build.examples.chatprogram">
+
+            </class>
+
+        </loader>
+
+    </project>
+
+    <project name="chatserver" namespace="org.mearvk.munction.builds.chatprogram001">
+
+        <loader type="default">
+
+            <class name="ChatServer" package="munction.modules.build.examples.chatprogram">
+
+            </class>
+
+        </loader>
+
+    </project>
+
+</munction>
