@@ -8,14 +8,14 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	//
 
-	public MunctionContainer(String munctionserver, String namespace, String projectname, String modulename)
+	public MunctionContainer(String munctionserver, String namespace, String projectname, String modulename, String startupURL)
 	{
-		this.projects.add(new MunctionProject(munctionserver, namespace, projectname, modulename));
+		this.projects.add(new MunctionProject(munctionserver, namespace, projectname, modulename, startupURL));
 	}
 
 	public MunctionContainer()
 	{
-		this.projects.add(new MunctionProject("munction","default","default","default"));
+		this.projects.add(new MunctionProject("munction","default","default","default","./settings/config/startup.xml"));
 	}
 }
 

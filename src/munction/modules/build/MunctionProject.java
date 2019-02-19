@@ -1,6 +1,11 @@
 package munction.modules.build;
 
+import exceptions.StartupFileNotFoundException;
 import munction.modules.server.MunctionServer;
+import system.handlers.StartupFileHandler;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class MunctionProject
 {
@@ -12,9 +17,15 @@ public class MunctionProject
 
     public String modulename;
 
+    public String startupURL;
+
     //
 
-    public MunctionProject(String munctionserver, String namespace, String projectname, String modulename)
+    public StartupFileHandler handler;
+
+    //
+
+    public MunctionProject(String munctionserver, String namespace, String projectname, String modulename, String startupURL)
     {
         try
         {
@@ -25,6 +36,12 @@ public class MunctionProject
             this.projectname = projectname;
 
             this.modulename = modulename;
+
+            this.startupURL = startupURL;
+
+            //
+
+            this.handler = new StartupFileHandler(this.startupURL);
         }
         catch(Exception e)
         {
@@ -43,6 +60,12 @@ public class MunctionProject
             this.projectname = "default";
 
             this.modulename = "default";
+
+            this.startupURL = "./settings/config/startup.xml";
+
+            //
+
+            this.handler = new StartupFileHandler(this.startupURL);
         }
         catch(Exception e)
         {
