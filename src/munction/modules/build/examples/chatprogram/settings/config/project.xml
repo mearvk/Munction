@@ -4,9 +4,13 @@
 
         <loader type="default">
 
-            <class name="ChatClient" package="munction.modules.build.examples.chatprogram">
+            <module id="server" name="server">
 
-            </class>
+                <class name="ChatClient" package="munction.modules.build.examples.chatprogram">
+
+                </class>
+
+            </module>
 
         </loader>
 
@@ -16,9 +20,13 @@
 
         <loader type="default">
 
-            <class name="ChatServer" package="munction.modules.build.examples.chatprogram">
+            <module id="server" name="server">
 
-            </class>
+                <class name="ChatServer" package="munction.modules.build.examples.chatprogram">
+
+                </class>
+
+            </module>
 
         </loader>
 

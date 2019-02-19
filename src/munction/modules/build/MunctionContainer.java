@@ -14,8 +14,6 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	public String namespace;
 
-	public String modulename;
-
 	public String projectURL;
 
 	//
@@ -24,13 +22,11 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	//
 
-	public MunctionContainer(String munctionserver, String munctionname, String namespace, String modulename, String projectURL)
+	public MunctionContainer(String munctionserver, String munctionname, String namespace, String projectURL)
 	{
 		this.munctionserver = munctionserver;
 
 		this.namespace = namespace;
-
-		this.modulename = modulename;
 
 		this.projectURL = projectURL;
 
@@ -57,8 +53,6 @@ public class MunctionContainer extends MunctionContainerAtom
 		this.munctionserver = "munction";
 
 		this.namespace = "munction";
-
-		this.modulename = "demo";
 
 		this.projectURL = "./settings/config/project.xml";
 
