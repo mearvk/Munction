@@ -1,7 +1,7 @@
 package munction.modules.build;
 
 import munction.modules.server.MunctionServer;
-import system.handlers.StartupFileHandler;
+import system.handlers.ProjectFileHandler;
 
 import java.io.FileNotFoundException;
 
@@ -19,7 +19,7 @@ public class MunctionProject
 
     //
 
-    public StartupFileHandler handler;
+    public ProjectFileHandler handler;
 
     //
 
@@ -39,7 +39,7 @@ public class MunctionProject
 
             //
 
-            this.handler = new StartupFileHandler(this.startupURL);
+            this.handler = new ProjectFileHandler(this.startupURL);
         }
         catch(FileNotFoundException fnfe)
         {
@@ -67,7 +67,7 @@ public class MunctionProject
 
             //
 
-            this.handler = new StartupFileHandler(this.startupURL);
+            this.handler = new ProjectFileHandler(this.startupURL);
         }
         catch(FileNotFoundException fnfe)
         {

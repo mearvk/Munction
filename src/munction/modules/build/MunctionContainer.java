@@ -1,5 +1,7 @@
 package munction.modules.build;
 
+import system.handlers.ProjectFileHandler;
+
 import java.util.ArrayList;
 
 public class MunctionContainer extends MunctionContainerAtom
@@ -8,14 +10,74 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	//
 
-	public MunctionContainer(String munctionserver, String namespace, String projectname, String modulename, String startupURL)
+	public String munctionserver;
+
+	public String namespace;
+
+	public String modulename;
+
+	public String projectURL;
+
+	//
+
+	public ProjectFileHandler handler;
+
+	//
+
+	public MunctionContainer(String munctionserver, String munctionname, String namespace, String modulename, String projectURL)
 	{
-		this.projects.add(new MunctionProject(munctionserver, namespace, projectname, modulename, startupURL));
+		this.munctionserver = munctionserver;
+
+		this.namespace = namespace;
+
+		this.modulename = modulename;
+
+		this.projectURL = projectURL;
+
+		//
+
+		try
+		{
+			this.handler = new ProjectFileHandler();
+
+			this.handler.setprojectfile(projectURL);
+
+			this.handler.setprojectlist(this.projects);
+
+			this.handler.build();
+		}
+		catch(Exception exception)
+		{
+			MunctionException.relist(exception,"{MUNCTION}/MunctionContainer.class","constructor",true,true);
+		}
 	}
 
 	public MunctionContainer()
 	{
-		this.projects.add(new MunctionProject("munction","default","default","default","./settings/config/startup.xml"));
+		this.munctionserver = "munction";
+
+		this.namespace = "munction";
+
+		this.modulename = "demo";
+
+		this.projectURL = "./settings/config/project.xml";
+
+		//
+
+		try
+		{
+			this.handler = new ProjectFileHandler();
+
+			this.handler.setprojectfile(projectURL);
+
+			this.handler.setprojectlist(this.projects);
+
+			this.handler.build();
+		}
+		catch(Exception exception)
+		{
+			MunctionException.relist(exception,"{MUNCTION}/MunctionContainer.klass","constructor",true,true);
+		}
 	}
 }
 
