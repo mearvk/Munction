@@ -5,6 +5,10 @@ import java.util.Queue;
 
 public class FramingProcessor
 {
+	public FramingSettingsReader reader;
+
+	//
+
 	public ArrayList<Queue<Process>> processes = new ArrayList<>();
 	
 	public ArrayList<Queue<Item>> items = new ArrayList<>();
@@ -13,6 +17,13 @@ public class FramingProcessor
 	
 	public ArrayList<Queue<List>> lists = new ArrayList<>();
 	
+	//
+
+	public FramingProcessor()
+	{
+		reader = new FramingSettingsReader("./settings/config/framing.xml");
+	}
+
 	//
 	
 	public void addProcessSet(String name, String namespace, String munctionname, String munctionurl, Queue<Process> processes)

@@ -19,6 +19,10 @@ public class ApplicationContainer
 	public MunctionProcessor munctionprocessor = new MunctionProcessor();
 
 	//
+
+	public MunctionProject project = new MunctionProject();
+
+	//
 	
 	public FramingProcessor framingprocessor = new FramingProcessor();
 

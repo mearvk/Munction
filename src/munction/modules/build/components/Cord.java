@@ -20,6 +20,11 @@ public class Cord
 
     //
 
+    public Cord()
+    {
+        
+    }
+    
     public Cord(JConfigFileX config, JEventListenerX eventlistener)
     {
 
@@ -33,5 +38,15 @@ public class Cord
     public Cord(JConfigX config, JComponentX component)
     {
 
+    }
+    
+    //
+    
+    public void setComponent(JConfigX config, JComponentX component)
+    {
+        
+    }
+
+    public void setComponent(String component) {
     }
 }

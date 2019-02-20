@@ -10,7 +10,12 @@ public class JComponentX extends JComponent
 	public HashSet<Cord> cords = new HashSet();
 
 	public JComponent jComponent = this;
-	
+
+	public void connect()
+	{
+		//connect to munction database etc/
+	}
+
 	public JComponentX root(JConfigX config)
 	{
 		this.cords.add(new Cord(config, new NullParent()));

@@ -14,16 +14,6 @@ public class UserInterfaceStrategyImpl
 
     public UserInterfaceStrategyImpl()
     {
-        reader
-                .ref(this)
-                .scan()
-                .process()
-                .close();
 
-        builder
-                .ref(this)
-                .scan()
-                .process()
-                .close();
     }
 }
