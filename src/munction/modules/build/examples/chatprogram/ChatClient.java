@@ -6,7 +6,7 @@ import munction.modules.build.MunctionComponent;
 
 public class ChatClient extends ChatClientExtent
 {
-    ChatClientCord startupcord = new ChatClientCord();
+    ChatClientCord _cord = new ChatClientCord();
 
     public ChatClient()
     {
