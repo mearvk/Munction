@@ -7,6 +7,10 @@ import java.util.ArrayList;
 
 public class MunctionContainer extends MunctionContainerAtom
 {
+	public ApplicationContainer container = new ApplicationContainer();
+
+	//
+
 	public ArrayList<MunctionProject> projects = new ArrayList<MunctionProject>();
 
 	//

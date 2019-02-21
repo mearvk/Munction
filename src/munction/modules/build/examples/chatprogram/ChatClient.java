@@ -14,20 +14,18 @@ public class ChatClient extends ChatClientExtent
 
     static
     {
-        System.reference.munction.ref("{APPLICATION}","{APPNAME}", "{DEVSERVER}?codeblock=1234567890");
-
-        System.reference.staticref("munction://org.mearvk.munction", "munction://chatclient", ChatClient.class);
+        System.reference.staticref("mnx://munction", "mnx://chatclient", ChatClient.class);
     }
 
     public ChatClient()
     {
-        System.reference.ref("munction://org.mearvk.munction", "munction://chatclient", this);
+        System.reference.ref("mnx://munction", "mnx://chatclient", this);
     }
 }
 
 class ChatClientExtent extends MunctionComponent
 {
-    ApplicationContainer container = new ApplicationContainer();
+    public MunctionContainer container = new MunctionContainer();
 
     //
 
@@ -40,42 +38,48 @@ class ChatClientExtent extends MunctionComponent
         this.thread.setshutdownmonitor(ShutdownMonitor.class);
 
         this.thread.setframingmonitor(FramingMonitor.class);
+
+        //
+
+        MunctionStartQueue
+            .lazy()
+            .enqueue(ChatClientExtent.this.thread.startupmonitor);
     }
 
-    class StartupMonitor implements Runnable
+    class StartupMonitor extends Thread
     {
         @Override
         public void run()
         {
-
+            ChatClientExtent.this.thread.startupmonitor.start();
         }
     }
 
-    class RuntimeMonitor implements Runnable
+    class RuntimeMonitor extends Thread
     {
 
         @Override
         public void run()
         {
-
+            ChatClientExtent.this.thread.runtimemonitor.start();
         }
     }
 
-    class ShutdownMonitor implements Runnable
+    class ShutdownMonitor extends Thread
     {
         @Override
         public void run()
         {
-
+            ChatClientExtent.this.thread.shutdownmonitor.start();
         }
     }
 
-    class FramingMonitor extends FramingProcessor implements Runnable
+    class FramingMonitor extends Thread
     {
         @Override
         public void run()
         {
-
+            ChatClientExtent.this.thread.framingmonitor.start();
         }
     }
 }

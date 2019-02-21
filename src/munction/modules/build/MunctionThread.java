@@ -2,17 +2,17 @@ package munction.modules.build;
 
 public class MunctionThread extends Thread
 {
-    public Runnable startupmonitor;
+    public Thread startupmonitor;
 
-    public Runnable runtimemonitor;
+    public Thread runtimemonitor;
 
-    public Runnable shutdownmonitor;
+    public Thread shutdownmonitor;
 
-    public Runnable framingmonitor;
+    public Thread framingmonitor;
 
     //
 
-    public void setstartupmonitor(Class<? extends Runnable> klass)
+    public void setstartupmonitor(Class<? extends Thread> klass)
     {
         try
         {
@@ -24,7 +24,7 @@ public class MunctionThread extends Thread
         }
     }
 
-    public void setruntimemonitor(Class<? extends Runnable> klass)
+    public void setruntimemonitor(Class<? extends Thread> klass)
     {
         try
         {
@@ -36,7 +36,7 @@ public class MunctionThread extends Thread
         }
     }
 
-    public void setshutdownmonitor(Class<? extends Runnable> klass)
+    public void setshutdownmonitor(Class<? extends Thread> klass)
     {
         try
         {
@@ -48,7 +48,7 @@ public class MunctionThread extends Thread
         }
     }
 
-    public void setframingmonitor(Class<? extends Runnable> klass)
+    public void setframingmonitor(Class<? extends Thread> klass)
     {
         try
         {
