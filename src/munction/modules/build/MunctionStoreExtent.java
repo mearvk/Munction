@@ -1,5 +1,6 @@
 package munction.modules.build;
 
+import java.rmi.Remote;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
@@ -41,6 +42,25 @@ public class MunctionStoreExtent
         }
     }
 
+    public void bind(String name, Remote value, Boolean usedefault)
+    {
+        try
+        {
+            if(this.registry==null)
+            {
+                this.staticregistry.bind(name, value);
+            }
+            else
+            {
+                this.registry.bind(name,value);
+            }
+        }
+        catch (Exception exception)
+        {
+            MunctionException.relist(exception,"{MUNCTIONSTOREEXTENT}","bind",true, false);
+        }
+    }
+
     public String lookup(String name, Boolean usedefault)
     {
         String retval = null;
@@ -53,12 +73,12 @@ public class MunctionStoreExtent
             }
             else
             {
-                retval = ((MunctionString)this.staticregistry.lookup(name)).value;
+                retval = ((MunctionString)this.registry.lookup(name)).value;
             }
         }
         catch (Exception exception)
         {
-            MunctionException.relist(exception,"{}","lookup",true, false);
+            MunctionException.relist(exception,"{MUNCTIONSTOREEXTENT}","lookup",true, false);
         }
 
         return retval;

@@ -107,6 +107,21 @@ public class MunctionContainer extends MunctionContainerAtom
 			MunctionException.relist(exception,"{MUNCTION}/MunctionContainer.klass","constructor",true,true);
 		}
 	}
+
+	public void setprojectURL(String url)
+	{
+		this.extender.register("{SERVERURL}",url);
+	}
+
+	public void setnamespace(String namespace)
+	{
+		this.extender.register("{NAMESPACE}",namespace);
+	}
+
+	public void setservername(String servername)
+	{
+		this.extender.register("{SERVERNAME}",servername);
+	}
 }
 
 class MunctionContainerAtom

@@ -7,8 +7,6 @@ import munction.modules.build.System;
 @Munction
 public class ChatClient extends ChatClientExtent
 {
-    public MunctionStoreExtent extent;
-
     public static void main(String...args)
     {
         new ChatClient();
@@ -28,6 +26,8 @@ public class ChatClient extends ChatClientExtent
 @Munction
 class ChatClientExtent extends MunctionComponent
 {
+    public MunctionStoreExtent extent;
+
     public MunctionContainer container = new MunctionContainer();
 
     //
@@ -35,6 +35,14 @@ class ChatClientExtent extends MunctionComponent
     @Munction
     public ChatClientExtent()
     {
+        this.container.setprojectURL("xmnx://chatclient");
+
+        this.container.setservername("xmnx://chatclient");
+
+        this.container.setnamespace("xmnx://chatclient");
+
+        //
+
         this.thread.setstartupmonitor(StartupMonitor.class);
 
         this.thread.setruntimemonitor(RuntimeMonitor.class);
