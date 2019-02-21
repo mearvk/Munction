@@ -9,7 +9,7 @@ public class MunctionContainer extends MunctionContainerAtom
 {
 	public static MunctionServer server;
 
-	public static MunctionServerExtender serverextender = new MunctionServerExtender(server);
+	public static MunctionServerExtender extender;
 
 	//
 
@@ -31,16 +31,23 @@ public class MunctionContainer extends MunctionContainerAtom
 		{
 			this.server = new MunctionServer(munctionserver, 3434);
 
+			this.extender = new MunctionServerExtender(this.server);
+
 			this.servername = munctionserver;
 
 			this.namespace = namespace;
 
 			this.projectURL = projectURL;
+
+			//
+
+			this.extender.notify("{MUNCTIONSERVER}","{MUNCTION}","MunctionContainer created ["+java.lang.System.currentTimeMillis()+"]");
 		}
 		catch(Exception exception)
 		{
 			MunctionException.relist(exception,"{MUNCTION}/MunctionContainer.class","constructor",true,true);
 		}
+
 
 		//
 
@@ -66,11 +73,17 @@ public class MunctionContainer extends MunctionContainerAtom
 		{
 			this.server = new MunctionServer(servername, 3434);
 
+			this.extender = new MunctionServerExtender(this.server);
+
 			this.servername = "munction";
 
 			this.namespace = "munction";
 
 			this.projectURL = "./settings/config/project.xml";
+
+			//
+
+			this.extender.notify("{MUNCTIONSERVER}","{MUNCTION}", "MunctionContainer created ["+java.lang.System.currentTimeMillis()+"]");
 		}
 		catch(Exception exception)
 		{

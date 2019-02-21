@@ -7,6 +7,8 @@ import munction.modules.build.System;
 @Munction
 public class ChatClient extends ChatClientExtent
 {
+    public MunctionStoreExtent extent;
+
     public static void main(String...args)
     {
         new ChatClient();

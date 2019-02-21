@@ -8,7 +8,9 @@ public class MunctionServerExtender
 {
     public MunctionServer server;
 
-    public MunctionStore store;
+    public MunctionStoreExtent lookup = new MunctionStoreExtent();
+
+    public MunctionStore storage;
 
     //
 
@@ -30,6 +32,11 @@ public class MunctionServerExtender
     public void register(String namespace, String name, String link)
     {
 
+    }
+
+    public void notify(String namespace, String name, String message)
+    {
+        //MunctionNotifications.
     }
 
     public void register(MunctionServer server, Registry registry, String servername, String namespace, String name, String link)
