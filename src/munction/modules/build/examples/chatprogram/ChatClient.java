@@ -4,11 +4,7 @@ import munction.modules.annotations.Munction;
 import munction.modules.build.*;
 import munction.modules.build.System;
 
-@Munction
-(
-    includestaticblock =true,
-    includeconstructorblock =true
-)
+@Munction()
 public class ChatClient extends ChatClientExtent
 {
     public static void main(String...args)
