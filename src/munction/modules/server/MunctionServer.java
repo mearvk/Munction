@@ -14,12 +14,11 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.RMIClientSocketFactory;
 import java.rmi.server.RMIServerSocketFactory;
+import java.security.cert.X509Certificate;
 
 public class MunctionServer extends MunctionServerAtom
 {
     public static MunctionServerMap<String, MunctionServer> servers = new MunctionServerMap();
-
-    //
 
     public MunctionServerExtender extender = new MunctionServerExtender(this);
 
@@ -40,6 +39,21 @@ public class MunctionServer extends MunctionServerAtom
         //
 
         MunctionServer.servers.put(servername, (MunctionServer) this.createregistry());
+    }
+
+    public void persist(String namespace, String name, String link)
+    {
+        this.extender.persist(namespace, name, link);
+    }
+
+    public void connect(String namespace, String name, String link)
+    {
+        this.extender.connect(namespace, name, link);
+    }
+
+    public void register(String namespace, String name, String link)
+    {
+        this.extender.register(namespace, name, link);
     }
 
     public void start()
