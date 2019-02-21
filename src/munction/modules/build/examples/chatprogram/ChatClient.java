@@ -1,38 +1,42 @@
 package munction.modules.build.examples.chatprogram;
 
-import munction.modules.build.ApplicationContainer;
-import munction.modules.build.FramingProcessor;
-import munction.modules.build.MunctionComponent;
+import munction.modules.build.*;
+import munction.modules.build.System;
 
 public class ChatClient extends ChatClientExtent
 {
-    ChatClientCord _cord = new ChatClientCord();
+    public static void main(String...args)
+    {
+        new ChatClient();
+    }
+
+    static
+    {
+        System.extender.staticref("munction://org.mearvk.munction", "munction://chatclient", ChatClient.class);
+    }
 
     public ChatClient()
     {
-
+        System.extender.ref("munction://org.mearvk.munction", "munction://chatclient", this);
     }
-}
-
-class ChatClientCord extends MunctionCord
-{
-
 }
 
 class ChatClientExtent extends MunctionComponent
 {
     ApplicationContainer container = new ApplicationContainer();
 
+    //
+
     public ChatClientExtent()
     {
-        this.thread.setstartrunnable(Startup.class);
+        //this.thread.setstartupmonitor(StartupMonitor.class);
 
-        this.thread.setmaintenancerunnable(Maintenance.class);
+        //this.thread.setruntimemonitor(RuntimeMonitor.class);
 
-        this.thread.setshutdownrunnable(Shutdown.class);
+        //this.thread.setshutdownmonitor(ShutdownMonitor.class);
     }
 
-    class Startup implements Runnable
+    class StartupMonitor implements Runnable
     {
         @Override
         public void run()
@@ -41,7 +45,7 @@ class ChatClientExtent extends MunctionComponent
         }
     }
 
-    class Maintenance implements Runnable
+    class RuntimeMonitor implements Runnable
     {
 
         @Override
@@ -51,7 +55,7 @@ class ChatClientExtent extends MunctionComponent
         }
     }
 
-    class Shutdown implements Runnable
+    class ShutdownMonitor implements Runnable
     {
         @Override
         public void run()
@@ -60,7 +64,7 @@ class ChatClientExtent extends MunctionComponent
         }
     }
 
-    class Framer extends FramingProcessor implements Runnable
+    class FramingMonitor extends FramingProcessor implements Runnable
     {
         @Override
         public void run()

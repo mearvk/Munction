@@ -12,7 +12,7 @@ public class MunctionThread extends Thread
 
     //
 
-    public void setstartrunnable(Class<? extends Runnable> klass)
+    public void setstartupmonitor(Class<? extends Runnable> klass)
     {
         try
         {
@@ -24,7 +24,7 @@ public class MunctionThread extends Thread
         }
     }
 
-    public void setmaintenancerunnable(Class<? extends Runnable> klass)
+    public void setruntimemonitor(Class<? extends Runnable> klass)
     {
         try
         {
@@ -36,7 +36,7 @@ public class MunctionThread extends Thread
         }
     }
 
-    public void setshutdownrunnable(Class<? extends Runnable> klass)
+    public void setshutdownmonitor(Class<? extends Runnable> klass)
     {
         try
         {
@@ -48,7 +48,7 @@ public class MunctionThread extends Thread
         }
     }
 
-    public void setframing(Class<? extends Runnable> klass)
+    public void setframingmonitor(Class<? extends Runnable> klass)
     {
         try
         {
