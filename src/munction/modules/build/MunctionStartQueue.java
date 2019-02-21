@@ -1,10 +1,15 @@
 package munction.modules.build;
 
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
 public class MunctionStartQueue
 {
     public static MunctionStartQueue reference = new MunctionStartQueue();
 
     public MunctionStartQueueExtender extender = new MunctionStartQueueExtender(reference);
+
+    public Queue<Thread> runnables = new ConcurrentLinkedQueue<>();
 
     //
 
@@ -20,6 +25,18 @@ public class MunctionStartQueue
 
     public MunctionStartQueue enqueue(Thread thread)
     {
+        this.runnables.add(thread);
+
+        return reference;
+    }
+
+    public MunctionStartQueue start()
+    {
+        for(Thread thread : this.runnables)
+        {
+            thread.start();
+        }
+
         return reference;
     }
 

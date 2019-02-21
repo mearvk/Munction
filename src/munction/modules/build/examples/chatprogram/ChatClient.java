@@ -55,7 +55,8 @@ class ChatClientExtent extends MunctionComponent
 
         MunctionStartQueue
             .befeel()
-            .enqueue(ChatClientExtent.this.thread.startupmonitor);
+            .enqueue(ChatClientExtent.this.thread.startupmonitor)
+            .start();
     }
 
     @Munction
@@ -64,14 +65,19 @@ class ChatClientExtent extends MunctionComponent
         @Override
         public void run()
         {
-            ChatClientExtent.this.thread.startupmonitor.start();
+            //lookup start class for App Framework
+
+            //lookup start class for UI
+
+            //lookup start class for Network
+
+            //any odd anything, registration
         }
     }
 
     @Munction
     class RuntimeMonitor extends Thread
     {
-
         @Override
         public void run()
         {
