@@ -4,7 +4,7 @@ import munction.modules.annotations.Munction;
 import munction.modules.build.*;
 import munction.modules.build.System;
 
-@Munction()
+@Munction
 public class ChatClient extends ChatClientExtent
 {
     public static void main(String...args)
@@ -14,21 +14,23 @@ public class ChatClient extends ChatClientExtent
 
     static
     {
-        System.reference.staticref("mnx://munction", "mnx://chatclient", ChatClient.class);
+        System.reference.staticref("xmnx://munction", "xmnx://chatclient", ChatClient.class);
     }
 
     public ChatClient()
     {
-        System.reference.ref("mnx://munction", "mnx://chatclient", this);
+        System.reference.ref("xmnx://munction", "xmnx://chatclient", this);
     }
 }
 
+@Munction
 class ChatClientExtent extends MunctionComponent
 {
-    public MunctionContainer container = new MunctionContainer();
+    public MunctionContainer munction = new MunctionContainer();
 
     //
 
+    @Munction
     public ChatClientExtent()
     {
         this.thread.setstartupmonitor(StartupMonitor.class);
@@ -46,6 +48,7 @@ class ChatClientExtent extends MunctionComponent
             .enqueue(ChatClientExtent.this.thread.startupmonitor);
     }
 
+    @Munction
     class StartupMonitor extends Thread
     {
         @Override
@@ -55,6 +58,7 @@ class ChatClientExtent extends MunctionComponent
         }
     }
 
+    @Munction
     class RuntimeMonitor extends Thread
     {
 
@@ -65,6 +69,7 @@ class ChatClientExtent extends MunctionComponent
         }
     }
 
+    @Munction
     class ShutdownMonitor extends Thread
     {
         @Override
@@ -74,6 +79,7 @@ class ChatClientExtent extends MunctionComponent
         }
     }
 
+    @Munction
     class FramingMonitor extends Thread
     {
         @Override

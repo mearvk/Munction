@@ -7,15 +7,9 @@ import java.util.ArrayList;
 
 public class MunctionContainer extends MunctionContainerAtom
 {
-	public ApplicationContainer container = new ApplicationContainer();
-
-	//
-
-	public ArrayList<MunctionProject> projects = new ArrayList<MunctionProject>();
-
-	//
-
 	public MunctionServer munctionserver;
+
+	public MunctionServerExtender munctionserverextender;
 
 	//
 
@@ -33,23 +27,20 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	public MunctionContainer(String munctionserver, String munctionname, String namespace, String projectURL)
 	{
-		this.servername = munctionserver;
-
-		this.namespace = namespace;
-
-		this.projectURL = projectURL;
-
-		//
-
 		try
 		{
 			this.munctionserver = new MunctionServer(munctionserver, 3434);
+
+			this.servername = munctionserver;
+
+			this.namespace = namespace;
+
+			this.projectURL = projectURL;
 		}
 		catch(Exception exception)
 		{
 			MunctionException.relist(exception,"{MUNCTION}/MunctionContainer.class","constructor",true,true);
 		}
-
 
 		//
 
@@ -71,17 +62,15 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	public MunctionContainer()
 	{
-		this.servername = "munction";
-
-		this.namespace = "munction";
-
-		this.projectURL = "./settings/config/project.xml";
-
-		//
-
 		try
 		{
 			this.munctionserver = new MunctionServer(servername, 3434);
+
+			this.servername = "munction";
+
+			this.namespace = "munction";
+
+			this.projectURL = "./settings/config/project.xml";
 		}
 		catch(Exception exception)
 		{
@@ -89,15 +78,6 @@ public class MunctionContainer extends MunctionContainerAtom
 		}
 
 		//
-
-		try
-		{
-
-		}
-		catch(Exception exception)
-		{
-			MunctionException.relist(exception,"{MUNCTION}/MunctionContainer.klass","constructor",true,true);
-		}
 
 		try
 		{
@@ -119,6 +99,8 @@ public class MunctionContainer extends MunctionContainerAtom
 class MunctionContainerAtom
 {
 	public ApplicationContainer applicationinterface = new ApplicationContainer();
+
+	public ArrayList<MunctionProject> projects = new ArrayList<MunctionProject>();
 
 	//
 
