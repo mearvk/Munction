@@ -21,7 +21,7 @@ public class MunctionRegistryStartup
         return this;
     }
 
-    public MunctionRegistryStartup initregistry(MunctionServerAtom atom, Registry registry)
+    public MunctionRegistryStartup updateregistry(MunctionServerAtom atom, Registry registry)
     {
         if(registry == null)
         {

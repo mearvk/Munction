@@ -14,19 +14,19 @@ public class ChatClient extends ChatClientExtent
 
     static
     {
-        System.reference.staticref("xmnx://munction", "xmnx://chatclient", ChatClient.class);
+        System.reference.staticref("xmnx://container", "xmnx://chatclient", ChatClient.class);
     }
 
     public ChatClient()
     {
-        System.reference.ref("xmnx://munction", "xmnx://chatclient", this);
+        System.reference.ref("xmnx://container", "xmnx://chatclient", this);
     }
 }
 
 @Munction
 class ChatClientExtent extends MunctionComponent
 {
-    public MunctionContainer munction = new MunctionContainer();
+    public MunctionContainer container = new MunctionContainer();
 
     //
 

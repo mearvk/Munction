@@ -13,7 +13,7 @@ public class JComponentX extends JComponent
 
 	public void connect()
 	{
-		//connect to munction database etc/
+		//connect to container database etc/
 	}
 
 	public JComponentX root(JConfigX config)

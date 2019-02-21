@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 public class MunctionContainer extends MunctionContainerAtom
 {
-	public static MunctionServer munctionserver;
+	public static MunctionServer server;
 
-	public static MunctionServerExtender munctionserverextender = new MunctionServerExtender(munctionserver);
+	public static MunctionServerExtender serverextender = new MunctionServerExtender(server);
 
 	//
 
@@ -29,7 +29,7 @@ public class MunctionContainer extends MunctionContainerAtom
 	{
 		try
 		{
-			this.munctionserver = new MunctionServer(munctionserver, 3434);
+			this.server = new MunctionServer(munctionserver, 3434);
 
 			this.servername = munctionserver;
 
@@ -64,7 +64,7 @@ public class MunctionContainer extends MunctionContainerAtom
 	{
 		try
 		{
-			this.munctionserver = new MunctionServer(servername, 3434);
+			this.server = new MunctionServer(servername, 3434);
 
 			this.servername = "munction";
 

@@ -14,11 +14,12 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.RMIClientSocketFactory;
 import java.rmi.server.RMIServerSocketFactory;
-import java.security.cert.X509Certificate;
 
 public class MunctionServer extends MunctionServerAtom
 {
     public static MunctionServerMap<String, MunctionServer> servers = new MunctionServerMap();
+
+    //
 
     public MunctionServerExtender extender = new MunctionServerExtender(this);
 
@@ -38,7 +39,11 @@ public class MunctionServer extends MunctionServerAtom
 
         //
 
-        MunctionServer.servers.put(servername, (MunctionServer) this.createregistry());
+        this.initregistry();
+
+        //
+
+        this.extender.register(this, this.registry, servername,"{MUNCTIONSERVER}/{RESOLVER}","{MUNCTIONSERVER}", "{MUNCTIONURL}");
     }
 
     public void persist(String namespace, String name, String link)
@@ -58,7 +63,7 @@ public class MunctionServer extends MunctionServerAtom
 
     public void start()
     {
-        this.createregistry();
+        this.initregistry();
     }
 
     public void stop()
@@ -83,29 +88,29 @@ class MunctionServerAtom
 
     //
 
-    protected MunctionServerAtom createregistry()
+    protected Registry initregistry()
     {
         try
         {
-            Registry registry = this.registry;
+            Registry registry = this.registry = LocateRegistry.createRegistry(3434);
 
             this.control.registrystartup
                     .security(this, registry)
-                    .initregistry(this, registry);
+                    .updateregistry(this, registry);
         }
         catch(Exception exception)
         {
             MunctionException.relist(exception, "{MUNCTION}/initialize","destroy");
         }
 
-        return this;
+        return this.registry;
     }
 
-    protected MunctionServerAtom removeregistry()
+    protected Registry removeregistry()
     {
         try
         {
-            Registry registry = this.registry =  LocateRegistry.createRegistry(3434);
+            Registry registry = this.registry;
 
             this.control.registryshutdown
                     .security(this, registry)
@@ -116,7 +121,7 @@ class MunctionServerAtom
             MunctionException.relist(exception, "{MUNCTION}/initialize","setup");
         }
 
-        return this;
+        return this.registry;
     }
 
     public Remote pull(String resourcename)

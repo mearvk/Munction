@@ -6,7 +6,7 @@ public @interface Munction
 
     String name() default "";
 
-    String servername() default "munction://localhost";
+    String servername() default "container://localhost";
 
     int id() default 0;
 

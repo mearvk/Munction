@@ -114,7 +114,7 @@ public class ApplicationContainer
 		
 		processor
 				.setcontext(context)
-				.sethandler(MUNCTION_HANDLER, "::", "munction://localhost")
+				.sethandler(MUNCTION_HANDLER, "::", "container://localhost")
 				.cycle()
 				.close();
 		
@@ -151,7 +151,7 @@ public class ApplicationContainer
 		
 		processor
 				.setcontext(context)
-				.sethandler(MUNCTION_HANDLER, "::", "munction://localhost")
+				.sethandler(MUNCTION_HANDLER, "::", "container://localhost")
 				.cycle()
 				.close();
 		
@@ -188,7 +188,7 @@ public class ApplicationContainer
 		
 		processor
 				.setcontext(context)
-				.sethandler(MUNCTION_HANDLER, "::", "munction://localhost")
+				.sethandler(MUNCTION_HANDLER, "::", "container://localhost")
 				.cycle()
 				.close();
 		

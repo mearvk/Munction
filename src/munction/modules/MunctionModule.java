@@ -77,13 +77,13 @@ class MunctionModuleAtom extends AbstractFunctionalAtom
 	{
 		container.reference(container, component, object, handler); //store information for meta-documentation of product
 		
-		container.serialize(container, component, object, handler); //pre-process object for munction.modules.MunctionModule, RMI, etc.
+		container.serialize(container, component, object, handler); //pre-process object for container.modules.MunctionModule, RMI, etc.
 	}
 	
 	public void addDocument(Documenter documenter, ASNought.BuildContainer container, JComponent component, SwingObject object, CallbackHandler handler, Options options)
 	{
 		documenter.reference(container, component, object, handler, options); //store information for meta-documentation of product
 		
-		documenter.serialize(container, component, object, handler, options); //process object for munction.modules.MunctionModule, RMI, etc.
+		documenter.serialize(container, component, object, handler, options); //process object for container.modules.MunctionModule, RMI, etc.
 	}
 }
