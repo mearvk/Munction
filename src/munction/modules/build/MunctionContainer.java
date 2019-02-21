@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 public class MunctionContainer extends MunctionContainerAtom
 {
-	public MunctionServer munctionserver;
+	public static MunctionServer munctionserver;
 
-	public MunctionServerExtender munctionserverextender;
+	public static MunctionServerExtender munctionserverextender = new MunctionServerExtender(munctionserver);
 
 	//
 

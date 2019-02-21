@@ -1,6 +1,7 @@
 package munction.modules.server;
 
 import munction.modules.build.MunctionException;
+import munction.modules.build.MunctionServerExtender;
 import munction.modules.build.MunctionServerMap;
 import munction.modules.build.RegistryControl;
 
@@ -17,6 +18,10 @@ import java.rmi.server.RMIServerSocketFactory;
 public class MunctionServer extends MunctionServerAtom
 {
     public static MunctionServerMap<String, MunctionServer> servers = new MunctionServerMap();
+
+    //
+
+    public MunctionServerExtender extender = new MunctionServerExtender(this);
 
     //
 
@@ -90,7 +95,7 @@ class MunctionServerAtom
 
             this.control.registryshutdown
                     .security(this, registry)
-                    .killregistry(this, registry);
+                    .updateregistry(this, registry);
         }
         catch(Exception exception)
         {

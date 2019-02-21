@@ -21,7 +21,7 @@ public class MunctionRegistryShutdown
         return this;
     }
 
-    public MunctionRegistryShutdown killregistry(MunctionServerAtom atom, Registry registry)
+    public MunctionRegistryShutdown updateregistry(MunctionServerAtom atom, Registry registry)
     {
         if(registry == null)
         {

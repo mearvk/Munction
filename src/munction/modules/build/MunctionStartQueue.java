@@ -8,7 +8,7 @@ public class MunctionStartQueue
 
     //
 
-    public static MunctionStartQueue lazy()
+    public static MunctionStartQueue befeel()
     {
         return reference;
     }

@@ -44,7 +44,7 @@ class ChatClientExtent extends MunctionComponent
         //
 
         MunctionStartQueue
-            .lazy()
+            .befeel()
             .enqueue(ChatClientExtent.this.thread.startupmonitor);
     }
 
