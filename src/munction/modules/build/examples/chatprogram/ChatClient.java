@@ -1,8 +1,14 @@
 package munction.modules.build.examples.chatprogram;
 
+import munction.modules.annotations.Munction;
 import munction.modules.build.*;
 import munction.modules.build.System;
 
+@Munction
+(
+    includestaticblock =true,
+    includeconstructorblock =true
+)
 public class ChatClient extends ChatClientExtent
 {
     public static void main(String...args)
@@ -12,12 +18,14 @@ public class ChatClient extends ChatClientExtent
 
     static
     {
-        System.extender.staticref("munction://org.mearvk.munction", "munction://chatclient", ChatClient.class);
+        System.reference.munction.ref("{APPLICATION}","{APPNAME}", "{DEVSERVER}?codeblock=1234567890");
+
+        System.reference.staticref("munction://org.mearvk.munction", "munction://chatclient", ChatClient.class);
     }
 
     public ChatClient()
     {
-        System.extender.ref("munction://org.mearvk.munction", "munction://chatclient", this);
+        System.reference.ref("munction://org.mearvk.munction", "munction://chatclient", this);
     }
 }
 
@@ -34,6 +42,8 @@ class ChatClientExtent extends MunctionComponent
         this.thread.setruntimemonitor(RuntimeMonitor.class);
 
         this.thread.setshutdownmonitor(ShutdownMonitor.class);
+
+        this.thread.setframingmonitor(FramingMonitor.class);
     }
 
     class StartupMonitor implements Runnable

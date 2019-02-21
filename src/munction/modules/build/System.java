@@ -4,21 +4,24 @@ import system.handlers.RegisteredHandler;
 
 public class System
 {
-	public static System extender = new System();
+	public static System reference = new System();
 
-	public SystemExtender extension = new SystemExtender(extender);
+	public SystemExtender extension = new SystemExtender(reference);
+
+	public MunctionExtender munction = new MunctionExtender(reference);
 
 	//
 
 	public static void staticref(String namespace, String name, Object o)
 	{
-		extender.extension.staticref(namespace, name, o);
+		reference.extension.staticref(namespace, name, o);
 	}
 
 	public void ref(String namespace, String name, Object o)
 	{
-		extender.extension.ref(namespace, name, o);
+		reference.extension.ref(namespace, name, o);
 	}
+
 
 	public void addObject(Object object, RegisteredHandler handler)
 	{
