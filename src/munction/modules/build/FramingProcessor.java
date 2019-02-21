@@ -21,7 +21,7 @@ public class FramingProcessor
 
 	public FramingProcessor()
 	{
-		reader = new FramingSettingsReader("./settings/config/framing.xml");
+		reader = new FramingSettingsReader("./settings/config/framingmonitor.xml");
 	}
 
 	//

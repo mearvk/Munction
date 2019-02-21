@@ -5,5 +5,5 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MunctionComponent
 {
-    public MunctionThread thread;
+    public MunctionThread thread = new MunctionThread();
 }

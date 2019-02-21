@@ -29,11 +29,11 @@ class ChatClientExtent extends MunctionComponent
 
     public ChatClientExtent()
     {
-        //this.thread.setstartupmonitor(StartupMonitor.class);
+        this.thread.setstartupmonitor(StartupMonitor.class);
 
-        //this.thread.setruntimemonitor(RuntimeMonitor.class);
+        this.thread.setruntimemonitor(RuntimeMonitor.class);
 
-        //this.thread.setshutdownmonitor(ShutdownMonitor.class);
+        this.thread.setshutdownmonitor(ShutdownMonitor.class);
     }
 
     class StartupMonitor implements Runnable

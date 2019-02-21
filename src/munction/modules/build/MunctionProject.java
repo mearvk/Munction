@@ -63,7 +63,7 @@ public class MunctionProject
 
             this.modulename = "default";
 
-            this.startupURL = "./settings/config/startup.xml";
+            this.startupURL = "./settings/config/startupmonitor.xml";
 
             //
 

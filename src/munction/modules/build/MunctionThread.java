@@ -2,13 +2,13 @@ package munction.modules.build;
 
 public class MunctionThread extends Thread
 {
-    public Runnable startup;
+    public Runnable startupmonitor;
 
-    public Runnable maintenance;
+    public Runnable runtimemonitor;
 
-    public Runnable shutdown;
+    public Runnable shutdownmonitor;
 
-    public Runnable framing;
+    public Runnable framingmonitor;
 
     //
 
@@ -16,7 +16,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.startup = klass.newInstance();
+            this.startupmonitor = klass.newInstance();
         }
         catch(Exception exception)
         {
@@ -28,7 +28,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.maintenance = klass.newInstance();
+            this.runtimemonitor = klass.newInstance();
         }
         catch(Exception exception)
         {
@@ -40,7 +40,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.shutdown = klass.newInstance();
+            this.shutdownmonitor = klass.newInstance();
         }
         catch(Exception exception)
         {
@@ -52,7 +52,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.framing = klass.newInstance();
+            this.framingmonitor = klass.newInstance();
         }
         catch(Exception exception)
         {
