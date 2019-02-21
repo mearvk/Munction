@@ -11,7 +11,7 @@ public class MunctionExtender
         this.ref = ref;
     }
 
-    public static void staticref(String namespace, String name, String munctionlink)
+    public void staticref(String namespace, String name, String munctionlink)
     {
         //
     }

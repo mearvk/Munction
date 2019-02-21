@@ -6,7 +6,9 @@ public class System
 {
 	public static System reference = new System();
 
-	public SystemExtender extension = new SystemExtender(reference);
+	//
+
+	public SystemExtender extender = new SystemExtender(reference);
 
 	public MunctionExtender munction = new MunctionExtender(reference);
 
@@ -14,14 +16,17 @@ public class System
 
 	public static void staticref(String namespace, String name, Object o)
 	{
-		reference.extension.staticref(namespace, name, o);
+		reference.extender.staticref(namespace, name, o);
+
+		reference.munction.staticref(namespace,name,"xmnx://localhost");
 	}
 
 	public void ref(String namespace, String name, Object o)
 	{
-		reference.extension.ref(namespace, name, o);
-	}
+		reference.extender.ref(namespace, name, o);
 
+		reference.munction.ref(namespace,name,"xmnx://localhost");
+	}
 
 	public void addObject(Object object, RegisteredHandler handler)
 	{
