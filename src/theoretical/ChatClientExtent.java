@@ -23,9 +23,9 @@ public class ChatClientExtent extends MunctionComponent
 
         this.container.setprojectURL("xmnx://chatclient");
 
-        this.container.setservername("xmnx://chatclient");
+        this.container.setservername("xmnx://examples");
 
-        this.container.setnamespace("xmnx://chatclient");
+        this.container.setnamespace("xmnx://org.mearvk.examples.theoretical");
 
         //
 
