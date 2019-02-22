@@ -5,8 +5,6 @@ import munction.modules.annotations.Munction;
 @Munction
 public class ChatClientExtent extends MunctionComponent
 {
-
-
     public MunctionContainer container = new MunctionContainer();
 
     //
@@ -52,7 +50,7 @@ public class ChatClientExtent extends MunctionComponent
         @Override
         public void run()
         {
-            java.lang.System.err.println("StartupMonitor called.");
+            java.lang.System.out.println("[monitor] startup called.");
         }
     }
 
@@ -62,7 +60,7 @@ public class ChatClientExtent extends MunctionComponent
         @Override
         public void run()
         {
-            java.lang.System.err.println("RuntimeMonitor called.");
+            java.lang.System.out.println("[monitor] runtime called.");
         }
     }
 
@@ -72,7 +70,7 @@ public class ChatClientExtent extends MunctionComponent
         @Override
         public void run()
         {
-            java.lang.System.err.println("ShutdownMonitor called.");
+            java.lang.System.out.println("[monitor] shutdown called.");
         }
     }
 
@@ -82,7 +80,7 @@ public class ChatClientExtent extends MunctionComponent
         @Override
         public void run()
         {
-            java.lang.System.err.println("FramingMonitor called.");
+            java.lang.System.out.println("[monitor] framing called.");
         }
     }
 }

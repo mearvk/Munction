@@ -25,8 +25,6 @@ public class MunctionStartQueue
     {
         this.runnables.add(thread);
 
-        try{Thread.sleep(1000);}catch(Exception e){}
-
         return reference;
     }
 
@@ -35,8 +33,6 @@ public class MunctionStartQueue
         for(Thread thread : this.runnables)
         {
             thread.start();
-
-            java.lang.System.out.println("MunctionStartQueue working...");
 
             this.runnables.remove(thread);
         }

@@ -9,8 +9,6 @@ public class MunctionContainer extends MunctionContainerAtom
 {
 	public static MunctionServer server;
 
-	public static MunctionServerExtender extender;
-
 	//
 
 	public String servername;
@@ -31,8 +29,6 @@ public class MunctionContainer extends MunctionContainerAtom
 		{
 			this.server = new MunctionServer(munctionserver, 3434);
 
-			this.extender = new MunctionServerExtender(this.server);
-
 			this.servername = munctionserver;
 
 			this.namespace = namespace;
@@ -41,7 +37,7 @@ public class MunctionContainer extends MunctionContainerAtom
 
 			//
 
-			this.extender.notify("{MUNCTIONSERVER}","{MUNCTION}","MunctionContainer created ["+java.lang.System.currentTimeMillis()+"]");
+			this.server.extender.notify("{MUNCTIONSERVER}","{MUNCTION}","MunctionContainer created ["+java.lang.System.currentTimeMillis()+"]");
 		}
 		catch(Exception exception)
 		{
@@ -73,8 +69,6 @@ public class MunctionContainer extends MunctionContainerAtom
 		{
 			this.server = new MunctionServer(servername, 3434);
 
-			this.extender = new MunctionServerExtender(this.server);
-
 			this.servername = "munction";
 
 			this.namespace = "munction";
@@ -83,7 +77,7 @@ public class MunctionContainer extends MunctionContainerAtom
 
 			//
 
-			this.extender.notify("{MUNCTIONSERVER}","{MUNCTION}", "MunctionContainer created ["+java.lang.System.currentTimeMillis()+"]");
+			this.server.extender.notify("{MUNCTIONSERVER}","{MUNCTION}", "MunctionContainer created ["+java.lang.System.currentTimeMillis()+"]");
 		}
 		catch(Exception exception)
 		{
@@ -110,17 +104,17 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	public void setprojectURL(String url)
 	{
-		this.extender.register("{SERVERURL}",url);
+		this.server.extender.register("{SERVERURL}",url);
 	}
 
 	public void setnamespace(String namespace)
 	{
-		this.extender.register("{NAMESPACE}",namespace);
+		this.server.extender.register("{NAMESPACE}",namespace);
 	}
 
 	public void setservername(String servername)
 	{
-		this.extender.register("{SERVERNAME}",servername);
+		this.server.extender.register("{SERVERNAME}",servername);
 	}
 }
 
