@@ -9,9 +9,18 @@ public class ChatClientExtent extends MunctionComponent
 
     //
 
+    static
+    {
+        System.staticref("xmnx://org.mearvk.examples","xmnx://chatclientextent", ChatClientExtent.class);
+    }
+
     @Munction
     public ChatClientExtent()
     {
+        System.reference.ref("xmnx://org.mearvk.examples","xmnx://chatclientextent", this);
+
+        //
+
         this.container.setprojectURL("xmnx://chatclient");
 
         this.container.setservername("xmnx://chatclient");

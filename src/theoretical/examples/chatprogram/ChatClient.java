@@ -14,11 +14,11 @@ public class ChatClient extends ChatClientExtent
 
     static
     {
-        System.reference.staticref("xmnx://container", "xmnx://chatclient/@mearvk", ChatClient.class);
+        System.staticref("xmnx://org.mearvk.examples", "xmnx://chatclient", ChatClient.class);
     }
 
     public ChatClient()
     {
-        System.reference.ref("xmnx://container", "xmnx://chatclient/@mearvk", this);
+        System.reference.ref("xmnx://org.mearvk.examples", "xmnx://chatclient", this);
     }
 }
