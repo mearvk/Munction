@@ -80,7 +80,7 @@ public class Builder extends AS001
 			
 			coprocessor.reference();  //setreference scripts, timings, callbacks, identifiers
 			
-			coprocessor.build();      //build
+			coprocessor.build();      //theoretical
 			
 			coprocessor.send();       //upload
 		}
@@ -101,7 +101,7 @@ public class Builder extends AS001
 			
 			coprocessor.reference();  //setreference scripts, timings, callbacks, identifiers
 			
-			coprocessor.build();      //build
+			coprocessor.build();      //theoretical
 			
 			coprocessor.send();       //upload
 		}
@@ -122,7 +122,7 @@ public class Builder extends AS001
 			
 			coprocessor.reference();  //setreference scripts, timings, callbacks, identifiers
 			
-			coprocessor.build();      //build
+			coprocessor.build();      //theoretical
 			
 			coprocessor.send();       //upload
 		}
@@ -143,7 +143,7 @@ public class Builder extends AS001
 			
 			coprocessor.reference();  //setreference scripts, timings, callbacks, identifiers
 			
-			coprocessor.build();      //build
+			coprocessor.build();      //theoretical
 			
 			coprocessor.send();       //upload
 		}
@@ -164,7 +164,7 @@ public class Builder extends AS001
 			
 			coprocessor.reference();  //setreference scripts, timings, callbacks, identifiers
 			
-			coprocessor.build();      //build
+			coprocessor.build();      //theoretical
 			
 			coprocessor.send();       //upload
 		}

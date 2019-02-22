@@ -4,7 +4,7 @@
 
         <dir type="BASEDIR" name="BASEDIR" url="~/IdeaProjects/Munction/src"></dir>
 
-        <dir type="APPLICATION" name="CHATPROGRAM" url="~/IdeaProjects/Munction/src/munction/build"></dir>
+        <dir type="APPLICATION" name="CHATPROGRAM" url="~/IdeaProjects/Munction/src/munction/theoretical"></dir>
 
     </file>
 

@@ -1,9 +1,9 @@
 package munction.modules.server;
 
-import munction.modules.build.MunctionException;
-import munction.modules.build.MunctionServerExtender;
-import munction.modules.build.MunctionServerMap;
-import munction.modules.build.RegistryControl;
+import theoretical.MunctionException;
+import theoretical.MunctionServerExtender;
+import theoretical.MunctionServerMap;
+import theoretical.RegistryControl;
 
 import java.io.IOException;
 import java.net.ServerSocket;

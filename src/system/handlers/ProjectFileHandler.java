@@ -1,6 +1,6 @@
 package system.handlers;
 
-import munction.modules.build.MunctionProject;
+import theoretical.MunctionProject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
