@@ -7,7 +7,7 @@ public class MunctionServerMap<K,V> extends HashMap<K,V>
     @Override
     public V put(K key, V value)
     {
-        java.lang.System.out.println("MunctionServerMap.put ["+key+","+value+"]");
+        java.lang.System.out.println("[server] instantiation ["+key+","+value+"]");
 
         return value;
     }
@@ -19,7 +19,7 @@ public class MunctionServerMap<K,V> extends HashMap<K,V>
 
         value = this.get(key);
 
-        java.lang.System.out.println("MunctionServerMap.put ["+key+","+value+"]");
+        java.lang.System.out.println("[server] instantiation ["+key+","+value+"]");
 
         return (V)value;
     }

@@ -16,6 +16,8 @@ public class MunctionStoreExtent
         {
             staticregistry = LocateRegistry.createRegistry(6868);
 
+            staticregistry.bind("{MUNCTIONSTOREEXTENT}", new MunctionString("resolver-needed"));
+
             staticregistry.bind("{MUNCTIONSERVER}", new MunctionString("resolver-needed"));
 
             staticregistry.bind("{MUNCTIONURL}", new MunctionString("resolver-needed"));

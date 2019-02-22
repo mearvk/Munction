@@ -48,7 +48,7 @@ public class MunctionServerExtender
 
     public void notify(String namespace, String name, String message)
     {
-        java.lang.System.out.println(this.lookup.lookup(namespace,true)+" : "+this.lookup.lookup(name,true)+" : "+message);
+        java.lang.System.out.println("[server] "+this.lookup.lookup(namespace,true)+" : "+this.lookup.lookup(name,true)+" : "+message);
     }
 
     public void register(MunctionServer server, Registry registry, String servername, String namespace, String name, String link)

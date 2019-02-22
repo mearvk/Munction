@@ -4,6 +4,7 @@ import munction.modules.server.MunctionServer;
 import system.handlers.ProjectFileHandler;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MunctionContainer extends MunctionContainerAtom
 {
@@ -77,7 +78,7 @@ public class MunctionContainer extends MunctionContainerAtom
 
 			//
 
-			this.server.extender.notify("{MUNCTIONSERVER}","{MUNCTION}", "MunctionContainer created ["+java.lang.System.currentTimeMillis()+"]");
+			this.server.extender.notify("{MUNCTIONSERVER}","{MUNCTION}", "MunctionContainer created ["+new Date(java.lang.System.currentTimeMillis())+"]");
 		}
 		catch(Exception exception)
 		{
@@ -130,7 +131,7 @@ class MunctionContainerAtom
 	{
 		//security manager
 
-		java.lang.System.out.println("Munction container starting...");
+		java.lang.System.out.println("[munction] munction container started.");
 	}
 }
 
