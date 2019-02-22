@@ -31,7 +31,14 @@ public class MunctionServerExtender
 
     public void register(String namespace, String name, String link)
     {
-
+        try
+        {
+            this.lookup.registry.bind(namespace+""+name, new MunctionString(link));
+        }
+        catch(Exception exception)
+        {
+            MunctionException.relist(exception,"","",true, false);
+        }
     }
 
     public void register(String key, String value)
