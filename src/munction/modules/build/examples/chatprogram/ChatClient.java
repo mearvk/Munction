@@ -1,8 +1,8 @@
 package munction.modules.build.examples.chatprogram;
 
 import munction.modules.annotations.Munction;
-import munction.modules.build.*;
 import munction.modules.build.System;
+import munction.modules.build.ChatClientExtent;
 
 @Munction
 public class ChatClient extends ChatClientExtent
@@ -19,93 +19,8 @@ public class ChatClient extends ChatClientExtent
 
     public ChatClient()
     {
+        super();
+
         System.reference.ref("xmnx://container", "xmnx://chatclient", this);
     }
 }
-
-@Munction
-class ChatClientExtent extends MunctionComponent
-{
-    public MunctionStoreExtent extent;
-
-    public MunctionContainer container = new MunctionContainer();
-
-    //
-
-    @Munction
-    public ChatClientExtent()
-    {
-        this.container.setprojectURL("xmnx://chatclient");
-
-        this.container.setservername("xmnx://chatclient");
-
-        this.container.setnamespace("xmnx://chatclient");
-
-        //
-
-        this.thread.setstartupmonitor(StartupMonitor.class);
-
-        this.thread.setruntimemonitor(RuntimeMonitor.class);
-
-        this.thread.setshutdownmonitor(ShutdownMonitor.class);
-
-        this.thread.setframingmonitor(FramingMonitor.class);
-
-        //
-
-        MunctionStartQueue
-            .befeel()
-            .enqueue(ChatClientExtent.this.thread.startupmonitor)
-            .start();
-    }
-
-    @Munction
-    class StartupMonitor extends Thread
-    {
-        @Override
-        public void run()
-        {
-            //lookup start class for App Framework
-
-            //lookup start class for UI
-
-            //lookup start class for Network
-
-            //any odd anything, registration
-        }
-    }
-
-    @Munction
-    class RuntimeMonitor extends Thread
-    {
-        @Override
-        public void run()
-        {
-            ChatClientExtent.this.thread.runtimemonitor.start();
-        }
-    }
-
-    @Munction
-    class ShutdownMonitor extends Thread
-    {
-        @Override
-        public void run()
-        {
-            ChatClientExtent.this.thread.shutdownmonitor.start();
-        }
-    }
-
-    @Munction
-    class FramingMonitor extends Thread
-    {
-        @Override
-        public void run()
-        {
-            ChatClientExtent.this.thread.framingmonitor.start();
-        }
-    }
-}
-
-
-
-

@@ -2,13 +2,13 @@ package munction.modules.build;
 
 public class MunctionThread extends Thread
 {
-    public Thread startupmonitor;
+    public ChatClientExtent.StartupMonitor startupmonitor;
 
-    public Thread runtimemonitor;
+    public ChatClientExtent.RuntimeMonitor runtimemonitor;
 
-    public Thread shutdownmonitor;
+    public ChatClientExtent.ShutdownMonitor shutdownmonitor;
 
-    public Thread framingmonitor;
+    public ChatClientExtent.FramingMonitor framingmonitor;
 
     //
 
@@ -16,7 +16,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.startupmonitor = klass.newInstance();
+            this.startupmonitor = (ChatClientExtent.StartupMonitor)klass.getConstructors()[0].newInstance();
         }
         catch(Exception exception)
         {
@@ -28,7 +28,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.runtimemonitor = klass.newInstance();
+            this.runtimemonitor = (ChatClientExtent.RuntimeMonitor)klass.newInstance();
         }
         catch(Exception exception)
         {
@@ -40,7 +40,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.shutdownmonitor = klass.newInstance();
+            this.shutdownmonitor = (ChatClientExtent.ShutdownMonitor)klass.newInstance();
         }
         catch(Exception exception)
         {
@@ -52,7 +52,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.framingmonitor = klass.newInstance();
+            this.framingmonitor = (ChatClientExtent.FramingMonitor)klass.newInstance();
         }
         catch(Exception exception)
         {

@@ -1,9 +1,8 @@
 package munction.modules.build;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 public class MunctionComponent
 {
+    public MunctionStoreExtent extent; //dead quiet please
+
     public MunctionThread thread = new MunctionThread();
 }
