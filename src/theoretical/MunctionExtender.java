@@ -11,7 +11,7 @@ public class MunctionExtender
 
     public void staticref(String namespace, String name, String munctionlink)
     {
-
+        //class elf for now; night
     }
 
     public void ref(String namespace, String name, String munctionlink)

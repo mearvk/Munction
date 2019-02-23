@@ -7,11 +7,6 @@ import theoretical.ChatClientExtent;
 @Munction
 public class ChatClient extends ChatClientExtent
 {
-    public static void main(String...args)
-    {
-        ChatClient client = new ChatClient();
-    }
-
     static
     {
         System.staticref("xmnx://org.mearvk.examples", "xmnx://chatclient", ChatClient.class);
@@ -20,5 +15,15 @@ public class ChatClient extends ChatClientExtent
     public ChatClient()
     {
         System.reference.ref("xmnx://org.mearvk.examples", "xmnx://chatclient", this);
+    }
+}
+
+class Driver
+{
+    ChatClient client;
+
+    public static void main(String...args)
+    {
+
     }
 }
