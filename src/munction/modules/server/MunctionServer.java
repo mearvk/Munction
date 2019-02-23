@@ -17,10 +17,6 @@ import java.rmi.server.RMIServerSocketFactory;
 
 public class MunctionServer extends MunctionServerAtom
 {
-    public static MunctionServerMap<String, MunctionServer> servers = new MunctionServerMap();
-
-    //
-
     public MunctionServerExtender extender = new MunctionServerExtender(this);
 
     //
@@ -61,6 +57,8 @@ public class MunctionServer extends MunctionServerAtom
         this.extender.register(namespace, name, link);
     }
 
+    //
+
     public void start()
     {
         this.initregistry();
@@ -78,6 +76,10 @@ class MunctionServerAtom
     public Registry registry = null;
 
     public RegistryControl control = new RegistryControl();
+
+    //
+
+    public MunctionServerMap<String, MunctionServer> servers = new MunctionServerMap();
 
     //
 

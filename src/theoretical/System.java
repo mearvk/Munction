@@ -6,11 +6,7 @@ public class System
 {
 	public static System reference = new System();
 
-	//
-
 	public static SystemExtender extender = new SystemExtender(reference);
-
-	//
 
 	public static MunctionExtender munction = new MunctionExtender(reference);
 

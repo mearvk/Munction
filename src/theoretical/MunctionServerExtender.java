@@ -8,7 +8,7 @@ public class MunctionServerExtender
 {
     public MunctionServer server;
 
-    public MunctionStoreExtent lookup = new MunctionStoreExtent();
+    public MunctionServers servers;
 
     public MunctionStore storage;
 
@@ -33,7 +33,7 @@ public class MunctionServerExtender
     {
         try
         {
-            this.lookup.registry.bind(namespace+""+name, new MunctionString(link));
+            this.storage.lookup.registry.bind(namespace+""+name, new MunctionString(link));
         }
         catch(Exception exception)
         {
@@ -45,7 +45,7 @@ public class MunctionServerExtender
     {
         try
         {
-            this.lookup.registry.bind(key, new MunctionString(value));
+            this.storage.lookup.registry.bind(key, new MunctionString(value));
         }
         catch(Exception exception)
         {
@@ -55,11 +55,11 @@ public class MunctionServerExtender
 
     public void notify(String namespace, String name, String message)
     {
-        java.lang.System.out.println("[server] "+this.lookup.lookup(namespace,true)+" : "+this.lookup.lookup(name,true)+" : "+message);
+        java.lang.System.out.println("[server] "+this.storage.lookup.lookup(namespace,true)+" : "+this.storage.lookup.lookup(name,true)+" : "+message);
     }
 
     public void register(MunctionServer server, Registry registry, String servername, String namespace, String name, String link)
     {
-        MunctionServer.servers.put(servername, server);
+        MunctionServers.servers.put(servername, server);
     }
 }
