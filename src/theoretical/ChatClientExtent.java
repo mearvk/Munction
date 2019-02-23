@@ -21,11 +21,17 @@ public class ChatClientExtent extends MunctionComponent
 
         //
 
+        Systemr.leaf();
+
+        R.apprid().unit(); //reflexive about 2nd, 3rd consciences about re, re, redo, redo'r, about the r'do the aabout the smart
+
+        R.
+
         this.container.setprojectURL("xmnx://chatclient");
 
-        this.container.setservername("xmnx://examples");
+        this.container.setservername("xmnx://chatclient/theoretical");
 
-        this.container.setnamespace("xmnx://org.mearvk.examples.theoretical");
+        this.container.setnamespace("xmnx://org.mearvk");
 
         //
 
