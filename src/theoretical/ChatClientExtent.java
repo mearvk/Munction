@@ -21,14 +21,6 @@ public class ChatClientExtent extends MunctionComponent
 
         //
 
-        Systemr.leaf(); //passing by and throw a bag of marijuana at it
-
-        R.apprid().unit(); //reflexive about 2nd, 3rd consciences about re, re, redo, redo'r, about the r'do the aabout the smart <stop by and talk at it>
-
-        R.debrid().debrid(); //run walk away actually <make a conscious effort at it>
-
-        //
-
         this.container.setprojectURL("xmnx://chatclient");
 
         this.container.setservername("xmnx://chatclient/theoretical");

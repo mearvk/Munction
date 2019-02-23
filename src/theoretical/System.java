@@ -8,29 +8,31 @@ public class System
 
 	//
 
-	public SystemExtender extender = new SystemExtender(reference);
+	public static SystemExtender extender = new SystemExtender(reference);
 
-	public MunctionExtender munction = new MunctionExtender(reference);
+	//
+
+	public static MunctionExtender munction = new MunctionExtender(reference);
 
 	//
 
 	public static void staticref(String namespace, String name, Object o)
 	{
-		reference.extender.staticref(namespace, name, o);
+		System.extender.staticref(namespace, name, o);
 
-		reference.munction.staticref(namespace,name,"xmnx://localhost");
+		System.munction.staticref(namespace,name,"xmnx://localhost");
 	}
 
 	public void ref(String namespace, String name, Object o)
 	{
-		reference.extender.ref(namespace, name, o);
+		System.extender.ref(namespace, name, o);
 
-		reference.munction.ref(namespace,name,"xmnx://localhost");
+		System.munction.ref(namespace,name,"xmnx://localhost");
 	}
 
 	public void addObject(Object object, RegisteredHandler handler)
 	{
-	
+		//...
 	}
 }
 
