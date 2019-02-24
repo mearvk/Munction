@@ -1,9 +1,6 @@
 package munction.modules.server;
 
-import theoretical.MunctionException;
-import theoretical.MunctionServerExtender;
-import theoretical.MunctionServerMap;
-import theoretical.RegistryControl;
+import theoretical.*;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -33,6 +30,21 @@ public class MunctionServer extends MunctionServerAtom
     public Integer portnumber;
 
     //
+
+    public MunctionServer()
+    {
+        this.servername = this.defaultservername;
+
+        this.portnumber = this.defaultportnumber;
+
+        //
+
+        this.initregistry();
+
+        //
+
+        this.extender.register(this, this.registry, servername,"{MUNCTIONSERVER}/{RESOLVER}","{MUNCTIONSERVER}", "{MUNCTIONURL}");
+    }
 
     public MunctionServer(String servername, Integer portnumber)
     {
@@ -90,8 +102,11 @@ public class MunctionServer extends MunctionServerAtom
 
     public void register(String namespace, String name, String link, Class klass)
     {
-        System.out.println("Registration for ["+klass+"] requested.");
+        this.extender.register(namespace, name, link);
+    }
 
+    public void register(String namespace, String name, String link, MunctionComponent component)
+    {
         this.extender.register(namespace, name, link);
     }
 
@@ -114,6 +129,10 @@ class MunctionServerAtom
     public Registry registry = null;
 
     public RegistryControl control = new RegistryControl();
+
+    public Integer defaultportnumber = 3434;
+
+    public String defaultservername = "xmnx://munction";
 
     //
 
