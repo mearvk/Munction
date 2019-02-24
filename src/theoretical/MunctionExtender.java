@@ -23,6 +23,6 @@ public class MunctionExtender extends MunctionComponent
 
     public void ref(String namespace, String name, String munctionlink)
     {
-        MunctionServer.staticextender.persist(namespace,name,munctionlink);
+        MunctionServer.staticreference.persist(namespace,name,munctionlink);
     }
 }

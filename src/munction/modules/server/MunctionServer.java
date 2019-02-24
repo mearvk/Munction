@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.rmi.Remote;
-import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.RMIClientSocketFactory;
@@ -17,11 +16,15 @@ import java.rmi.server.RMIServerSocketFactory;
 
 public class MunctionServer extends MunctionServerAtom
 {
-    public static MunctionServer reference = new MunctionServer("{MUNCTIONSERVER}",3434);
+    public MunctionServer reference = new MunctionServer(staticreference);
 
-    public static MunctionServerExtender staticextender = new MunctionServerExtender(reference);
+    public MunctionServerExtender extender = new MunctionServerExtender(staticreference);
 
-    public static MunctionServerExtender extender = new MunctionServerExtender(reference);
+    //
+
+    public static MunctionServer staticreference = new MunctionServer("{MUNCTIONSERVER}",3434);
+
+    public static MunctionServerExtender staticextender = new MunctionServerExtender(staticreference);
 
     //
 
@@ -44,6 +47,11 @@ public class MunctionServer extends MunctionServerAtom
         //
 
         this.extender.register(this, this.registry, servername,"{MUNCTIONSERVER}/{RESOLVER}","{MUNCTIONSERVER}", "{MUNCTIONURL}");
+    }
+
+    public MunctionServer(MunctionServer server)
+    {
+        this.reference = server;
     }
 
     //
@@ -77,6 +85,13 @@ public class MunctionServer extends MunctionServerAtom
 
     public void register(String namespace, String name, String link)
     {
+        this.extender.register(namespace, name, link);
+    }
+
+    public void register(String namespace, String name, String link, Class klass)
+    {
+        System.out.println("Registration for ["+klass+"] requested.");
+
         this.extender.register(namespace, name, link);
     }
 

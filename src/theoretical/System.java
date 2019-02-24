@@ -16,14 +16,14 @@ public class System
 	{
 		System.extender.staticref(namespace, name, o);
 
-		System.munction.staticref(namespace,name,"xmnx://localhost");
+		System.munction.staticref(namespace, name,"xmnx://localhost");
 	}
 
 	public void ref(String namespace, String name, Object o)
 	{
 		System.extender.ref(namespace, name, o);
 
-		System.munction.ref(namespace,name,"xmnx://localhost");
+		System.munction.ref(namespace, name,"xmnx://localhost");
 	}
 
 	public void addObject(Object object, RegisteredHandler handler)
