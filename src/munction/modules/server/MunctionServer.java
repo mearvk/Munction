@@ -17,7 +17,11 @@ import java.rmi.server.RMIServerSocketFactory;
 
 public class MunctionServer extends MunctionServerAtom
 {
-    public MunctionServerExtender extender = new MunctionServerExtender(this);
+    public static MunctionServer reference = new MunctionServer("{MUNCTIONSERVER}",3434);
+
+    public static MunctionServerExtender staticextender = new MunctionServerExtender(reference);
+
+    public static MunctionServerExtender extender = new MunctionServerExtender(reference);
 
     //
 
@@ -27,7 +31,7 @@ public class MunctionServer extends MunctionServerAtom
 
     //
 
-    public MunctionServer(String servername, Integer portnumber) throws RemoteException
+    public MunctionServer(String servername, Integer portnumber)
     {
         this.servername = servername;
 
@@ -41,6 +45,25 @@ public class MunctionServer extends MunctionServerAtom
 
         this.extender.register(this, this.registry, servername,"{MUNCTIONSERVER}/{RESOLVER}","{MUNCTIONSERVER}", "{MUNCTIONURL}");
     }
+
+    //
+
+    public static void staticpersist(String namespace, String name, String link)
+    {
+        MunctionServer.staticextender.persist(namespace, name, link);
+    }
+
+    public static void staticconnect(String namespace, String name, String link)
+    {
+        MunctionServer.staticextender.connect(namespace, name, link);
+    }
+
+    public static void staticregister(String namespace, String name, String link)
+    {
+        MunctionServer.staticextender.register(namespace, name, link);
+    }
+
+    //
 
     public void persist(String namespace, String name, String link)
     {

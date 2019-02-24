@@ -1,6 +1,7 @@
 package theoretical.examples.chatprogram;
 
 import munction.modules.annotations.Munction;
+import theoretical.MunctionException;
 import theoretical.System;
 import theoretical.ChatClientExtent;
 
@@ -20,10 +21,16 @@ public class ChatClient extends ChatClientExtent
 
 class Driver
 {
-    ChatClient client;
-
     public static void main(String...args)
     {
-
+        try
+        {
+            Class.forName("theoretical.examples.chatprogram.ChatClient").getConstructor().newInstance();
+        }
+        catch (Exception exception)
+        {
+            MunctionException.relist(exception, "","", true, true);
+        }
     }
 }
+
