@@ -8,7 +8,7 @@ public class MunctionExtender extends MunctionComponent
 
     static
     {
-        System.staticref("xmnx://org.mearvk.examples", "xmnx://munctionextender", MunctionExtender.class);
+        //System.staticref("xmnx://org.mearvk.examples", "xmnx://munctionextender", MunctionExtender.class);
     }
 
     public MunctionExtender(System ref)

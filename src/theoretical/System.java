@@ -12,6 +12,13 @@ public class System
 
 	//
 
+	static
+	{
+
+	}
+
+	//
+
 	public static void staticref(String namespace, String name, Object o)
 	{
 		System.extender.staticref(namespace, name, o);

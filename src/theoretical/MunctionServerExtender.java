@@ -10,7 +10,7 @@ public class MunctionServerExtender
 
     public MunctionServers servers;
 
-    public MunctionStore storage;
+    public MunctionStore storage = new MunctionStore();
 
     //
 
@@ -40,7 +40,7 @@ public class MunctionServerExtender
     {
         try
         {
-            this.storage.lookup.registry.bind(namespace+""+name, new MunctionString(link));
+            this.storage.lookup.registry.bind(namespace+" "+name, new MunctionString(link));
         }
         catch(Exception exception)
         {

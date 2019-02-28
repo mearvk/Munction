@@ -11,7 +11,7 @@ public class MunctionStartQueue
 
     //
 
-    public static MunctionStartQueue befeel()
+    public static MunctionStartQueue reference()
     {
         return reference;
     }

@@ -21,7 +21,7 @@ public class MunctionRegistryStartup
         return this;
     }
 
-    public MunctionRegistryStartup updateregistry(MunctionServerAtom atom, Registry registry)
+    public MunctionRegistryStartup updateregistry(MunctionServerAtom atom, String servername, Registry registry)
     {
         if(registry == null)
         {
@@ -29,7 +29,7 @@ public class MunctionRegistryStartup
             {
                 //security manager
 
-                atom.registry = LocateRegistry.createRegistry(3434, new RMIClientImpl(), new RMIServerImpl());
+                atom.registry = LocateRegistry.createRegistry(3434);
             }
             catch(Exception exception)
             {

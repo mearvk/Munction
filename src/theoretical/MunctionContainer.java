@@ -24,13 +24,13 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	//
 
-	public MunctionContainer(String munctionserver, String munctionname, String namespace, String projectURL)
+	public MunctionContainer(String servername, String munctionname, String namespace, String projectURL)
 	{
 		try
 		{
-			this.server = new MunctionServer(munctionserver, 3434);
+			this.server = new MunctionServer();
 
-			this.servername = munctionserver;
+			this.servername = servername;
 
 			this.namespace = namespace;
 
@@ -68,7 +68,7 @@ public class MunctionContainer extends MunctionContainerAtom
 	{
 		try
 		{
-			this.server = new MunctionServer(servername, 3434);
+			this.server = new MunctionServer();
 
 			this.servername = "munction";
 

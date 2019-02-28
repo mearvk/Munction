@@ -40,7 +40,7 @@ public class ChatClientExtent extends MunctionComponent
         //
 
         MunctionStartQueue
-                .befeel()
+                .reference()
                 .enqueue(ChatClientExtent.this.thread.startupmonitor)
                 .enqueue(ChatClientExtent.this.thread.runtimemonitor)
                 .enqueue(ChatClientExtent.this.thread.framingmonitor)

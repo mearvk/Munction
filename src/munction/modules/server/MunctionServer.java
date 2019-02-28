@@ -13,7 +13,7 @@ import java.rmi.server.RMIServerSocketFactory;
 
 public class MunctionServer extends MunctionServerAtom
 {
-    public MunctionServer reference = new MunctionServer(staticreference);
+    public MunctionServer reference = staticreference;
 
     public MunctionServerExtender extender = new MunctionServerExtender(staticreference);
 
@@ -25,9 +25,6 @@ public class MunctionServer extends MunctionServerAtom
 
     //
 
-    public String servername;
-
-    public Integer portnumber;
 
     //
 
@@ -63,7 +60,25 @@ public class MunctionServer extends MunctionServerAtom
 
     public MunctionServer(MunctionServer server)
     {
+        this.reference.removeregistry();
+
+        //
+
         this.reference = server;
+
+        //
+
+        this.servername = server.servername;
+
+        this.portnumber = server.portnumber;
+
+        //
+
+        this.reference.initregistry();
+
+        //
+
+        this.extender.register(this, this.registry, servername,"{MUNCTIONSERVER}/{RESOLVER}","{MUNCTIONSERVER}", "{MUNCTIONURL}");
     }
 
     //
@@ -130,9 +145,17 @@ class MunctionServerAtom
 
     public RegistryControl control = new RegistryControl();
 
+    //
+
     public Integer defaultportnumber = 3434;
 
     public String defaultservername = "xmnx://munction";
+
+    //
+
+    public String servername;
+
+    public Integer portnumber;
 
     //
 
@@ -155,7 +178,7 @@ class MunctionServerAtom
 
             this.control.registrystartup
                     .security(this, registry)
-                    .updateregistry(this, registry);
+                    .updateregistry(this, this.servername, registry);
         }
         catch(Exception exception)
         {
@@ -173,7 +196,7 @@ class MunctionServerAtom
 
             this.control.registryshutdown
                     .security(this, registry)
-                    .updateregistry(this, registry);
+                    .updateregistry(this, this.servername, registry);
         }
         catch(Exception exception)
         {
