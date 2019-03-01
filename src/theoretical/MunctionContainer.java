@@ -102,17 +102,17 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	public void setprojectURL(String url)
 	{
-		this.server.extender.register("{SERVERURL}",url);
+		this.server.extender.register("{SERVERURL}", url);
 	}
 
 	public void setnamespace(String namespace)
 	{
-		this.server.extender.register("{NAMESPACE}",namespace);
+		this.server.extender.register("{NAMESPACE}", namespace);
 	}
 
 	public void setservername(String servername)
 	{
-		this.server.extender.register("{SERVERNAME}",servername);
+		this.server.extender.register("{SERVERNAME}", servername);
 	}
 }
 
@@ -131,6 +131,11 @@ class MunctionContainerAtom
 	public ArrayList<MunctionProject> projects = new ArrayList<MunctionProject>();
 
 	//
+
+	static
+	{
+		System.staticref("xmnx://munctioncontaineratom","xmnx://munctioncontaineratom", MunctionContainerAtom.class);
+	}
 
 	public MunctionContainerAtom()
 	{

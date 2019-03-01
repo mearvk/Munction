@@ -7,7 +7,7 @@ import theoretical.System;
 @Munction
 public class ChatClient extends ChatClientExtent
 {
-    private MunctionDriver driver;
+    private MunctionDriver driver; //static only
 
     static
     {

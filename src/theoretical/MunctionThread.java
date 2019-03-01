@@ -28,7 +28,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.runtimemonitor = (RuntimeMonitor)klass.newInstance();
+            this.runtimemonitor = (RuntimeMonitor)klass.getConstructors()[0].newInstance();
         }
         catch(Exception exception)
         {
@@ -40,7 +40,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.shutdownmonitor = (ShutdownMonitor)klass.newInstance();
+            this.shutdownmonitor = (ShutdownMonitor)klass.getConstructors()[0].newInstance();
         }
         catch(Exception exception)
         {
@@ -52,7 +52,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.framingmonitor = (FramingMonitor)klass.newInstance();
+            this.framingmonitor = (FramingMonitor)klass.getConstructors()[0].newInstance();
         }
         catch(Exception exception)
         {
