@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class MunctionContainer extends MunctionContainerAtom
 {
-	public static MunctionServer server;
+	public MunctionServer server;
 
 	//
 
