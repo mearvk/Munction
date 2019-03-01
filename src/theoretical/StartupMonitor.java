@@ -4,6 +4,6 @@ public class StartupMonitor extends Thread
 {
     public void run()
     {
-        java.lang.System.out.println("[monitor] startup started.");
+        java.lang.System.out.println("[munction] startup monitor started.");
     }
 }
