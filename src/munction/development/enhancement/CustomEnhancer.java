@@ -1,6 +1,6 @@
-package munction.modules.enhancement;
+package munction.development.enhancement;
 
-public class StandardEnhancer
+public class CustomEnhancer
 {
 	public void setRegistered()
 	{

@@ -1,10 +1,10 @@
 package munction.localized;
 
-public class ShutdownMonitor extends Thread
+public class ChatClientShutdownMonitor extends Thread
 {
     public MunctionThread thread;
 
-    public ShutdownMonitor(MunctionThread thread)
+    public ChatClientShutdownMonitor(MunctionThread thread)
     {
         this.thread = thread;
     }

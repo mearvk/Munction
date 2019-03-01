@@ -24,13 +24,13 @@
         <constructor-arg ref="system"/>
     </bean>
 
-    <bean id="persistencemodule" class="munction.modules.persistence.PersistenceModule">
+    <bean id="persistencemodule" class="munction.development.persistence.PersistenceModule">
         <meta key="version" value="1.0"></meta>
         <constructor-arg ref="presystem"/>
         <constructor-arg ref="system"/>
     </bean>
 
-    <bean id="enhancementmodule" class="munction.modules.enhancement.EnhancementModule">
+    <bean id="enhancementmodule" class="munction.development.enhancement.EnhancementModule">
         <meta key="version" value="1.0"></meta>
         <constructor-arg ref="presystem"/>
         <constructor-arg ref="system"/>

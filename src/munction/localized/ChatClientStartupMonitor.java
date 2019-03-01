@@ -1,10 +1,10 @@
 package munction.localized;
 
-public class RuntimeMonitor extends Thread
+public class ChatClientStartupMonitor extends Thread
 {
     public Thread thread;
 
-    public RuntimeMonitor(MunctionThread thread)
+    public ChatClientStartupMonitor(MunctionThread thread)
     {
         this.thread = thread;
     }
@@ -13,7 +13,7 @@ public class RuntimeMonitor extends Thread
     {
         if(SystemExtender.debug)
         {
-            java.lang.System.out.println("[munction] runtime monitor started.");
+            java.lang.System.out.println("[munction] startup monitor started.");
         }
     }
 }

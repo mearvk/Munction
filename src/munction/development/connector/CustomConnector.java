@@ -1,6 +1,6 @@
-package munction.modules.persistence;
+package munction.development.connector;
 
-public class CustomPersistor
+public class CustomConnector
 {
 	public void setRegistered()
 	{

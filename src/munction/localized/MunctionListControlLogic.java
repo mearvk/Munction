@@ -10,7 +10,7 @@ public class MunctionListControlLogic
 
     public MunctionListControlLogic(MunctionListControlExtender extender, String bodiname, String bodinamespace, String classname)
     {
-        Bodi.pull(bodiname, bodiname, classname);
+        MunctionBodi.pull(bodiname, bodiname, classname);
     }
 
     public boolean add(ArrayList list, Object o)

@@ -1,6 +1,6 @@
 package theoretical.examples.chatprogram;
 
-import munction.localized.Bodi;
+import munction.localized.MunctionBodi;
 import munction.localized.MunctionException;
 
 public class MunctionBench
@@ -13,9 +13,9 @@ public class MunctionBench
     {
         try
         {
-            Bodi.staticref(this.classname = classname);
+            MunctionBodi.staticref(this.classname = classname);
 
-            Bodi.staticref(this.benchclassname = benchclassname);
+            MunctionBodi.staticref(this.benchclassname = benchclassname);
         }
         catch (Exception exception)
         {

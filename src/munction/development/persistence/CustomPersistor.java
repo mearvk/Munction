@@ -1,6 +1,6 @@
-package munction.modules.persistence;
+package munction.development.persistence;
 
-public class StandardPersistor
+public class CustomPersistor
 {
 	public void setRegistered()
 	{

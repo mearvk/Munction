@@ -8,6 +8,8 @@ public class MunctionComponent
 
     public MunctionThread thread = new MunctionThread();
 
+    public MunctionComponent parent;
+
     //
 
     static
@@ -22,5 +24,13 @@ public class MunctionComponent
         System.reference.ref("xmnx://org.mearvk.theoretical.examples","xmnx://munctioncomponent", MunctionComponent.class);
 
         //this.server.register("xmnx://org.mearvk.theoretical.examples","xmnx://munctioncomponent","xmnx://dynamicref/", this);;
+
+        MunctionStartQueue
+                .reference()
+                .enqueue(parent.thread.startupmonitor)
+                .enqueue(parent.thread.runtimemonitor)
+                .enqueue(parent.thread.framingmonitor)
+                .enqueue(parent.thread.shutdownmonitor)
+                .start();
     }
 }

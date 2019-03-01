@@ -1,8 +1,8 @@
-package munction.modules.enhancement;
+package munction.development.persistence;
 
 import system.handlers.RegisteredHandler;
 
-public class System
+public class Presystem
 {
 	public void addObject(Object object, RegisteredHandler handler)
 	{

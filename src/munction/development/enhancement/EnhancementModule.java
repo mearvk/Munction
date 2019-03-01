@@ -1,4 +1,4 @@
-package munction.modules.enhancement;
+package munction.development.enhancement;
 
 import munction.modules.atoms.AbstractFunctionalAtom;
 import org.springframework.beans.factory.BeanFactory;
@@ -46,9 +46,9 @@ public class EnhancementModule extends EnhancementModuleAtom
 
 		//
 
-		munction.modules.enhancement.Presystem presystem = (munction.modules.enhancement.Presystem) factory.getBean("enhancer.presystem");
+		munction.development.enhancement.Presystem presystem = (munction.development.enhancement.Presystem) factory.getBean("enhancer.presystem");
 
-		munction.modules.enhancement.System system = (munction.modules.enhancement.System) factory.getBean("enhancer.system");
+		munction.development.enhancement.System system = (munction.development.enhancement.System) factory.getBean("enhancer.system");
 
 		//
 

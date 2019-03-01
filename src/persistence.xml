@@ -3,21 +3,21 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <bean id="persistence.presystem" class="munction.modules.persistence.Presystem">
+    <bean id="persistence.presystem" class="munction.development.persistence.Presystem">
         <meta key="version" value="1.0"></meta>
     </bean>
 
-    <bean id="persistence.system" class="munction.modules.persistence.System">
+    <bean id="persistence.system" class="munction.development.persistence.System">
         <meta key="version" value="1.0"></meta>
     </bean>
 
-    <bean id="persistence.standard" class="munction.modules.persistence.StandardPersistor">
+    <bean id="persistence.standard" class="munction.development.persistence.StandardPersistor">
 
         <meta key="input" value="/home/xenu/IdeaProjects/Munction/input/ui/ui.xml"></meta>
 
     </bean>
 
-    <bean id="persistence.custom" class="munction.modules.persistence.CustomPersistor">
+    <bean id="persistence.custom" class="munction.development.persistence.CustomPersistor">
 
         <meta key="input" value="/home/xenu/IdeaProjects/Munction/input/application/application.xml"></meta>
 

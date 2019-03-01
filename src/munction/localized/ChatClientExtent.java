@@ -21,22 +21,12 @@ public class ChatClientExtent extends MunctionComponent
 
         //
 
-        this.thread.setstartupmonitor(StartupMonitor.class);
+        this.thread.setstartupmonitor(ChatClientStartupMonitor.class);
 
-        this.thread.setruntimemonitor(RuntimeMonitor.class);
+        this.thread.setruntimemonitor(ChatClientRuntimeMonitor.class);
 
-        this.thread.setshutdownmonitor(ShutdownMonitor.class);
+        this.thread.setshutdownmonitor(ChatClientShutdownMonitor.class);
 
-        this.thread.setframingmonitor(FramingMonitor.class);
-
-        //
-
-        MunctionStartQueue
-                .reference()
-                .enqueue(ChatClientExtent.this.thread.startupmonitor)
-                .enqueue(ChatClientExtent.this.thread.runtimemonitor)
-                .enqueue(ChatClientExtent.this.thread.framingmonitor)
-                .enqueue(ChatClientExtent.this.thread.shutdownmonitor)
-                .start();
+        this.thread.setframingmonitor(ChatClientFramingMonitor.class);
     }
 }

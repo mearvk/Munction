@@ -1,4 +1,4 @@
-package munction.modules.persistence;
+package munction.development.persistence;
 
 import munction.modules.atoms.AbstractFunctionalAtom;
 import org.springframework.beans.factory.BeanFactory;
@@ -45,9 +45,9 @@ public class PersistenceModule
 
 		//
 
-		munction.modules.persistence.Presystem presystem = (munction.modules.persistence.Presystem) factory.getBean("persistence.presystem");
+		munction.development.persistence.Presystem presystem = (munction.development.persistence.Presystem) factory.getBean("persistence.presystem");
 
-		munction.modules.persistence.System system = (munction.modules.persistence.System) factory.getBean("persistence.system");
+		munction.development.persistence.System system = (munction.development.persistence.System) factory.getBean("persistence.system");
 
 		//
 

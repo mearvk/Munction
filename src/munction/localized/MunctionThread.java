@@ -2,13 +2,13 @@ package munction.localized;
 
 public class MunctionThread extends Thread
 {
-    public StartupMonitor startupmonitor;
+    public ChatClientStartupMonitor startupmonitor;
 
-    public RuntimeMonitor runtimemonitor;
+    public ChatClientRuntimeMonitor runtimemonitor;
 
-    public ShutdownMonitor shutdownmonitor;
+    public ChatClientShutdownMonitor shutdownmonitor;
 
-    public FramingMonitor framingmonitor;
+    public ChatClientFramingMonitor framingmonitor;
 
     //
 
@@ -16,7 +16,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.startupmonitor = (StartupMonitor)klass.getConstructors()[0].newInstance();
+            this.startupmonitor = (ChatClientStartupMonitor)klass.getConstructors()[0].newInstance();
         }
         catch(Exception exception)
         {
@@ -28,7 +28,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.runtimemonitor = (RuntimeMonitor)klass.getConstructors()[0].newInstance();
+            this.runtimemonitor = (ChatClientRuntimeMonitor)klass.getConstructors()[0].newInstance();
         }
         catch(Exception exception)
         {
@@ -40,7 +40,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.shutdownmonitor = (ShutdownMonitor)klass.getConstructors()[0].newInstance();
+            this.shutdownmonitor = (ChatClientShutdownMonitor)klass.getConstructors()[0].newInstance();
         }
         catch(Exception exception)
         {
@@ -52,7 +52,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.framingmonitor = (FramingMonitor)klass.getConstructors()[0].newInstance();
+            this.framingmonitor = (ChatClientFramingMonitor)klass.getConstructors()[0].newInstance();
         }
         catch(Exception exception)
         {

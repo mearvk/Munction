@@ -1,8 +1,8 @@
 package munction.modules;
 
 import munction.modules.atoms.AbstractFunctionalAtom;
-import munction.modules.connector.CustomConnector;
-import munction.modules.connector.StandardConnector;
+import munction.development.connector.CustomConnector;
+import munction.development.connector.StandardConnector;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import system.Presystem;
@@ -48,9 +48,9 @@ public class ConnectorModule extends ConnectorModuleAtom
 		
 		//
 		
-		munction.modules.connector.Presystem presystem = (munction.modules.connector.Presystem) factory.getBean("connector.presystem");
+		munction.development.connector.Presystem presystem = (munction.development.connector.Presystem) factory.getBean("connector.presystem");
 		
-		munction.modules.connector.System system = (munction.modules.connector.System) factory.getBean("connector.system");
+		munction.development.connector.System system = (munction.development.connector.System) factory.getBean("connector.system");
 		
 		//
 		

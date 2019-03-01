@@ -1,6 +1,6 @@
-package munction.modules.enhancement;
+package munction.development.persistence;
 
-public class CustomEnhancer
+public class StandardPersistor
 {
 	public void setRegistered()
 	{

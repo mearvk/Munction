@@ -1,6 +1,6 @@
-package munction.modules.connector;
+package munction.development.connector;
 
-public class CustomConnector
+public class StandardConnector
 {
 	public void setRegistered()
 	{

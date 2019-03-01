@@ -2,7 +2,7 @@ package munction.localized;
 
 import java.rmi.Remote;
 
-public class Bodi
+public class MunctionBodi
 {
     public static void staticref(String classname)
     {
@@ -15,7 +15,6 @@ public class Bodi
             MunctionException.relist(exception, "", "", true, true);
         }
     }
-
 
     public static void put(String bodiname, String bodinamespace, String classname)
     {

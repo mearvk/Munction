@@ -1,4 +1,4 @@
-package munction.modules.connector;
+package munction.development.connector;
 
 import munction.modules.atoms.AbstractFunctionalAtom;
 import org.springframework.beans.factory.BeanFactory;
@@ -46,9 +46,9 @@ public class ConnectorModule extends ConnectorModuleAtom
 
 		//
 
-		munction.modules.connector.Presystem presystem = (munction.modules.connector.Presystem) factory.getBean("enhancer.presystem");
+		munction.development.connector.Presystem presystem = (munction.development.connector.Presystem) factory.getBean("enhancer.presystem");
 
-		munction.modules.connector.System system = (munction.modules.connector.System) factory.getBean("enhancer.system");
+		munction.development.connector.System system = (munction.development.connector.System) factory.getBean("enhancer.system");
 
 		//
 

@@ -3,21 +3,21 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <bean id="connector.presystem" class="munction.modules.connector.Presystem">
+    <bean id="connector.presystem" class="munction.development.connector.Presystem">
         <meta key="version" value="1.0"></meta>
     </bean>
 
-    <bean id="connector.system" class="munction.modules.connector.System">
+    <bean id="connector.system" class="munction.development.connector.System">
         <meta key="version" value="1.0"></meta>
     </bean>
 
-    <bean id="connector.standard" class="munction.modules.connector.StandardConnector">
+    <bean id="connector.standard" class="munction.development.connector.StandardConnector">
 
         <meta key="input" value="/home/xenu/IdeaProjects/Munction/input/ui/ui.xml"></meta>
 
     </bean>
 
-    <bean id="connector.custom" class="munction.modules.connector.CustomConnector">
+    <bean id="connector.custom" class="munction.development.connector.CustomConnector">
 
         <meta key="input" value="/home/xenu/IdeaProjects/Munction/input/application/application.xml"></meta>
 

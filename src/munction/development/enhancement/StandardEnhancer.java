@@ -1,6 +1,6 @@
-package munction.modules.connector;
+package munction.development.enhancement;
 
-public class StandardConnector
+public class StandardEnhancer
 {
 	public void setRegistered()
 	{
