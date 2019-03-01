@@ -2,8 +2,18 @@ package theoretical;
 
 public class RuntimeMonitor extends Thread
 {
+    public Thread thread;
+
+    public RuntimeMonitor(MunctionThread thread)
+    {
+        this.thread = thread;
+    }
+
     public void run()
     {
-        java.lang.System.out.println("[munction] runtime monitor started.");
+        if(SystemExtender.debug)
+        {
+            java.lang.System.out.println("[munction] runtime monitor started.");
+        }
     }
 }

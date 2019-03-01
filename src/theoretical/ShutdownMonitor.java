@@ -1,9 +1,21 @@
 package theoretical;
 
+import munction.modules.annotations.Munction;
+
 public class ShutdownMonitor extends Thread
 {
+    public MunctionThread thread;
+
+    public ShutdownMonitor(MunctionThread thread)
+    {
+        this.thread = thread;
+    }
+
     public void run()
     {
-        java.lang.System.out.println("[munction] shutdown monitor started.");
+        if(SystemExtender.debug)
+        {
+            java.lang.System.out.println("[munction] shutdown monitor started.");
+        }
     }
 }

@@ -6,7 +6,7 @@ public class SystemExtender
 {
     public System system;
 
-    public boolean debug = FALSE;
+    public static boolean debug = FALSE;
 
     static
     {
@@ -21,13 +21,17 @@ public class SystemExtender
     public void staticref(String namespace, String name, Object o)
     {
         if(debug)
-        java.lang.System.out.println("[static] "+namespace+" : "+name+" : "+o);
+        {
+            java.lang.System.out.println("[static] " + namespace + " : " + name + " : " + o);
+        }
     }
 
     public void ref(String namespace, String name, Object o)
     {
         if(debug)
-        java.lang.System.out.println("[instance] "+namespace+" : "+name+" : "+o);
+        {
+            java.lang.System.out.println("[instance] " + namespace + " : " + name + " : " + o);
+        }
     }
 }
 
