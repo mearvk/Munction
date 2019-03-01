@@ -52,15 +52,5 @@ public class MunctionDriver
         }
     }
 
-    public static void main(String...args)
-    {
-        try
-        {
-            Class.forName("theoretical.examples.chatprogram.ChatClient");
-        }
-        catch(Exception exception)
-        {
-            java.lang.System.out.println(exception);
-        }
-    }
+
 }

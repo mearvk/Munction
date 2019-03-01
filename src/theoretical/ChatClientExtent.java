@@ -5,7 +5,7 @@ import munction.modules.annotations.Munction;
 @Munction
 public class ChatClientExtent extends MunctionComponent
 {
-    public MunctionContainer container = new MunctionContainer();
+    public MunctionContainer container;
 
     //
 

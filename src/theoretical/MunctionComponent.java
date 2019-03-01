@@ -12,11 +12,15 @@ public class MunctionComponent
 
     static
     {
-        MunctionServer.staticreference.register("xmnx://org.mearvk.theoretical.examples","xmnx://munctioncomponent","xmnx://staticref/", MunctionComponent.class);
+        System.staticref("xmnx://org.mearvk.theoretical.examples","xmnx://munctioncomponent", MunctionComponent.class);
+
+        //MunctionServer.staticreference.register("xmnx://org.mearvk.theoretical.examples","xmnx://munctioncomponent","xmnx://staticref/", MunctionComponent.class);
     }
 
     public MunctionComponent()
     {
-        this.server.register("xmnx://org.mearvk.theoretical.examples","xmnx://munctioncomponent","xmnx://dynamicref/", this);;
+        System.reference.ref("xmnx://org.mearvk.theoretical.examples","xmnx://munctioncomponent", MunctionComponent.class);
+
+        //this.server.register("xmnx://org.mearvk.theoretical.examples","xmnx://munctioncomponent","xmnx://dynamicref/", this);;
     }
 }

@@ -12,20 +12,17 @@ public class MunctionContainer extends MunctionContainerAtom
 
 	//
 
-	public String servername;
-
-	public String namespace;
-
-	public String projectURL;
-
-	//
-
-	public ProjectFileHandler handler;
+	static
+	{
+		System.staticref("xmnx://munctioncontainer","xmnx://munctioncontainer", MunctionContainer.class);
+	}
 
 	//
 
 	public MunctionContainer(String servername, String munctionname, String namespace, String projectURL)
 	{
+		System.reference.ref("xmnx://munctioncontainer","xmnx://munctioncontainer", this);
+
 		try
 		{
 			this.server = new MunctionServer();
@@ -123,14 +120,20 @@ class MunctionContainerAtom
 {
 	public ApplicationContainer applicationinterface = new ApplicationContainer();
 
+	public ProjectFileHandler handler;
+
+	public String servername;
+
+	public String namespace;
+
+	public String projectURL;
+
 	public ArrayList<MunctionProject> projects = new ArrayList<MunctionProject>();
 
 	//
 
 	public MunctionContainerAtom()
 	{
-		//security manager
-
 		java.lang.System.out.println("[munction] munction container started.");
 	}
 }
