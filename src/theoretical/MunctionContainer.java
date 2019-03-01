@@ -25,7 +25,7 @@ public class MunctionContainer extends MunctionContainerAtom
 
 		try
 		{
-			this.server = new MunctionServer();
+			this.server = new MunctionServer(servername,3434);
 
 			this.servername = servername;
 
@@ -65,7 +65,7 @@ public class MunctionContainer extends MunctionContainerAtom
 	{
 		try
 		{
-			this.server = new MunctionServer();
+			this.server = new MunctionServer(servername,3434);
 
 			this.servername = "munction";
 

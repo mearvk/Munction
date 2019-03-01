@@ -4,6 +4,11 @@ public class SystemExtender
 {
     public System system;
 
+    static
+    {
+        //System.staticref("xmnx://system","xmnx://system", SystemExtender.class);
+    }
+
     public SystemExtender(System system)
     {
         this.system = system;

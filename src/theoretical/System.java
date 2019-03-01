@@ -22,20 +22,16 @@ public class System
 	public static void staticref(String namespace, String name, Object o)
 	{
 		System.extender.staticref(namespace, name, o);
-
-		//System.munction.staticref(namespace, name,"xmnx://localhost");
 	}
 
 	public void ref(String namespace, String name, Object o)
 	{
 		System.extender.ref(namespace, name, o);
-
-		//System.munction.ref(namespace, name,"xmnx://localhost");
 	}
 
 	public void addObject(Object object, RegisteredHandler handler)
 	{
-		//...
+
 	}
 }
 
