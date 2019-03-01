@@ -2,13 +2,13 @@ package theoretical;
 
 public class MunctionThread extends Thread
 {
-    public ChatClientExtent.StartupMonitor startupmonitor;
+    public StartupMonitor startupmonitor;
 
-    public ChatClientExtent.RuntimeMonitor runtimemonitor;
+    public RuntimeMonitor runtimemonitor;
 
-    public ChatClientExtent.ShutdownMonitor shutdownmonitor;
+    public ShutdownMonitor shutdownmonitor;
 
-    public ChatClientExtent.FramingMonitor framingmonitor;
+    public FramingMonitor framingmonitor;
 
     //
 
@@ -16,7 +16,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.startupmonitor = (ChatClientExtent.StartupMonitor)klass.getConstructors()[0].newInstance();
+            this.startupmonitor = (StartupMonitor)klass.getConstructors()[0].newInstance();
         }
         catch(Exception exception)
         {
@@ -28,7 +28,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.runtimemonitor = (ChatClientExtent.RuntimeMonitor)klass.newInstance();
+            this.runtimemonitor = (RuntimeMonitor)klass.newInstance();
         }
         catch(Exception exception)
         {
@@ -40,7 +40,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.shutdownmonitor = (ChatClientExtent.ShutdownMonitor)klass.newInstance();
+            this.shutdownmonitor = (ShutdownMonitor)klass.newInstance();
         }
         catch(Exception exception)
         {
@@ -52,7 +52,7 @@ public class MunctionThread extends Thread
     {
         try
         {
-            this.framingmonitor = (ChatClientExtent.FramingMonitor)klass.newInstance();
+            this.framingmonitor = (FramingMonitor)klass.newInstance();
         }
         catch(Exception exception)
         {

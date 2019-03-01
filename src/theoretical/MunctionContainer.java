@@ -27,11 +27,11 @@ public class MunctionContainer extends MunctionContainerAtom
 		{
 			this.server = new MunctionServer(servername,3434);
 
-			this.servername = servername;
+			this.server.munctionname = munctionname;
 
-			this.namespace = namespace;
+			this.server.namespace = namespace;
 
-			this.projectURL = projectURL;
+			this.server.projecturl = projectURL;
 
 			//
 

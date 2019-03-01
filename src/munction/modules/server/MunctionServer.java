@@ -102,6 +102,12 @@ class MunctionServerAtom
 {
     public MunctionServerAtom reference = this;
 
+    public String namespace;
+
+    public String munctionname;
+
+    public String projecturl;
+
     public static MunctionServer staticreference = new MunctionServer("xmnx://munctionserver",3434);
 
     public static MunctionServerExtender staticextender = new MunctionServerExtender(staticreference);

@@ -21,14 +21,6 @@ public class ChatClientExtent extends MunctionComponent
 
         //
 
-        this.container.setprojectURL("xmnx://chatclient");
-
-        this.container.setservername("xmnx://chatclient/theoretical");
-
-        this.container.setnamespace("xmnx://org.mearvk");
-
-        //
-
         this.thread.setstartupmonitor(StartupMonitor.class);
 
         this.thread.setruntimemonitor(RuntimeMonitor.class);
@@ -46,65 +38,5 @@ public class ChatClientExtent extends MunctionComponent
                 .enqueue(ChatClientExtent.this.thread.framingmonitor)
                 .enqueue(ChatClientExtent.this.thread.shutdownmonitor)
                 .start();
-    }
-
-    @Munction
-    static class StartupMonitor extends Thread
-    {
-        public StartupMonitor()
-        {
-
-        }
-
-        @Override
-        public void run()
-        {
-            java.lang.System.out.println("[monitor] startup called.");
-        }
-    }
-
-    @Munction
-    static class RuntimeMonitor extends Thread
-    {
-        public RuntimeMonitor()
-        {
-
-        }
-
-        @Override
-        public void run()
-        {
-            java.lang.System.out.println("[monitor] runtime called.");
-        }
-    }
-
-    @Munction
-    static class ShutdownMonitor extends Thread
-    {
-        public ShutdownMonitor()
-        {
-
-        }
-
-        @Override
-        public void run()
-        {
-            java.lang.System.out.println("[monitor] shutdown called.");
-        }
-    }
-
-    @Munction
-    static class FramingMonitor extends Thread
-    {
-        public FramingMonitor()
-        {
-
-        }
-
-        @Override
-        public void run()
-        {
-            java.lang.System.out.println("[monitor] framing called.");
-        }
     }
 }
