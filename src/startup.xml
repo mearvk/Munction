@@ -36,7 +36,7 @@
         <constructor-arg ref="system"/>
     </bean>
 
-    <bean id="buildmodule" class="theoretical.BuildModule">
+    <bean id="buildmodule" class="munction.localized.BuildModule">
         <meta key="version" value="1.0"></meta>
         <constructor-arg ref="presystem"/>
         <constructor-arg ref="system"/>

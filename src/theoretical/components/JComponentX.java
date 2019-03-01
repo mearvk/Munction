@@ -1,6 +1,6 @@
 package theoretical.components;
 
-import theoretical.NullParent;
+import munction.localized.NullParent;
 
 import javax.swing.*;
 import java.util.HashSet;

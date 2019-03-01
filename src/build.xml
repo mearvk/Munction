@@ -3,21 +3,21 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <bean id="builder.presystem" class="theoretical.Presystem">
+    <bean id="builder.presystem" class="munction.localized.Presystem">
         <meta key="version" value="1.0"></meta>
     </bean>
 
-    <bean id="builder.system" class="theoretical.System">
+    <bean id="builder.system" class="munction.localized.System">
         <meta key="version" value="1.0"></meta>
     </bean>
 
-    <bean id="builder.interface" class="theoretical.UserInterfaceInterpreter">
+    <bean id="builder.interface" class="munction.localized.UserInterfaceInterpreter">
 
         <meta key="input" value="/home/xenu/IdeaProjects/Munction/input/ui/ui.xml"></meta>
 
     </bean>
 
-    <bean id="builder.application" class="theoretical.ApplicationInterpreter">
+    <bean id="builder.application" class="munction.localized.ApplicationInterpreter">
 
         <meta key="input" value="/home/xenu/IdeaProjects/Munction/input/application/application.xml"></meta>
 

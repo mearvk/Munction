@@ -1,7 +1,7 @@
 package theoretical.examples.chatprogram;
 
-import theoretical.Bodi;
-import theoretical.MunctionException;
+import munction.localized.Bodi;
+import munction.localized.MunctionException;
 
 public class MunctionBench
 {

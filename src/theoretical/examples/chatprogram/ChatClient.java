@@ -1,8 +1,9 @@
 package theoretical.examples.chatprogram;
 
+import munction.localized.ChatClientExtent;
+import munction.localized.MunctionDriver;
 import munction.modules.annotations.Munction;
-import theoretical.*;
-import theoretical.System;
+import munction.localized.System;
 
 @Munction
 public class ChatClient extends ChatClientExtent

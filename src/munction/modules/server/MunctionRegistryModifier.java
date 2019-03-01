@@ -1,6 +1,6 @@
 package munction.modules.server;
 
-import theoretical.MunctionException;
+import munction.localized.MunctionException;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;

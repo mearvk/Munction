@@ -1,6 +1,6 @@
 package munction.modules.server;
 
-import theoretical.*;
+import munction.localized.*;
 
 import java.io.IOException;
 import java.net.ServerSocket;
