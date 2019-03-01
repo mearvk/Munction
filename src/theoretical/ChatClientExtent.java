@@ -66,6 +66,11 @@ public class ChatClientExtent extends MunctionComponent
     @Munction
     static class RuntimeMonitor extends Thread
     {
+        public RuntimeMonitor()
+        {
+
+        }
+
         @Override
         public void run()
         {
@@ -76,6 +81,11 @@ public class ChatClientExtent extends MunctionComponent
     @Munction
     static class ShutdownMonitor extends Thread
     {
+        public ShutdownMonitor()
+        {
+
+        }
+
         @Override
         public void run()
         {
@@ -86,6 +96,11 @@ public class ChatClientExtent extends MunctionComponent
     @Munction
     static class FramingMonitor extends Thread
     {
+        public FramingMonitor()
+        {
+
+        }
+
         @Override
         public void run()
         {

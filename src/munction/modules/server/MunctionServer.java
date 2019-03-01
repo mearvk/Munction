@@ -13,72 +13,31 @@ import java.rmi.server.RMIServerSocketFactory;
 
 public class MunctionServer extends MunctionServerAtom
 {
-    public MunctionServer reference = staticreference;
-
-    public MunctionServerExtender extender = new MunctionServerExtender(staticreference);
-
-    //
-
-    public static MunctionServer staticreference = new MunctionServer("{MUNCTIONSERVER}",3434);
-
-    public static MunctionServerExtender staticextender = new MunctionServerExtender(staticreference);
-
-    //
-
+    public MunctionServer reference = this;
 
     //
 
     public MunctionServer()
     {
-        this.servername = this.defaultservername;
 
-        this.portnumber = this.defaultportnumber;
-
-        //
-
-        this.initregistry();
-
-        //
-
-        this.extender.register(this, this.registry, servername,"{MUNCTIONSERVER}/{RESOLVER}","{MUNCTIONSERVER}", "{MUNCTIONURL}");
     }
 
     public MunctionServer(String servername, Integer portnumber)
     {
-        this.servername = servername;
+        this.reference = new MunctionServer();
 
-        this.portnumber = portnumber;
+        this.reference.servername = servername;
 
-        //
-
-        this.initregistry();
-
-        //
-
-        this.extender.register(this, this.registry, servername,"{MUNCTIONSERVER}/{RESOLVER}","{MUNCTIONSERVER}", "{MUNCTIONURL}");
+        this.reference.portnumber = portnumber;
     }
 
     public MunctionServer(MunctionServer server)
     {
-        this.reference.removeregistry();
-
-        //
-
         this.reference = server;
 
-        //
+        this.reference.servername = server.servername;
 
-        this.servername = server.servername;
-
-        this.portnumber = server.portnumber;
-
-        //
-
-        this.reference.initregistry();
-
-        //
-
-        this.extender.register(this, this.registry, servername,"{MUNCTIONSERVER}/{RESOLVER}","{MUNCTIONSERVER}", "{MUNCTIONURL}");
+        this.reference.portnumber = server.portnumber;
     }
 
     //
@@ -141,6 +100,16 @@ public class MunctionServer extends MunctionServerAtom
 
 class MunctionServerAtom
 {
+    public MunctionServerAtom reference = this;
+
+    public static MunctionServer staticreference = new MunctionServer("xmnx://munctionserver",3434);
+
+    public static MunctionServerExtender staticextender = new MunctionServerExtender(staticreference);
+
+    public MunctionServerExtender extender = new MunctionServerExtender(staticreference);
+
+    //
+
     public Registry registry = null;
 
     public RegistryControl control = new RegistryControl();
@@ -149,7 +118,7 @@ class MunctionServerAtom
 
     public Integer defaultportnumber = 3434;
 
-    public String defaultservername = "xmnx://munction";
+    public String defaultservername = "xmnx://munctionserver";
 
     //
 
@@ -166,6 +135,16 @@ class MunctionServerAtom
     public MunctionServerAtom()
     {
 
+    }
+
+    public MunctionServerAtom(String servername, Integer portnumber)
+    {
+
+    }
+
+    public MunctionServerAtom(MunctionServer server)
+    {
+        this.initregistry();
     }
 
     //

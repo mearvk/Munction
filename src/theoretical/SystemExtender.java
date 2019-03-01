@@ -16,7 +16,7 @@ public class SystemExtender
 
     public void ref(String namespace, String name, Object o)
     {
-        java.lang.System.out.println("[dynamic] "+namespace+" : "+name+" : "+o);
+        java.lang.System.out.println("[instance] "+namespace+" : "+name+" : "+o);
     }
 }
 

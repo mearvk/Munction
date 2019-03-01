@@ -25,8 +25,6 @@ public class ChatClient extends ChatClientExtent
     {
         try
         {
-            for(int i=0; i<5; i++)
-
             Class.forName("theoretical.examples.chatprogram.ChatClient");
         }
         catch(Exception exception)
