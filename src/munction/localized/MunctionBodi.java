@@ -18,6 +18,15 @@ public class MunctionBodi
 
     public static void put(String bodiname, String bodinamespace, String classname)
     {
+        java.lang.System.out.println("[bodi] "+bodiname+" : "+bodinamespace+" : "+classname);
+
+        return;
+    }
+
+    public static void put(String bodiname, String bodinamespace, Class klass)
+    {
+        java.lang.System.out.println("[bodi] "+bodiname+" : "+bodinamespace+" : "+klass);
+
         return;
     }
 

@@ -2,6 +2,8 @@ package munction.modules.annotations;
 
 public @interface Munction
 {
+    String parentclassname = "";
+
     String namespace() default "";
 
     String name() default "";

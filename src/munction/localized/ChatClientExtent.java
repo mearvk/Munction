@@ -9,6 +9,14 @@ public class ChatClientExtent extends MunctionComponent
 
     //
 
+    public MunctionAspectContainer application = new BodiEnabledAspectContainer("theoretical.examples.chatprogram.ChatClientApplicationAspect","xbdx://aspects/chatprogram/application");
+
+    public MunctionAspectContainer network = new BodiEnabledAspectContainer("theoretical.examples.chatprogram.ChatClientNetworkAspect","xbdx://aspects/chatprogram/network");
+
+    public MunctionAspectContainer userinterface = new BodiEnabledAspectContainer("theoretical.examples.chatprogram.ChatClientUserInterfaceAspect","xbdx://aspects/chatprogram/userinterface");
+
+    //
+
     static
     {
         System.staticref("xmnx://org.mearvk.examples","xmnx://chatclientextent", ChatClientExtent.class);
@@ -18,6 +26,14 @@ public class ChatClientExtent extends MunctionComponent
     public ChatClientExtent()
     {
         System.reference.ref("xmnx://org.mearvk.examples","xmnx://chatclientextent", this);
+
+        //
+
+        this.container.cord(application, 1);
+
+        this.container.cord(network, 2);
+
+        this.container.cord(userinterface, 3);
 
         //
 

@@ -8,7 +8,7 @@ public class System
 
 	public static SystemExtender extender = new SystemExtender(reference);
 
-	public static MunctionExtender munction = new MunctionExtender(reference);
+	//public static MunctionExtender munction = new MunctionExtender(reference);
 
 
 
@@ -16,7 +16,7 @@ public class System
 
 	static
 	{
-		System.extender.staticref("xmnx://system","xmnx://system", System.class);
+		System.extender.staticref("xmnx://"+System.class.getPackageName(),"xmnx://"+System.class.getSimpleName().toLowerCase(), System.class);
 	}
 
 	//

@@ -1,12 +1,13 @@
 package munction.localized;
 
 import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
 
 public class SystemExtender
 {
     public System system;
 
-    public static boolean debug = FALSE;
+    public static boolean debug = TRUE;
 
     static
     {

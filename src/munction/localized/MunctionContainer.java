@@ -114,6 +114,11 @@ public class MunctionContainer extends MunctionContainerAtom
 	{
 		this.server.extender.register("{SERVERNAME}", servername);
 	}
+
+	public void cord(MunctionAspectContainer aspect, Integer order)
+	{
+
+	}
 }
 
 class MunctionContainerAtom
