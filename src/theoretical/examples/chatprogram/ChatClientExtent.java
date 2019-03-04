@@ -7,18 +7,21 @@ import munction.localized.MunctionContainer;
 import munction.localized.System;
 import munction.modules.annotations.Munction;
 
-@Munction
+@Munction(policy = "xbdx://policies/MunctionComponent")
 public class ChatClientExtent extends MunctionComponent
 {
     public MunctionContainer container = new MunctionContainer("xmnx://chatclient","xmnx://chatclient","xmnx://chatclient","http://munction/projects/chatclient");
 
     //
 
-    public MunctionAspectContainer application = new BodiEnabledAspectContainer(ChatClientApplicationAspect.class,"");
+    @Munction(order = 1, policy = "xbdx://policies/MunctionComponent/DevelopmentApplicationAspect")
+    public MunctionAspectContainer application = new BodiEnabledAspectContainer(DevelopmentApplicationAspect.class,"");
 
-    public MunctionAspectContainer network = new BodiEnabledAspectContainer(ChatClientNetworkAspect.class,"");
+    @Munction(order = 2, policy = "xbdx://policies/MunctionComponent/DevelopmentNetworkAspect")
+    public MunctionAspectContainer network = new BodiEnabledAspectContainer(DevelopmentNetworkAspect.class,"");
 
-    public MunctionAspectContainer userinterface = new BodiEnabledAspectContainer(ChatClientUserInterfaceAspect.class,"");
+    @Munction(order = 3, policy = "xbdx://policies/MunctionComponent/DevelopmentUserInterfaceAspect")
+    public MunctionAspectContainer userinterface = new BodiEnabledAspectContainer(DevelopmentUserInterfaceAspect.class,"");
 
     //
 
@@ -31,23 +34,5 @@ public class ChatClientExtent extends MunctionComponent
     public ChatClientExtent()
     {
         System.reference.ref(this);
-
-        //
-
-        this.container.cord(application, 001);
-
-        this.container.cord(network, 002);
-
-        this.container.cord(userinterface, 003);
-
-        //
-
-        this.thread.setstartupmonitor(ChatClientStartupMonitor.class);
-
-        this.thread.setruntimemonitor(ChatClientRuntimeMonitor.class);
-
-        this.thread.setshutdownmonitor(ChatClientShutdownMonitor.class);
-
-        this.thread.setframingmonitor(ChatClientFramingMonitor.class);
     }
 }

@@ -8,9 +8,13 @@ public @interface Munction
 
     String name() default "";
 
+    String policy() default "";
+
     String servername() default "container://localhost";
 
     int id() default 0;
+
+    int order() default 0;
 
     int depth() default 6;
 

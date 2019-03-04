@@ -2,7 +2,7 @@ package theoretical.examples.chatprogram;
 
 import munction.localized.InterfaceAspect;
 
-public class ChatClientUserInterfaceAspect extends InterfaceAspect
+public class DevelopmentUserInterfaceAspect extends InterfaceAspect
 {
 
 }

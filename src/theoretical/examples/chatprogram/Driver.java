@@ -14,11 +14,11 @@ public class Driver
     {
         try
         {
-            MunctionBodi.put("xbdx://aspects/chatprogram/application", "", Class.forName("theoretical.examples.chatprogram.ChatClientApplicationAspect"));
+            MunctionBodi.put("xbdx://aspects/chatprogram/application", "", Class.forName("theoretical.examples.chatprogram.DevelopmentApplicationAspect"));
 
-            MunctionBodi.put("xbdx://aspects/chatprogram/network","", Class.forName("theoretical.examples.chatprogram.ChatClientNetworkAspect"));
+            MunctionBodi.put("xbdx://aspects/chatprogram/network","", Class.forName("theoretical.examples.chatprogram.DevelopmentNetworkAspect"));
 
-            MunctionBodi.put("xbdx://aspects/chatprogram/userinterface","", Class.forName("theoretical.examples.chatprogram.ChatClientUserInterfaceAspect"));
+            MunctionBodi.put("xbdx://aspects/chatprogram/userinterface","", Class.forName("theoretical.examples.chatprogram.DevelopmentUserInterfaceAspect"));
         }
         catch(Exception exception)
         {
