@@ -10,7 +10,7 @@ public class MunctionDriver extends MunctionDriverCustomExtent
 
     public static void main(String...args)
     {
-        MunctionDriver.bench("munction.localized.MunctionDriver","munction.localized.MunctionBench");
+        MunctionDriver.classload("munction.localized.MunctionDriver","munction.localized.MunctionBench");
     }
 
     //
@@ -35,7 +35,17 @@ public class MunctionDriver extends MunctionDriverCustomExtent
         }
     }
 
-    public static void bench(String classname, String benchclassname)
+    public static void classload(String classname)
+    {
+
+    }
+
+    public static void classload(String classname, String benchclassname)
+    {
+
+    }
+
+    public static void benchload(String classname, String benchclassname)
     {
         try
         {
@@ -43,7 +53,7 @@ public class MunctionDriver extends MunctionDriverCustomExtent
 
             bench.bench(classname);
 
-            MunctionDriver.benches.add(bench);
+            //MunctionDriver.benches.add(benchload);
         }
         catch (Exception exception)
         {

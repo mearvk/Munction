@@ -8,7 +8,7 @@ public class MunctionBodi
     {
         try
         {
-            MunctionBodi.staticref(classname);
+            Class.forName(classname);
         }
         catch(Exception exception)
         {
