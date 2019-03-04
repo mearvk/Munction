@@ -1,5 +1,10 @@
 package munction.localized;
 
+import theoretical.examples.chatprogram.ChatClientFramingMonitor;
+import theoretical.examples.chatprogram.ChatClientRuntimeMonitor;
+import theoretical.examples.chatprogram.ChatClientShutdownMonitor;
+import theoretical.examples.chatprogram.ChatClientStartupMonitor;
+
 public class MunctionThread extends Thread
 {
     public ChatClientStartupMonitor startupmonitor;

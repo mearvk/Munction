@@ -14,6 +14,8 @@ public @interface Munction
 
     int depth() default 6;
 
+    boolean staticstart() default true;
+
     boolean rewire() default true;
 
     boolean includestaticblock() default true;

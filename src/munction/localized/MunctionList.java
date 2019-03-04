@@ -9,6 +9,8 @@ public class MunctionList<Type> extends ArrayList<Type>
     @Override
     public boolean add(Object o)
     {
+        
+
         controller.logic.add(this, o);
 
         //

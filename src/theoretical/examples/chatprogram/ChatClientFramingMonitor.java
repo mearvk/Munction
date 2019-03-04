@@ -1,4 +1,7 @@
-package munction.localized;
+package theoretical.examples.chatprogram;
+
+import munction.localized.MunctionThread;
+import munction.localized.SystemExtender;
 
 public class ChatClientFramingMonitor extends Thread
 {

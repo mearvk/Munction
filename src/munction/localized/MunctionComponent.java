@@ -14,14 +14,14 @@ public class MunctionComponent
 
     static
     {
-        System.staticref("xmnx://org.mearvk.theoretical.examples","xmnx://munctioncomponent", MunctionComponent.class);
+        System.staticref("xmnx://"+MunctionComponent.class.getPackageName().toLowerCase(),"xmnx:/"+MunctionComponent.class.getSimpleName().toLowerCase(), MunctionComponent.class);
 
         //MunctionServer.staticreference.register("xmnx://org.mearvk.theoretical.examples","xmnx://munctioncomponent","xmnx://staticref/", MunctionComponent.class);
     }
 
     public MunctionComponent()
     {
-        System.reference.ref("xmnx://org.mearvk.theoretical.examples","xmnx://munctioncomponent", MunctionComponent.class);
+        System.reference.ref("xmnx://"+MunctionComponent.class.getPackageName().toLowerCase(),"xmnx://"+MunctionComponent.class.getSimpleName().toLowerCase(), MunctionComponent.class);
 
         //this.server.register("xmnx://org.mearvk.theoretical.examples","xmnx://munctioncomponent","xmnx://dynamicref/", this);;
 

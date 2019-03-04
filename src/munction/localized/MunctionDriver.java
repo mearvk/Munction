@@ -1,7 +1,5 @@
 package munction.localized;
 
-import theoretical.examples.chatprogram.MunctionBench;
-
 public class MunctionDriver
 {
     public static MunctionList<MunctionBench> benches = new MunctionList<MunctionBench>();

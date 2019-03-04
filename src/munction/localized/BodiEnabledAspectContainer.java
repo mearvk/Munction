@@ -6,4 +6,9 @@ public class BodiEnabledAspectContainer extends MunctionAspectContainer
     {
 
     }
+
+    public BodiEnabledAspectContainer(Class klass, String bodiurl)
+    {
+
+    }
 }
