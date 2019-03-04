@@ -116,7 +116,7 @@ public class Builder extends AS001
 		
 		public void process()
 		{
-			//application
+			//container1
 			
 			Builder coprocessor = new Builder(new ASNought.BuildScript(""));
 			
@@ -158,7 +158,7 @@ public class Builder extends AS001
 		
 		public void process()
 		{
-			//network
+			//container2
 			
 			Builder coprocessor = new Builder(new ASNought.BuildScript(""));
 			

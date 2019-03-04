@@ -1,10 +1,19 @@
 package munction.localized;
 
-public class MunctionDriver
+public class MunctionDriver extends MunctionDriverCustomExtent
 {
     public static MunctionList<MunctionBench> benches = new MunctionList<MunctionBench>();
 
     public static MunctionList<MunctionWrench> wrenches = new MunctionList<MunctionWrench>();
+
+    //
+
+    public static void main(String...args)
+    {
+        MunctionDriver.bench("munction.localized.MunctionDriver","munction.localized.MunctionBench");
+    }
+
+    //
 
     static
     {
@@ -30,7 +39,11 @@ public class MunctionDriver
     {
         try
         {
-            MunctionDriver.benches.add(new MunctionBench(classname, benchclassname));
+            MunctionBench bench = new MunctionBench(classname, benchclassname);
+
+            bench.bench(classname);
+
+            MunctionDriver.benches.add(bench);
         }
         catch (Exception exception)
         {
@@ -49,6 +62,6 @@ public class MunctionDriver
             MunctionException.relist(exception, "","", true, true);
         }
     }
-
-
 }
+
+

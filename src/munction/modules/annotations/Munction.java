@@ -18,6 +18,8 @@ public @interface Munction
 
     int depth() default 6;
 
+    boolean start() default false;
+
     boolean staticstart() default true;
 
     boolean rewire() default true;

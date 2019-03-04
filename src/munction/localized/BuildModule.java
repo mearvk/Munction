@@ -54,7 +54,7 @@ public class BuildModule extends BuildModuleAtom
 		
 		UserInterfaceInterpreter userinterpreter = (UserInterfaceInterpreter) factory.getBean("builder.interface");
 		
-		ApplicationInterpreter applicationinterpreter = (ApplicationInterpreter) factory.getBean("builder.application");
+		ApplicationInterpreter applicationinterpreter = (ApplicationInterpreter) factory.getBean("builder.container1");
 		
 		//
 		

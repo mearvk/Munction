@@ -24,17 +24,23 @@ public class MunctionBench
         }
     }
 
+    public void bench(String classname)
+    {
+        try
+        {
+            Class.forName(classname);
+        }
+        catch (Exception exception)
+        {
+            MunctionException.relist(exception, "","", true,true);
+        }
+    }
+
     public static void forName(String classname)
     {
         try
         {
             Class.forName(classname);
-
-            //Object object = Class.forName(classname);
-
-            //Munction munction = (Munction)object.getClass().getAnnotation(Munction.class);
-
-            //java.lang.System.out.println(munction.staticstart());
         }
         catch (Exception exception)
         {
