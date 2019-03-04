@@ -10,7 +10,7 @@ public class MunctionDriver extends MunctionDriverCustomExtent
 
     public static void main(String...args)
     {
-        MunctionDriver.classload("munction.localized.MunctionDriver","munction.localized.MunctionBench");
+        MunctionDriver.classload("munction.localized.MunctionDriver", munction.localized.MunctionClassloader.class);
     }
 
     //
@@ -37,12 +37,30 @@ public class MunctionDriver extends MunctionDriverCustomExtent
 
     public static void classload(String classname)
     {
+        try
+        {
+            MunctionClassloader loader = new MunctionClassloader();
 
+            loader.load(classname);
+        }
+        catch (Exception exception)
+        {
+            MunctionException.relist(exception, "","", true, true);
+        }
     }
 
-    public static void classload(String classname, String benchclassname)
+    public static void classload(String classname, Class<? extends ClassLoader> loaderclass)
     {
+        try
+        {
+            MunctionClassloader loader = (MunctionClassloader)loaderclass.newInstance();
 
+            loader.load(classname);
+        }
+        catch (Exception exception)
+        {
+            MunctionException.relist(exception, "","", true, true);
+        }
     }
 
     public static void benchload(String classname, String benchclassname)
