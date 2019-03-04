@@ -70,8 +70,6 @@ public class MunctionDriver extends MunctionDriverCustomExtent
             MunctionBench bench = new MunctionBench(classname, benchclassname);
 
             bench.bench(classname);
-
-            //MunctionDriver.benches.add(benchload);
         }
         catch (Exception exception)
         {
